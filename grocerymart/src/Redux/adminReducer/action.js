@@ -12,7 +12,6 @@ const getUserProfile = (id) => (dispatch) => {
     })
     .then((res) => {
       dispatch({ type: types.GET_USER_PROFILE_SUCCESS, payload: res.data });
-      console.log(res.data);
     })
     .catch((e) => {
       dispatch({ type: types.GET_USER_PROFILE_FAILURE, payload: e });

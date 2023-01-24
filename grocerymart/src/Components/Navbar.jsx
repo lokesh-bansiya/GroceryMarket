@@ -1,52 +1,46 @@
 import {
   Box,
   Flex,
-  Button,
   Input,
   Image,
-  useDisclosure
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import logo from "../Assets/redCart.png";
 import cart from "../Assets/cart.jpg";
 import user from "../Assets/user.png";
-import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { useState } from 'react';
-import SignUp from '../Modal/SignUp';
-import Login from '../Modal/Login';
+import SignUp from "../Modal/SignUp";
+import Login from "../Modal/Login";
+import { ProductsMenu } from "../Menu/ProductsMenu";
+import { CategoryMenu } from "../Menu/CategoryMenu";
+import  MobileScreenMenu  from "../Drawer/MobileScreenMenu";
+import { Link } from "react-router-dom";
+import { ProfileMenu } from "../Menu/ProfileMenu";
 
 export default function Navbar() {
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [state, setState] = useState(true);
-
   return (
-    <Box 
-      width="100%" 
-      margin="auto">
+    <Box width="100%" margin="auto">
       <Flex
-        paddingRight="2%" 
-        paddingLeft="2%" 
+        paddingRight="2%"
+        paddingLeft="2%"
         width="100%"
         flexDirection="row"
         justifyContent="space-between"
         boxShadow="rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
         alignItems="center"
         height="auto"
-        
       >
-        <Box
-          width={{base: "30%", sm:"25%", md:"20%", lg:"15%"}}
-        >
-          <Image width="100%" src={logo} alt='logo' />
+        <Box width={{ base: "30%", sm: "25%", md: "20%", lg: "15%" }}>
+          <Image width="100%" src={logo} alt="logo" />
         </Box>
-        <Box 
-          display={{ base: "none", sm: "none", md: "flex", lg: "flex" }} 
-          width={{base: "40%", sm:"50%", md:"60%", lg:"60%"}}>
-          <Flex
-            width="100%"
-            alignItems="center"
-          >
-            <Box marginRight="3%" width={{ base: "0%", sm: "40%", md: "40%", lg: "40%" }}>
+        <Box
+          display={{ base: "none", sm: "none", md: "flex", lg: "flex" }}
+          width={{ base: "40%", sm: "50%", md: "60%", lg: "60%" }}
+        >
+          <Flex width="100%" alignItems="center">
+            <Box
+              marginRight="3%"
+              width={{ base: "0%", sm: "40%", md: "30%", lg: "30%" }}
+            >
               <Flex
                 justifyContent="space-around"
                 alignItems="center"
@@ -59,63 +53,76 @@ export default function Navbar() {
                   width={{ base: "0%", sm: "100%", md: "100%", lg: "100%" }}
                   display={{ base: "none", sm: "flex", md: "flex", lg: "flex" }}
                 >
-                  <Box fontSize={{ base: "70%", sm: "70%", md: "100%", lg: "150%" }} fontWeight="bold">
-                    Products
+                  <Box
+                    fontSize={{
+                      base: "70%",
+                      sm: "70%",
+                      md: "100%",
+                      lg: "120%",
+                    }}
+                  >
+                    <ProductsMenu/>
                   </Box>
-                  <Box fontSize={{ base: "70%", sm: "70%", md: "100%", lg: "150%" }} fontWeight="bold">
-                    Category
+                  <Box
+                    fontSize={{
+                      base: "70%",
+                      sm: "70%",
+                      md: "100%",
+                      lg: "120%",
+                    }}
+                  >
+                    <CategoryMenu/>
                   </Box>
                 </Flex>
               </Flex>
             </Box>
             <Box
-              display={{base: "none", sm:"block", md:"block",lg: "block"}}
-              width={{ base: "90%", sm: "50%", md: "50%", lg: "50%" }}
+              display={{ base: "none", sm: "block", md: "block", lg: "block" }}
+              width={{ base: "90%", sm: "57%", md: "60%", lg: "60%" }}
             >
-              <Input marginTop="5%" marginBottom="5%" variant='outline' placeholder='Search' size={{base: "sm", sm: "md", md: "md", lg:"lg"}} />
+              <Input
+                marginTop="5%"
+                marginBottom="5%"
+                variant="outline"
+                placeholder="Search"
+                size={{ base: "sm", sm: "md", md: "md", lg: "lg" }}
+              />
             </Box>
           </Flex>
         </Box>
-        <Box width={{base: "40%", sm:"30%", md:"20%", lg:"20%"}}>
+        <Box width={{ base: "40%", sm: "30%", md: "20%", lg: "20%" }}>
           <Flex
             flexDirection="row"
             alignItems="center"
             justifyContent="space-around"
           >
-            <Button 
-              fontSize={{base: "60%", sm:"70%", md:"100%", lg:"100%"}} 
-              size={{ base: "sm", sm: "sm", md: "md", lg: "lg" }} 
-              onClick={onOpen}
-              bg={"blue.300"}>
-                Login
-            </Button>
-            <Login isOpen={isOpen} onClose={onClose}/>
-            
-            <Button 
-              fontSize={{base: "60%", sm:"70%", md:"100%", lg:"100%"}} 
-              size={{ base: "sm", sm: "sm", md: "md", lg: "lg",xl: "lg" }} 
-              bg={"pink.500"} 
-              onClick={onOpen}
-              color={"white"}>
-                Sign Up
-            </Button>
-            <SignUp isOpen={isOpen} onClose={onClose}/>
+            <Box>
+              <Login/>
+            </Box>
+            <Box>
+              <SignUp/>
+            </Box>
           </Flex>
         </Box>
       </Flex>
       <Flex
         flexDirection="row"
-        paddingRight="2%" 
-        paddingLeft="2%" 
+        paddingRight="2%"
+        paddingLeft="2%"
         alignItems="center"
         justifyContent="space-between"
       >
-        <Box 
-          display="block"
-          width="10%"
-        >
-          <Box display={{base: "block", sm:"none", md:"none",lg: "none", xl: "none"}}>
-            {state? <HamburgerIcon fontSize="160%"/> : <CloseIcon fontSize="150%"/>}
+        <Box display="block" width="10%">
+          <Box
+            display={{
+              base: "block",
+              sm: "block",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <MobileScreenMenu/>
           </Box>
         </Box>
         <Box width={{ base: "30%", sm: "20%", md: "12%", lg: "10%" }}>
@@ -126,16 +133,25 @@ export default function Navbar() {
             border="1px solid blue"
             bg={"blue.400"}
             borderRadius="10px"
-            justifyContent="space-around">
+            justifyContent="space-around"
+          >
             <Box width="30%">
-              <Image margin="3%" borderRadius="50%" width="100%" src={cart} alt="Cart" />
+              <Link to="/cart">
+              <Image
+                margin="3%"
+                borderRadius="50%"
+                width="100%"
+                src={cart}
+                alt="Cart"
+              />
+              </Link>
             </Box>
             <Box width="30%">
-              <Image margin="3%" borderRadius="50%" width="100%" src={user} />
+              <ProfileMenu/>
             </Box>
           </Flex>
         </Box>
       </Flex>
     </Box>
-  )
+  );
 }
