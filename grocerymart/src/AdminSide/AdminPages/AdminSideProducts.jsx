@@ -6,6 +6,7 @@ import { AdminSideNavbar } from "../AdminPages/AdminSideNavbar";
 import { AdminSideSingleProductPage } from "../AdminPages/AdminSideSingleProductPage";
 import loading from "../AdminAssets/giphy.gif";
 import error from "../AdminAssets/serverError.gif";
+import { border } from "@chakra-ui/react";
 
 const AdminSideProducts = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const AdminSideProducts = () => {
   return (
     <div>
       <div>
-        <div className="product_heading">Wondermart Product Items</div>
+        <div className="product_heading">Grocery Mart Product Items</div>
       </div>
       <div className="adminProductContainer">
         <div>
@@ -35,6 +36,8 @@ const AdminSideProducts = () => {
               justifyContent: "center",
               position: "absolute",
               zIndex: "10",
+              paddingTop: "5%",
+              paddingLeft: "15%",
               width: "100%",
             }}
           >
@@ -51,7 +54,7 @@ const AdminSideProducts = () => {
                 style={{
                   fontWeight: "bold",
                   fontSize: "100%",
-                  color: "blue",
+                  color: "black",
                   display: "flex",
                   justifyContent: "center",
                   fontSize: "150%",

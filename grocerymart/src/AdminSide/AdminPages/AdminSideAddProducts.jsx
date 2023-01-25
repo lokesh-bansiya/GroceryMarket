@@ -142,7 +142,7 @@ const AdminSideAddProducts = () => {
   return (
     <div className="AdminSideProductAddContainer">
       <div className="admin_side_update_form_heading">
-        Wondermart Add Product Page
+        Grocery Mart Add Product Page
       </div>
       <div className="admin_side_form_box">
         <div>

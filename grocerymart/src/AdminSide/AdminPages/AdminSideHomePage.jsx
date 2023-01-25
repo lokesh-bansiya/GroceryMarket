@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../AdminStyles/AdminSideHomePage.css";
 import { getUsers } from "../../Redux/adminReducer/action";
-import { AdminSideNavbar } from "../../page/AdminPages/AdminSideNavbar";
-import { AdminSideSingleAdminPage } from "../../page/AdminPages/AdminSideSingleAdminPage";
+import { AdminSideNavbar } from "../AdminPages/AdminSideNavbar";
+import { AdminSideSingleAdminPage } from "../AdminPages/AdminSideSingleAdminPage";
 import loading from "../AdminAssets/adminloading.gif";
 import error from "../AdminAssets/serverError.gif";
 
@@ -23,7 +23,7 @@ const AdminSideHomePage = () => {
   return (
     <>
       <div>
-        <div className="admin_heading">Wondermart Admins</div>
+        <div className="admin_heading">Grocery Mart Admins</div>
       </div>
       <div className="adminHomeContainer">
         <div>
@@ -36,8 +36,11 @@ const AdminSideHomePage = () => {
               justifyContent: "center",
               position: "absolute",
               zIndex: "10",
-              width: "100%",
+              width: "85%",
               paddingTop: "5%",
+              marginLeft: "15%",
+              height: "100vh",
+              backgroundColor: "gray"
             }}
           >
             <div>
@@ -54,7 +57,7 @@ const AdminSideHomePage = () => {
                 style={{
                   fontWeight: "bold",
                   fontSize: "100%",
-                  color: "blue",
+                  color: "black",
                   display: "flex",
                   justifyContent: "center",
                   fontSize: "150%",
@@ -69,7 +72,7 @@ const AdminSideHomePage = () => {
           <></>
         )}
 
-{IsError ? (
+        {IsError ? (
           <div
             style={{
               display: "flex",
@@ -108,7 +111,7 @@ const AdminSideHomePage = () => {
         <div className="admin_grid_container">
           {admins.length &&
             admins
-              .filter((item) => item.adminID === "wondermart")
+              .filter((item) => item.adminID === "GroceryMarket")
               .map((item) => {
                 return (
                   <AdminSideSingleAdminPage

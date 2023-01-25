@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import loading from "../AdminAssets/adminloading.gif";
 import error from "../AdminAssets/serverError.gif";
 
-
 const AdminSideUsers = () => {
   const dispatch = useDispatch();
   const users = useSelector((store) => store.adminReducer.users);
@@ -23,7 +22,7 @@ const AdminSideUsers = () => {
   return (
     <>
       <div>
-        <div className="admin_heading">Wondermart Users</div>
+        <div className="admin_heading">Grocery Mart Users</div>
       </div>
       <div className="adminHomeContainer">
         <div>
@@ -36,8 +35,11 @@ const AdminSideUsers = () => {
               justifyContent: "center",
               position: "absolute",
               zIndex: "10",
-              width: "100%",
+              width: "85%",
               paddingTop: "5%",
+              marginLeft: "15%",
+              height: "100vh",
+              backgroundColor: "gray",
             }}
           >
             <div>
@@ -54,10 +56,11 @@ const AdminSideUsers = () => {
                 style={{
                   fontWeight: "bold",
                   fontSize: "100%",
-                  color: "blue",
+                  color: "black",
                   display: "flex",
                   justifyContent: "center",
-                  fontSize: "120%",
+                  fontSize: "150%",
+                  marginTop: "5%",
                 }}
               >
                 Please wait loading...
@@ -68,7 +71,7 @@ const AdminSideUsers = () => {
           <></>
         )}
 
-{IsError ? (
+        {IsError ? (
           <div
             style={{
               display: "flex",
@@ -104,7 +107,7 @@ const AdminSideUsers = () => {
         ) : (
           <></>
         )}
-        
+
         <div className="admin_grid_container">
           {users.length &&
             users.map((item) => {

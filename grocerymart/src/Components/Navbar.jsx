@@ -6,7 +6,6 @@ import {
 } from "@chakra-ui/react";
 import logo from "../Assets/redCart.png";
 import cart from "../Assets/cart.jpg";
-import user from "../Assets/user.png";
 import SignUp from "../Modal/SignUp";
 import Login from "../Modal/Login";
 import { ProductsMenu } from "../Menu/ProductsMenu";
@@ -18,7 +17,7 @@ import { ProfileMenu } from "../Menu/ProfileMenu";
 export default function Navbar() {
 
   return (
-    <Box width="100%" margin="auto">
+    <Box width="100%" marginBottom={'20%'} margin="auto" position={'fixed'} zIndex="100" >
       <Flex
         paddingRight="2%"
         paddingLeft="2%"
@@ -28,6 +27,7 @@ export default function Navbar() {
         boxShadow="rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
         alignItems="center"
         height="auto"
+        bg={'white'}
       >
         <Box width={{ base: "30%", sm: "25%", md: "20%", lg: "15%" }}>
           <Image width="100%" src={logo} alt="logo" />

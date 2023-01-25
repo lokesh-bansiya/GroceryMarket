@@ -22,7 +22,6 @@ import additem from "../AdminAssets/newgrocery.png";
 const AdminSideProductEditPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  console.log(id);
   const [brand, setBrand] = useState("");
   const [name, setName] = useState("");
   const [weight, setWeight] = useState("");
@@ -99,7 +98,7 @@ const AdminSideProductEditPage = () => {
   return (
     <div className="AdminSideProductEditContainer">
       <div className="admin_side_update_form_heading">
-        Wondermart Product Edit Page
+      Grocery Mart Product Edit Page
       </div>
       <div className="admin_side_form_box">
         <div>

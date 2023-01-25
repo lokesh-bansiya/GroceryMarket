@@ -17,7 +17,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import React, { useReducer, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import logo from "../Assets/redbaglogosmall.png";
 import Login from "./Login";
 import { signUp } from "../Redux/authReducer/action";
@@ -67,7 +67,6 @@ export default function SignUp() {
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
   const [info, setInfo] = useState('user');
-  const message = useSelector((store) => store.authReducer.signupmessage);
 
   const [userState, setUserState] = useReducer(
     signUpReducer,
@@ -77,23 +76,28 @@ export default function SignUp() {
   const toast = useToast();
 
   const signUpHandler = () => {
-
     if (userState.username && userState.email && userState.mobileNo && userState.password) {
       dispatch(signUp(info, userState));
-      toast({
-        title: "User signed up!",
-        description: "We've added your product.",
-        status: "success",
-        duration: 2000,
-        position: "top",
-        isClosable: true,
-        render: () => (
-          <Box border="2px solid green" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="blue.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
-            {`${message.Message}`}
-          </Box>
-        ),
-      });
-      onClose();
+      const timer = setTimeout(() => {
+        const msg = localStorage.getItem("msg");
+        if(!msg){
+            msg = "Something went wrong!"
+        }
+        toast({
+          title: "User signed up!",
+          status: "success",
+          duration: 2000,
+          position: "top",
+          isClosable: true,
+          render: () => (
+            <Box border="2px solid green" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="blue.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
+              {`${msg}`}
+            </Box>
+          ),
+        });
+        onClose();
+      }, 3000);
+      return () => clearTimeout(timer);
   }
   else {
     toast({
@@ -111,6 +115,7 @@ export default function SignUp() {
     });
   }
 };
+
 
 return (
   <>
@@ -137,7 +142,7 @@ return (
         <ModalHeader fontWeight="bold" color={"darkgreen"}>
           Create your account
         </ModalHeader>
-        <ModalCloseButton paddingTop="8%" paddingRight="5%" fontSize="150%" />
+        <ModalCloseButton marginTop="8%" marginRight="5%" fontSize="150%" />
         <ModalBody pb={6}>
 
           <FormControl>

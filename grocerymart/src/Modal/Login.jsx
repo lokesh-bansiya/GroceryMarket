@@ -16,9 +16,9 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import React, { useReducer } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import logo from "../Assets/redbaglogosmall.png";
-import { login } from "../Redux/authReducer/action";
+import { getProfile, login } from "../Redux/authReducer/action";
 import SignUp from "./SignUp";
 
 
@@ -52,49 +52,57 @@ export default function Login() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
+  const dispatch = useDispatch();
+  const toast = useToast();
+  const userKey = localStorage.getItem("userKey") || "";
+  const message = useSelector((store) => store.authReducer.userInfo.Message);
 
-  
   const [loginState, setLoginState] = useReducer(
     loginReducer,
     initialLoginState
   );
-  const dispatch = useDispatch();
-  const toast = useToast();
 
-  const loginHandler = () => {
-
-    if (loginState.email && loginState.password) {
-      dispatch(login(loginState));
+  const loginHandler = (loginState) => {
+    if (loginState.email !== "" && loginState.password !== "") {
+      dispatch(login(loginState))
+      dispatch(getProfile(userKey))
+        const timer = setTimeout(() => {
+          const msg = localStorage.getItem("msg");
+          if(!msg){
+              msg = "Something went wrong!"
+          }
+          toast({
+            title: "User signed up!",
+            status: "success",
+            duration: 2000,
+            position: "top",
+            isClosable: true,
+            render: () => (
+              <Box border="2px solid green" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="blue.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
+                {`${msg}`}
+              </Box>
+            ),
+          });
+          onClose();
+        }, 3000);
+        return () => clearTimeout(timer);
+    }
+    else {
       toast({
-        title: "User loged in!",
-        status: "success",
+        title: "Error!",
+        description: "Something went wrong.",
+        status: "warning",
         duration: 2000,
         position: "top",
         isClosable: true,
         render: () => (
-          <Box border="2px solid green" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="blue.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
-            {`User Login Successfull!`}
+          <Box border="2px solid green" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="red.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
+            {`All fields are not there !`}
           </Box>
-        ),
+        )
       });
-      onClose();
-  }
-  else {
-    toast({
-      title: "Error!",
-      description: "Something went wrong.",
-      status: "warning",
-      duration: 2000,
-      position: "top",
-      isClosable: true,
-      render: () => (
-        <Box border="2px solid green" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="red.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
-          {`All fields are not there !`}
-        </Box>
-      )
-    });
-  }
-};
+    }
+  };
 
 
   return (
@@ -115,13 +123,13 @@ export default function Login() {
       >
         <ModalOverlay />
         <ModalContent>
-          <Box width="40%" padding="5%" paddingBottom={0}>
+          <Box width="40%" margin="5%" paddingBottom={0}>
             <Image width="100%" src={logo} />
           </Box>
           <ModalHeader fontWeight="bold" color={"darkgreen"}>
             Login
           </ModalHeader>
-          <ModalCloseButton paddingTop="8%" paddingRight="5%" fontSize="150%" />
+          <ModalCloseButton marginTop="8%" marginRight="5%" fontSize="150%" />
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Email</FormLabel>
@@ -159,7 +167,7 @@ export default function Login() {
                 fontSize={{ base: "60%", sm: "70%", md: "100%", lg: "100%" }}
                 size={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
                 mr={3}
-                onClick={() => loginHandler()}
+                onClick={() => loginHandler(loginState)}
               >
                 Login
               </Button>

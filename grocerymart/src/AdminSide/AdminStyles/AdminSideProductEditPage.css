@@ -2,37 +2,29 @@
     width: 100%;
     margin: auto;
     height: fit-content;
-    padding: 5%;
+    padding-top: 4%;
     text-align: center;
-    background-color: aliceblue;
+    background-color: gray;
 }
 
 .AdminSideProductEditContainer .admin_side_update_form_heading {
     display: flex;
     justify-content: center;
-    padding: 2%;
     font-size: 130%;
     font-weight: bold;
     border-radius: 15px;
-    border: 2px solid rgb(250, 246, 247);
-    background-color: rgb(2, 128, 67);
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-    margin-bottom: 3%;
     color: white;
 }
 
 .AdminSideProductEditContainer .admin_side_form_box {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
 }
 
 .AdminSideProductEditContainer .admin_side_form_box>div:first-child {
-    width: 17%;
-    height: 50vh;
-    padding-left: 1%;
-    background-color: rgb(251, 169, 169);
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    width: 15%;
+    height: auto;
 }
 
 .AdminSideProductEditContainer .parendFormBox {
@@ -41,14 +33,12 @@
 }
 
 .AdminSideProductEditContainer .admin_side_form_box>div:last-child {
-    width: 82%;
+    width: 85%;
 }
 
 .adminSideProductEditBox {
     margin: auto;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     display: flex;
-    background-color: rgb(251, 169, 169);
     width: 100%;
     padding: 5% 0%;
     justify-content: center;
@@ -88,21 +78,23 @@
 
     .AdminSideProductEditContainer .admin_side_form_box>div:first-child {
         width: 25%;
-        height: 50vh;
-        padding-left: 1%;
-        background-color: rgb(251, 169, 169);
+        height: auto;
+    }
+    
+    .AdminSideProductEditContainer .admin_side_form_box>div:last-child {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding-top: 10%;
     }
 
     .AdminSideProductEditContainer .parendFormBox {
         display: flex;
+        width: 100%;
         flex-direction: column;
     }
 
-    .AdminSideProductEditContainer .admin_side_form_box>div:last-child {
-        width: 72%;
-        display: flex;
-        flex-direction: column;
-    }
 
     .adminSideProductEditBox {
         margin: auto;
@@ -119,36 +111,16 @@
     .AdminSideProductEditContainer .productEditBox1 {
         width: 90%;
         color: black;
-        margin: auto;
     }
 
     .AdminSideProductEditContainer .productEditBox2 {
         width: 90%;
-        margin: auto;
         margin-top: 5%;
     }
 
 }
 
-@media all and (min-width: 281px) and (max-width: 550px) {
-
-    .AdminSideProductEditContainer .admin_side_form_box {
-        display: block;
-    }
-
-    .AdminSideProductEditContainer .admin_side_form_box>div:first-child {
-        width: 100%;
-        height: fit-content;
-        padding-left: auto;
-        background-color: rgb(133, 235, 248);
-        display: flex;
-        padding-top: 3%;
-        border-radius: 15px;
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 3%;
-        text-align: center;
-    }
+@media all and (min-width: 281px) and (max-width: 400px) {
 
     .AdminSideProductEditContainer .parendFormBox {
         display: flex;
@@ -156,7 +128,6 @@
     }
 
     .AdminSideProductEditContainer .admin_side_form_box>div:last-child {
-        width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -174,13 +145,13 @@
     }
 
     .AdminSideProductEditContainer .productEditBox1 {
-        width: 80%;
+        width: 90%;
         color: black;
         margin: auto;
     }
 
     .AdminSideProductEditContainer .productEditBox2 {
-        width: 80%;
+        width: 90%;
         margin: auto;
         margin-top: 5%;
     }

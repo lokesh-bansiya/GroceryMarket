@@ -7,11 +7,11 @@ const ProductsMenu = () => {
         Products
       </MenuButton>
       <MenuList>
-        <MenuItem>Download</MenuItem>
-        <MenuItem>Create a Copy</MenuItem>
-        <MenuItem>Mark as Draft</MenuItem>
-        <MenuItem>Delete</MenuItem>
-        <MenuItem>Attend a Workshop</MenuItem>
+        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Download</MenuItem>
+        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Create a Copy</MenuItem>
+        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Mark as Draft</MenuItem>
+        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Delete</MenuItem>
+        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Attend a Workshop</MenuItem>
       </MenuList>
     </Menu>
   );

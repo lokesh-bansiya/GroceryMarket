@@ -46,7 +46,7 @@ const AdminSideSingleUser = ({ username, email, id }) => {
         <div className="color_red">
           <DeleteIcon
             onClick={() => deleteUserHandler(id)}
-            fontSize="130%"
+            fontSize="70%"
             cursor="pointer"
           />
         </div>

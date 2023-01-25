@@ -1,10 +1,12 @@
 .adminProductContainer {
     display: flex;
     flex-direction: row;
-    width: 95%;
+    width: 100%;
+    height: 100%;
     justify-content: space-around;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 2%;
+    background-color: gray;
 }
 
 .adminProductContainer>div:first-child {
@@ -14,12 +16,15 @@
 .adminProductContainer>div:last-child {
     width: 80%;
     margin: auto;
+    padding-top: 4%;
 }
 
 .admin_products_grid_container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
+    height: 100%;
+    padding-bottom: 1500px;
     gap: 0.2% 2%;
 }
 
@@ -35,12 +40,29 @@
     color: white;
 }
 
-@media all and (min-width: 651px) and (max-width: 1100px) {
+@media all and (min-width: 801px) and (max-width: 1200px) {
 
     .admin_products_grid_container {
         gap: 0.1% 2%;
     }
 
+    .adminProductContainer>div:last-child {
+        width: 80%;
+        margin: auto;
+        padding-top: 6%;
+    }
+}
+
+
+@media all and (min-width: 651px) and (max-width: 800px) {
+
+    .admin_products_grid_container {
+        gap: 0.1% 2%;
+    }
+
+    .adminProductContainer>div:last-child {
+        padding-top: 10%;
+    }
 }
 
 @media all and (min-width: 551px) and (max-width: 650px) {
@@ -48,32 +70,21 @@
     .admin_products_grid_container {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        width: 100%;
         gap: 0.1% 2%;
-    }
-
-}
-
-@media all and (min-width: 280px) and (max-width: 550px) {
-
-    .adminProductContainer {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .adminProductContainer>div:first-child {
-        width: 100%;
-        margin: auto;
     }
 
     .adminProductContainer>div:last-child {
-        width: 90%;
-        margin: auto;
+        padding-top: 11%;
     }
+}
 
+@media all and (min-width: 280px) and (max-width: 550px) {
     .admin_products_grid_container {
         grid-template-columns: repeat(1, 1fr);
-        gap: 0.1% 2%;
+        gap: 0.05% 2%;
     }
 
+    .adminProductContainer>div:last-child {
+        padding-top: 13%;
+    }
 }

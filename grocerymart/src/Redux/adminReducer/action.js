@@ -5,7 +5,7 @@ import axios from "axios";
 const getUserProfile = (id) => (dispatch) => {
   dispatch({ type: types.GET_USER_PROFILE_REQUEST });
   return axios
-    .get(`https://rich-red-indri-tie.cyclic.app/users/profile/${id}`, {
+    .get(`https://zany-bee-sarong.cyclic.app/users/profile/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -23,7 +23,7 @@ const getUserProfile = (id) => (dispatch) => {
 const getProductById = (id) => (dispatch) => {
   dispatch({ type: types.GET_PRODUCT_BY_ID_REQUEST });
   return axios
-    .get(`https://rich-red-indri-tie.cyclic.app/products/getById/${id}`, {
+    .get(`https://zany-bee-sarong.cyclic.app/products/getById/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -41,7 +41,7 @@ const getProductById = (id) => (dispatch) => {
 const getProducts = () => (dispatch) => {
   dispatch({ type: types.GET_PRODUCTS_REQUEST });
   return axios
-    .get(`https://rich-red-indri-tie.cyclic.app/products`, {
+    .get(`https://zany-bee-sarong.cyclic.app//products`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -60,7 +60,7 @@ const getUsers = () => (dispatch) => {
   dispatch({ type: types.GET_USERS_REQUEST });
 
   return axios
-    .get(`https://rich-red-indri-tie.cyclic.app/users`, {
+    .get(`https://zany-bee-sarong.cyclic.app/users`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -78,7 +78,7 @@ const getUsers = () => (dispatch) => {
 const addProduct = (product) => (dispatch) => {
   dispatch({ type: types.ADD_PRODUCT_REQUEST });
   return axios
-    .post("https://rich-red-indri-tie.cyclic.app/products/add", product, {
+    .post("https://zany-bee-sarong.cyclic.app/products/add", product, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -96,7 +96,7 @@ const addProduct = (product) => (dispatch) => {
 const deleteProduct = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_PRODUCT_REQUEST });
   return axios
-    .delete(`https://rich-red-indri-tie.cyclic.app/products/delete/${id}`, {
+    .delete(`https://zany-bee-sarong.cyclic.app/products/delete/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -113,7 +113,7 @@ const deleteProduct = (id) => (dispatch) => {
 const updateProduct = (id, payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_PRODUCT_REQUEST });
   return axios
-    .patch(`https://rich-red-indri-tie.cyclic.app/products/update/${id}`, payload,{
+    .patch(`https://zany-bee-sarong.cyclic.app/products/update/${id}`, payload,{
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -130,7 +130,7 @@ const updateProduct = (id, payload) => (dispatch) => {
 const deleteUser = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_USER_REQUEST });
   return axios
-    .delete(`https://rich-red-indri-tie.cyclic.app/users/delete/${id}`, {
+    .delete(`https://zany-bee-sarong.cyclic.app/users/delete/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },

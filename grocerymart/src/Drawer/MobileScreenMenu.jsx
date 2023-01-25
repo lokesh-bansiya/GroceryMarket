@@ -36,8 +36,8 @@ export default function MobileScreenMenu() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton
-            paddingTop="8%"
-            paddingRight="5%"
+            marginTop="8%"
+            marginRight="5%"
             fontSize="150%"
           />
           <DrawerHeader borderBottomWidth="1px">
@@ -48,14 +48,14 @@ export default function MobileScreenMenu() {
 
           <DrawerBody>
             <Stack>
-              <Box>
+              <Box padding="2%" borderRadius="5px" _hover={{ bg: "blue.100", color: "darkred" }}>
                 <ProductsMenu />
               </Box>
-              <Box>
+              <Box padding="2%" borderRadius="5px" _hover={{ bg: "blue.100", color: "darkred" }}>
                 <CategoryMenu />
               </Box>
-              <Box fontWeight={"bold"}>Cart</Box>
-              <Box fontWeight={"bold"} onClick={onClose}>
+              <Box padding="2%" borderRadius="5px" _hover={{ bg: "blue.100", color: "darkred" }} fontWeight={"bold"}>Cart</Box>
+              <Box padding="2%" borderRadius="5px" _hover={{ bg: "blue.100", color: "darkred" }} fontWeight={"bold"} onClick={onClose}>
                 Cancel
               </Box>
             </Stack>
