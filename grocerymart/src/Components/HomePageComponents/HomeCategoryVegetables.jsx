@@ -2,26 +2,27 @@ import React, { useEffect } from "react";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
 import { HomePageSingleCard } from "./HomePageSingleCard";
-import { getProductsByCategoryBeauty } from "../../Redux/appReducer/action";
+import { getProductsByCategoryVegetable } from "../../Redux/appReducer/action";
 
-const HomePageSection6 =() => {
+const HomeCategoryVegetables =() => {
 
   const dispatch = useDispatch();
-  const products = useSelector((store) => store.appReducer.itemsByCategoryBeauty);
+  const products = useSelector((store) => store.appReducer.itemsByCategoryVegetable);
 
   var settings = {
     dots: false,
     infinite: true,
-    speed: 1500,
     slidesToShow: 4,
-    slidesToScroll: 1,
     autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
 
 
   useEffect(() => {
     if(products.length===0){
-      dispatch(getProductsByCategoryBeauty());
+      dispatch(getProductsByCategoryVegetable());
     }
   },[products.length, dispatch]);
 
@@ -54,4 +55,4 @@ const HomePageSection6 =() => {
   );
 }
 
-export {HomePageSection6};
+export {HomeCategoryVegetables};

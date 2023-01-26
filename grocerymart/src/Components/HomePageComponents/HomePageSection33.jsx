@@ -10,7 +10,7 @@ const HomePageSection33 =() => {
   const products = useSelector((store) => store.appReducer.items);
 
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 2,

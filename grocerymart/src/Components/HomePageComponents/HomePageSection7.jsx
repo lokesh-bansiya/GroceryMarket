@@ -1,13 +1,13 @@
 
 import { Box, Grid, GridItem, Image } from "@chakra-ui/react";
-import fruit1 from "../../Assets/fruit1.webp";
-import fruit2 from "../../Assets/fruit2.webp";
-import fruit3 from "../../Assets/fruit3.webp";
-import fruit4 from "../../Assets/fruit4.webp";
-import fruit5 from "../../Assets/fruit5.webp";
-import fruit6 from "../../Assets/fruit6.webp";
+import section41 from "../../Assets/section41.webp";
+import section42 from "../../Assets/section42.webp";
+import section43 from "../../Assets/section43.webp";
+import section44 from "../../Assets/section44.webp";
+import section45 from "../../Assets/section45.webp";
+import section46 from "../../Assets/section46.webp";
 
-const HomePageSection5 = () => {
+const HomePageSection7 = () => {
   return (
     <Box padding="2%" width="100%" paddingTop="2%">
       <Box
@@ -21,7 +21,7 @@ const HomePageSection5 = () => {
         fontWeight="bold"
         color="gray.600"
       >
-        Fruits and Vegetables
+        Your Daily Staples
       </Box>
       <Grid
         gridTemplateColumns={{ base: "repeat(2,1fr)", sm: "repeat(3,1fr)", md: "repeat(6,1fr)", lg: "repeat(6,1fr)",xl:"repeat(6,1fr)"}}
@@ -36,8 +36,8 @@ const HomePageSection5 = () => {
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             }}
-            src={fruit1}
-            alt="fruit1"
+            src={section41}
+            alt="section41"
           />
         </GridItem>
         <GridItem boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
@@ -47,8 +47,8 @@ const HomePageSection5 = () => {
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             }}
-            src={fruit2}
-            alt="fruit2"
+            src={section42}
+            alt="section42"
           />
         </GridItem>
         <GridItem boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
@@ -58,8 +58,8 @@ const HomePageSection5 = () => {
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             }}
-            src={fruit3}
-            alt="fruit3"
+            src={section43}
+            alt="section43"
           />
         </GridItem>
         <GridItem boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
@@ -69,8 +69,8 @@ const HomePageSection5 = () => {
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             }}
-            src={fruit4}
-            alt="fruit4"
+            src={section44}
+            alt="section44"
           />
         </GridItem>
         <GridItem boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
@@ -80,8 +80,8 @@ const HomePageSection5 = () => {
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             }}
-            src={fruit5}
-            alt="fruit5"
+            src={section45}
+            alt="section45"
           />
         </GridItem>
         <GridItem boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
@@ -91,8 +91,8 @@ const HomePageSection5 = () => {
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             }}
-            src={fruit6}
-            alt="fruit6"
+            src={section46}
+            alt="section46"
           />
         </GridItem>
       </Grid>
@@ -100,4 +100,4 @@ const HomePageSection5 = () => {
   );
 };
 
-export { HomePageSection5 };
+export { HomePageSection7 };

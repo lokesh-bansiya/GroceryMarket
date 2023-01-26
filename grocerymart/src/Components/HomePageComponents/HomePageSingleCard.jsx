@@ -29,8 +29,8 @@ const HomePageSingleCard = ({
       
       <div className="SPI_Box2">
         <p>{brand} <span>{category}</span></p>
-        <p>{name}</p>
-        <p>{sasta}</p>
+        <p className="overflow">{name}</p>
+        {/* <p>{sasta}</p> */}
         <p>{weight}</p>
         <p>{packet}</p>
       </div>

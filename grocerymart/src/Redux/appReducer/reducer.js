@@ -3,6 +3,8 @@ import * as types from "./actionTypes";
 const initialState = {
   items: [],
   itemsByCategoryBeauty: [],
+  itemsByCategoryVegetable: [],
+  itemsByCategoryBakery: [],
   isLoading: false,
   isError: false,
 };
@@ -48,7 +50,44 @@ const reducer = (state = initialState, action) => {
           isLoading: false,
           isError: true,
         };
-      
+        case types.GET_BY_CATEGORY_VEGETABLES_REQUEST:
+          return {
+            ...state,
+            isLoading: true,
+            isError: false,
+          };
+        case types.GET_BY_CATEGORY_VEGETABLES_SUCCESS:
+          return {
+            ...state,
+            itemsByCategoryVegetable: payload,
+            isLoading: false,
+            isError: false,
+          };
+        case types.GET_BY_CATEGORY_VEGETABLES_FAILURE:
+          return {
+            ...state,
+            isLoading: false,
+            isError: true,
+          };
+          case types.GET_BY_CATEGORY_BAKERY_REQUEST:
+            return {
+              ...state,
+              isLoading: true,
+              isError: false,
+            };
+          case types.GET_BY_CATEGORY_BAKERY_SUCCESS:
+            return {
+              ...state,
+              itemsByCategoryBakery: payload,
+              isLoading: false,
+              isError: false,
+            };
+          case types.GET_BY_CATEGORY_BAKERY_FAILURE:
+            return {
+              ...state,
+              isLoading: false,
+              isError: true,
+            };
     default:
       return state;
   }

@@ -8,11 +8,11 @@ import homesectiontwoimg6 from "../../Assets/homesectiontwoimg6.webp";
 
 const HomePageSection2 = () => {
   return (
-    <Box padding="2%" width="100%" paddingTop="5%" paddingBottom="5%">
+    <Box padding="2%" width="100%" paddingTop="5%" paddingBottom="1%">
       <Grid
         gridTemplateColumns={{ base: "repeat(6,1fr)" }}
         gap="2%"
-        width="90%"
+        width="100%"
         margin="auto"
       >
         <GridItem>

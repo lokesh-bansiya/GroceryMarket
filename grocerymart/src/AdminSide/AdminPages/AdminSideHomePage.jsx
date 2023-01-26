@@ -4,7 +4,7 @@ import "../AdminStyles/AdminSideHomePage.css";
 import { getUsers } from "../../Redux/adminReducer/action";
 import { AdminSideNavbar } from "../AdminPages/AdminSideNavbar";
 import { AdminSideSingleAdminPage } from "../AdminPages/AdminSideSingleAdminPage";
-import loading from "../AdminAssets/adminloading.gif";
+import loading from "../../Assets/loadingforhome.gif";
 import error from "../AdminAssets/serverError.gif";
 
 
@@ -53,18 +53,6 @@ const AdminSideHomePage = () => {
                 src={loading}
                 alt="loading..."
               />
-              <h1
-                style={{
-                  fontWeight: "bold",
-                  color: "black",
-                  display: "flex",
-                  justifyContent: "center",
-                  fontSize: "150%",
-                  marginTop: "5%",
-                }}
-              >
-                Please wait loading...
-              </h1>
             </div>
           </div>
         ) : (

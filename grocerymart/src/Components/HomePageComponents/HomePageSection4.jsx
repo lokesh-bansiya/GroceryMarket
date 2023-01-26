@@ -14,16 +14,17 @@ const HomePageSection4 = () => {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        fontSize="150%"
+        fontSize="120%"
         padding="3%"
         fontWeight="bold"
+        color="gray.600"
       >
         Top Offers
       </Box>
       <Grid
         gridTemplateColumns={{ base: "repeat(4,1fr)" }}
         gap="2%"
-        width="90%"
+        width="100%"
         margin="auto"
       >
         <GridItem boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
