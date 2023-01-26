@@ -1,23 +1,23 @@
-import {
-  Box,
-  Flex,
-  Input,
-  Image,
-} from "@chakra-ui/react";
+import { Box, Flex, Input, Image } from "@chakra-ui/react";
 import logo from "../Assets/redCart.png";
 import cart from "../Assets/cart.jpg";
 import SignUp from "../Modal/SignUp";
 import Login from "../Modal/Login";
 import { ProductsMenu } from "../Menu/ProductsMenu";
 import { CategoryMenu } from "../Menu/CategoryMenu";
-import  MobileScreenMenu  from "../Drawer/MobileScreenMenu";
+import MobileScreenMenu from "../Drawer/MobileScreenMenu";
 import { Link } from "react-router-dom";
 import { ProfileMenu } from "../Menu/ProfileMenu";
 
 export default function Navbar() {
-
   return (
-    <Box width="100%" marginBottom={'20%'} margin="auto" position={'fixed'} zIndex="100" >
+    <Box
+      width="100%"
+      marginBottom={"20%"}
+      margin="auto"
+      position={"fixed"}
+      zIndex="100"
+    >
       <Flex
         paddingRight="2%"
         paddingLeft="2%"
@@ -27,10 +27,12 @@ export default function Navbar() {
         boxShadow="rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset"
         alignItems="center"
         height="auto"
-        bg={'white'}
+        bg={"white"}
       >
         <Box width={{ base: "30%", sm: "25%", md: "20%", lg: "15%" }}>
-          <Image width="100%" src={logo} alt="logo" />
+          <Link to="/">
+            <Image width="100%" src={logo} alt="logo" />
+          </Link>
         </Box>
         <Box
           display={{ base: "none", sm: "none", md: "flex", lg: "flex" }}
@@ -61,7 +63,7 @@ export default function Navbar() {
                       lg: "120%",
                     }}
                   >
-                    <ProductsMenu/>
+                    <ProductsMenu />
                   </Box>
                   <Box
                     fontSize={{
@@ -71,7 +73,7 @@ export default function Navbar() {
                       lg: "120%",
                     }}
                   >
-                    <CategoryMenu/>
+                    <CategoryMenu />
                   </Box>
                 </Flex>
               </Flex>
@@ -96,11 +98,29 @@ export default function Navbar() {
             alignItems="center"
             justifyContent="space-around"
           >
-            <Box>
-              <Login/>
+            <Box
+              padding={"1%"}
+              size={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
+              borderRadius="5px"
+              fontSize={"110%"}
+              fontWeight={1000}
+              color="white"
+              bg={"blue.400"}
+              _hover={{ bg: "blue.300" }}
+            >
+              <Login />
             </Box>
-            <Box>
-              <SignUp/>
+            <Box 
+              padding={"1%"}
+              size={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
+              borderRadius="5px"
+              fontSize={"110%"}
+              fontWeight={1000}
+              color="white"
+              bg={"pink.500"}
+              _hover={{ bg: "pink.400" }}
+            >
+              <SignUp />
             </Box>
           </Flex>
         </Box>
@@ -122,7 +142,7 @@ export default function Navbar() {
               xl: "none",
             }}
           >
-            <MobileScreenMenu/>
+            <MobileScreenMenu />
           </Box>
         </Box>
         <Box width={{ base: "30%", sm: "20%", md: "12%", lg: "10%" }}>
@@ -137,17 +157,17 @@ export default function Navbar() {
           >
             <Box width="30%">
               <Link to="/cart">
-              <Image
-                margin="3%"
-                borderRadius="50%"
-                width="100%"
-                src={cart}
-                alt="Cart"
-              />
+                <Image
+                  margin="3%"
+                  borderRadius="50%"
+                  width="100%"
+                  src={cart}
+                  alt="Cart"
+                />
               </Link>
             </Box>
             <Box width="30%">
-              <ProfileMenu/>
+              <ProfileMenu />
             </Box>
           </Flex>
         </Box>

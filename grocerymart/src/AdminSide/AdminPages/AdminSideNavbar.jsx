@@ -69,7 +69,7 @@ const AdminSideNavbar = () => {
         </div>
         <div>
           <Link to="/admin_side_add_product">
-            <div><img src={black}/></div>
+            <div><img src={black} alt="graph"/></div>
           </Link>
         </div>
         

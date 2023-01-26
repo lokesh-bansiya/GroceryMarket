@@ -55,7 +55,6 @@ const AdminSideUsers = () => {
               <h1
                 style={{
                   fontWeight: "bold",
-                  fontSize: "100%",
                   color: "black",
                   display: "flex",
                   justifyContent: "center",
@@ -93,7 +92,6 @@ const AdminSideUsers = () => {
               <h1
                 style={{
                   fontWeight: "bold",
-                  fontSize: "100%",
                   color: "blue",
                   display: "flex",
                   justifyContent: "center",

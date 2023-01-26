@@ -8,7 +8,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
-import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import user from "../Assets/user.png";
@@ -153,7 +152,7 @@ const ProfileMenu = () => {
           <></>
         )}
         {userProfile.adminID ? (
-          <Link to="/admin_home_page"><MenuItem
+          <Link to="/admin_dashboard"><MenuItem
             _hover={{ bg: "blue.200", color: "darkred" }}
             bg={"pink.500"}
             color="white"

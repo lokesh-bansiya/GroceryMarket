@@ -1,10 +1,10 @@
 import "../AdminStyles/AdminDashboard.css";
 import { AdminSideNavbar } from "../AdminPages/AdminSideNavbar";
 import circularOther from "../AdminAssets/cicularOther.png";
-import pic from "../AdminAssets/picchart.png";
+// import pic from "../AdminAssets/picchart.png";
 import main from "../AdminAssets/main.gif";
 import gif1graph from "../AdminAssets/gif1graph.gif";
-import help from "../AdminAssets/help.png";
+// import help from "../AdminAssets/help.png";
 import weekly from "../AdminAssets/weekly.png";
 
 const AdminDashboard = () => {

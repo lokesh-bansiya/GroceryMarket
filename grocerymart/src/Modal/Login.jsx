@@ -16,7 +16,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import React, { useReducer } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import logo from "../Assets/redbaglogosmall.png";
 import { getProfile, login } from "../Redux/authReducer/action";
 import SignUp from "./SignUp";
@@ -55,7 +55,6 @@ export default function Login() {
   const dispatch = useDispatch();
   const toast = useToast();
   const userKey = localStorage.getItem("userKey") || "";
-  const message = useSelector((store) => store.authReducer.userInfo.Message);
 
   const [loginState, setLoginState] = useReducer(
     loginReducer,
@@ -67,7 +66,7 @@ export default function Login() {
       dispatch(login(loginState))
       dispatch(getProfile(userKey))
         const timer = setTimeout(() => {
-          const msg = localStorage.getItem("msg");
+          var msg = localStorage.getItem("msg");
           if(!msg){
               msg = "Something went wrong!"
           }
@@ -111,7 +110,9 @@ export default function Login() {
         fontSize={{ base: "60%", sm: "70%", md: "100%", lg: "100%" }}
         size={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
         onClick={onOpen}
-        bg={"blue.300"}
+        bg={"blue.400"}
+        color="white"
+        _hover={{bg: "blue.300"}}
       >
         Login
       </Button>

@@ -6,7 +6,6 @@ import { AdminSideNavbar } from "../AdminPages/AdminSideNavbar";
 import { AdminSideSingleProductPage } from "../AdminPages/AdminSideSingleProductPage";
 import loading from "../AdminAssets/giphy.gif";
 import error from "../AdminAssets/serverError.gif";
-import { border } from "@chakra-ui/react";
 
 const AdminSideProducts = () => {
   const dispatch = useDispatch();
@@ -53,7 +52,6 @@ const AdminSideProducts = () => {
               <h1
                 style={{
                   fontWeight: "bold",
-                  fontSize: "100%",
                   color: "black",
                   display: "flex",
                   justifyContent: "center",
@@ -90,7 +88,6 @@ const AdminSideProducts = () => {
               <h1
                 style={{
                   fontWeight: "bold",
-                  fontSize: "100%",
                   color: "blue",
                   display: "flex",
                   justifyContent: "center",

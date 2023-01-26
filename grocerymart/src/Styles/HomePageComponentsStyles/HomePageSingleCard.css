@@ -1,0 +1,301 @@
+.SingleProductItemContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    padding: 7%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.SingleProductItemContainer:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.SingleProductItemContainer .SPI_Box1{
+    width: 100%;
+}
+
+.SingleProductItemContainer .SPI_Box1 img{
+    width: 80%;
+    margin: auto;
+    height: 120px;
+}
+
+.SingleProductItemContainer .SPI_Box2{
+    display: flex;
+    flex-direction: column;
+}
+
+.SingleProductItemContainer .SPI_Box2 p:first-child{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: bold;
+    color: rgb(91, 2, 2);
+}
+
+.SingleProductItemContainer .SPI_Box2 p:first-child span{
+    color: rgb(2, 2, 78);
+}
+
+.SingleProductItemContainer .SPI_Box2 p:nth-child(2){
+    color: rgb(1, 54, 54);
+    font-size: 80%;
+    font-weight: 500;
+}
+
+.SingleProductItemContainer .SPI_Box2 p:nth-child(3){
+    color: rgb(1, 91, 25);
+    font-size: 80%;
+    font-weight: 1000;
+}
+
+.SingleProductItemContainer .SPI_Box2 p:nth-child(4){
+    color: rgb(1, 54, 54);
+    font-size: 80%;
+    font-weight: 500;
+}
+
+.SingleProductItemContainer .SPI_Box2 p:nth-child(5){
+    color: rgb(1, 54, 54);
+    font-size: 80%;
+    font-weight: 500;
+}
+
+.SingleProductItemContainer .SPI_Box3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.SingleProductItemContainer .SPI_Box3 div:first-child{
+    width: fit-content;
+    color: rgb(13, 0, 58);
+    font-size: 80%;
+}
+
+.SingleProductItemContainer .SPI_Box3 div:first-child > span{
+    font-size: 90%;
+    font-weight: 1000;
+}
+
+.SingleProductItemContainer .SPI_Box3 div:last-child{
+    width: fit-content;
+    color: rgb(197, 5, 91);
+    font-size: 100%;
+    font-weight: 500;
+}
+
+
+.SingleProductItemContainer .SPI_Box5{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(13, 0, 58);
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.SingleProductItemContainer .SPI_Box4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+}
+
+.SingleProductItemContainer .SPI_Box4 button{
+    font-weight: bolder;
+    border-radius: 10px;
+    width: 50%;
+    background-color: rgb(133, 201, 207);
+    color: rgb(63, 1, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin: 5%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+
+.SingleProductItemContainer .SPI_Box4 button img{
+    width: 20%;
+    margin-left: 5%;
+}
+
+@media all and (min-width: 601px) and (max-width: 1000px) {
+    .SingleProductItemContainer{
+        padding: 5%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box1 img{
+        height: 100px;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:first-child{
+        font-size: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(2){
+        font-size: 60%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(3){
+        font-size: 70%;
+        font-weight: 600;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(4){
+        font-size: 70%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(5){
+        font-size: 70%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box3 div:first-child{
+        font-size: 70%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box3 div:last-child{
+        font-size: 60%;
+        font-weight: 500;
+    }
+    
+    
+    .SingleProductItemContainer .SPI_Box5{
+        font-size: 60%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box4 button{
+        font-size: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box4 button img{
+        width: 20%;
+        margin-left: 5%;
+    }
+    
+}
+
+@media all and (min-width: 401px) and (max-width: 600px) {
+    .SingleProductItemContainer{
+        padding: 7%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box1 img{
+        height: 100px;
+        width: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:first-child{
+        font-size: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(2){
+        font-size: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(3){
+        font-size: 80%;
+        font-weight: 600;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(4){
+        font-size: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(5){
+        font-size: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box3 div:first-child{
+        font-size: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box3 div:last-child{
+        font-size: 80%;
+        font-weight: 500;
+    }
+    
+    
+    .SingleProductItemContainer .SPI_Box5{
+        font-size: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box4 button{
+        font-size: 90%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box4 button img{
+        width: 20%;
+        margin-left: 5%;
+    }
+    
+}
+
+
+@media all and (min-width: 281px) and (max-width: 400px) {
+    .SingleProductItemContainer{
+        padding: 5%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box1 img{
+        height: 70px;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:first-child{
+        font-size: 70%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(2){
+        font-size: 60%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(3){
+        font-size: 70%;
+        font-weight: 600;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(4){
+        font-size: 70%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box2 p:nth-child(5){
+        font-size: 70%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box3 div:first-child{
+        font-size: 70%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box3 div:last-child{
+        font-size: 60%;
+        font-weight: 500;
+    }
+    
+    
+    .SingleProductItemContainer .SPI_Box5{
+        font-size: 60%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box4 button{
+        font-size: 80%;
+    }
+    
+    .SingleProductItemContainer .SPI_Box4 button img{
+        width: 20%;
+        margin-left: 5%;
+    }
+    
+}

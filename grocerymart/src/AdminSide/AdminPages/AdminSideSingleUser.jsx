@@ -31,7 +31,7 @@ const AdminSideSingleUser = ({ username, email, id }) => {
   return (
     <div className="single_admin_container">
       <div>
-        <img src={user} />
+        <img src={user} alt="user"/>
       </div>
       <div>
         <p>

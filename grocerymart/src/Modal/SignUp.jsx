@@ -79,7 +79,7 @@ export default function SignUp() {
     if (userState.username && userState.email && userState.mobileNo && userState.password) {
       dispatch(signUp(info, userState));
       const timer = setTimeout(() => {
-        const msg = localStorage.getItem("msg");
+        var msg = localStorage.getItem("msg");
         if(!msg){
             msg = "Something went wrong!"
         }
@@ -124,7 +124,8 @@ return (
       size={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
       bg={"pink.500"}
       onClick={onOpen}
-      color={"white"}
+      color="white"
+      _hover={{ bg: "pink.400" }}
     >
       Sign up
     </Button>
@@ -202,11 +203,8 @@ return (
               <option value="admin">Admin</option>
               <option value="user">User</option>
             </Select>
-
           </FormControl>
-
         </ModalBody>
-
         <ModalFooter
           display="flex"
           justifyContent="space-between"

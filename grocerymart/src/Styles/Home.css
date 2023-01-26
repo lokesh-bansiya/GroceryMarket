@@ -1,5 +1,55 @@
-.HomeContainer{
-    border: 1px solid red;
-    width: 100%;
-    margin: auto;
+.HomeContainer {
+  width: 80%;
+  margin: auto;
+  padding-top: 10%;
+}
+
+.HomeContainer .section1 {
+  width: 100%;
+  display: block;
+}
+
+.section3_largeScreen {
+  display: block;
+}
+
+.section3_mediumScreen {
+  display: none;
+}
+
+.section6_largeScreen{
+  display: block;
+  margin-top: 4%;
+}
+
+@media all and (min-width: 401px) and (max-width: 600px) {
+  .HomeContainer {
+    padding-top: 20%;
+  }
+  
+  .section3_mediumScreen {
+    display: block;
+  }
+
+  .section3_largeScreen,
+  .section6_largeScreen {
+    display: none;
+  }
+}
+
+
+@media all and (min-width: 281px) and (max-width: 400px) {
+  .HomeContainer {
+    padding-top: 25%;
+  }
+  
+  .section3_mediumScreen {
+    display: block;
+  }
+
+  .section3_largeScreen,
+  .section6_largeScreen {
+    display: none;
+  }
+  
 }
