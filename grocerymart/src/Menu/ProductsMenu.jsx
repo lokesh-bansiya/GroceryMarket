@@ -1,4 +1,5 @@
 import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const ProductsMenu = () => {
   return (
@@ -6,12 +7,13 @@ const ProductsMenu = () => {
       <MenuButton fontWeight={"bold"}>
         Products
       </MenuButton>
-      <MenuList>
-        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Download</MenuItem>
-        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Create a Copy</MenuItem>
-        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Mark as Draft</MenuItem>
-        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Delete</MenuItem>
-        <MenuItem _hover={{ bg: "blue.300", color: "darkred" }}>Attend a Workshop</MenuItem>
+      <MenuList boxShadow="rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px">
+        <Link to="/products"><MenuItem _hover={{ bg: "gray.200", color: "darkred" }}>All Products</MenuItem></Link>
+        <Link to="/beauty"><MenuItem _hover={{ bg: "gray.200", color: "darkred" }}>Beauty Products</MenuItem></Link>
+        <Link to="/nonveg"><MenuItem _hover={{ bg: "gray.200", color: "darkred" }}>Non-veg</MenuItem></Link>
+        <Link to="/vegetables"><MenuItem _hover={{ bg: "gray.200", color: "darkred" }}>Vegetables</MenuItem></Link>
+        <Link to="/bakery"><MenuItem _hover={{ bg: "gray.200", color: "darkred" }}>Bakery Items</MenuItem></Link>
+        <Link to="/products"><MenuItem _hover={{ bg: "gray.200", color: "darkred" }}>Different Brands</MenuItem></Link>
       </MenuList>
     </Menu>
   );

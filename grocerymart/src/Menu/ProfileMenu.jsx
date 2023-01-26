@@ -60,8 +60,8 @@ const ProfileMenu = () => {
       <MenuButton>
         <Image margin="3%" borderRadius="50%" width="100%" src={user} />
       </MenuButton>
-      <MenuList bg={"blue.200"} borderRadius="10px">
-        <MenuItem bg={"blue.200"}>
+      <MenuList borderRadius="10px" boxShadow="rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset">
+        <MenuItem>
           <Image
             borderRadius="50%"
             width="30%"
@@ -73,7 +73,6 @@ const ProfileMenu = () => {
         {userProfile ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
-            bg={"blue.200"}
             width="100%"
             display="flex"
             fontWeight={600}
@@ -86,7 +85,6 @@ const ProfileMenu = () => {
         {userProfile ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
-            bg={"blue.200"}
             width="100%"
             display="flex"
             fontWeight={600}
@@ -99,7 +97,6 @@ const ProfileMenu = () => {
         {userProfile ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
-            bg={"blue.200"}
             width="100%"
             display="flex"
             fontWeight={600}
@@ -113,7 +110,6 @@ const ProfileMenu = () => {
         {userProfile ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
-            bg={"blue.200"}
             width="100%"
             display="flex"
             fontWeight={600}
@@ -127,7 +123,6 @@ const ProfileMenu = () => {
         {userProfile ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
-            bg={"blue.200"}
             width="100%"
             display="flex"
             fontWeight={600}
@@ -140,7 +135,6 @@ const ProfileMenu = () => {
         {userProfile ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
-            bg={"blue.200"}
             width="100%"
             display="flex"
             fontWeight={600}

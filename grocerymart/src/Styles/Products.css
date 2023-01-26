@@ -1,0 +1,38 @@
+.ProductContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    padding-top: 7%;
+}
+
+.ProductContainer section:first-child{
+    width: 90%;
+    margin: auto;
+}
+
+.ProductContainer section:last-child{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.ProductContainer .sidebarAtProductPage{
+    padding-left: 2%;
+}
+
+.ProductContainer section:last-child .sidebarAtProductPage{
+    width: 17%;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    display: flex;
+    position: sticky;
+    height: 90vh;
+    top: 15%;
+}
+
+.ProductContainer section:last-child .mainBoxAtProductPage{
+    width: 83%;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}

@@ -7,7 +7,7 @@ import { ProductPageCarousel } from "../Components/ProductPageComponents/Product
 import { Stack } from "react-bootstrap";
 import { Checkbox } from "@chakra-ui/react";
 
-const Product = () => {
+const Bakery = () => {
   const dispatch = useDispatch();
   const products = useSelector((store) => store.appReducer.allProducts);
 
@@ -58,8 +58,7 @@ const Product = () => {
           </Stack>
         </div>
         <div className="mainBoxAtProductPage">
-          {products.length &&
-            products.map((ele) => {
+          {products.length && products.filter((item) => item.category === "bakery").map((ele) => {
               return (
                 <SingleCardPage
                   key={ele._id}
@@ -85,4 +84,4 @@ const Product = () => {
   );
 };
 
-export { Product };
+export { Bakery };

@@ -23,6 +23,15 @@
     width: 100%;
 }
 
+.SingleProductItemContainer .SPI_Box1 .green{
+    color: green;
+    font-size: 150%;
+}
+.SingleProductItemContainer .SPI_Box1 .red{
+    color: red;
+    font-size: 150%;
+}
+
 .SingleProductItemContainer .SPI_Box1 img{
     width: 80%;
     margin: auto;
@@ -103,6 +112,11 @@
     color: rgb(13, 0, 58);
     font-size: 90%;
     font-weight: bold;
+}
+
+.SingleProductItemContainer .SPI_Box5 span {
+    text-decoration: 2px line-through red;
+    padding: auto 2%;
 }
 
 .SingleProductItemContainer .SPI_Box4{
