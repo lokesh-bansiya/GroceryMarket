@@ -1,6 +1,9 @@
-import { Image } from "@chakra-ui/react";
+import { Box, Image, useToast } from "@chakra-ui/react";
 import "../../Styles/HomePageComponentsStyles/HomePageSingleCard.css";
 import cart from "../../Assets/trollyForCard.png";
+import { addProductToCart } from "../../Redux/cartReducer/action";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const HomePageSingleCard = ({
   id,
@@ -17,11 +20,48 @@ const HomePageSingleCard = ({
   isavailable,
   offers,
 }) => {
+
+  const toast = useToast();
+  const dispatch = useDispatch();
+
+  const addToCart = (id) => {
+    dispatch(addProductToCart(id)).then(() => {
+      const timer = setTimeout(() => {
+        var msg = localStorage.getItem("msg");
+        if (!msg) {
+          msg = "Something went wrong!";
+        }
+        toast({
+          status: "success",
+          duration: 2000,
+          position: "top",
+          isClosable: true,
+          render: () => (
+            <Box
+              border="2px solid green"
+              textAlign="center"
+              borderRadius="10px"
+              fontWeight="bolder"
+              color="white"
+              p={3}
+              bg="blue.500"
+              boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"
+            >
+              {`${msg}`}
+            </Box>
+          ),
+        });
+      }, 3000);
+      return () => clearTimeout(timer);
+    });
+  };
+
+
   return (
     <div className="SingleProductItemContainer">
 
       <div className="SPI_Box1">
-        <Image src={ImgSrc} alt={brand} />
+      <Link to={`/single_product_page/${id}`}><Image src={ImgSrc} alt={brand} /></Link>
         <div>
             {isavailable? <div className="green">⦿</div> : <div className="red">⦿</div>}
         </div>
@@ -42,7 +82,7 @@ const HomePageSingleCard = ({
       <div className="SPI_Box5">Price: ₹{price} { mrp? <span> MRP: ₹{mrp} </span>: <></>}</div>
 
       <div className="SPI_Box4">
-        <button>Add <Image src={cart} alt="Add"/></button>
+        <button onClick={() => addToCart(id)}>Add <Image src={cart} alt="Add"/></button>
       </div>
     </div>
   );

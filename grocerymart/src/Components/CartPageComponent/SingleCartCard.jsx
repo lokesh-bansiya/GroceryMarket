@@ -49,7 +49,6 @@ const SingleCartCard = ({
     };
 
     const decreaseQuantity = (id) => {
-        console.log(id);
         const item = cartItems.filter((el) => el._id === id);
         var newQuantity;
 
@@ -62,7 +61,6 @@ const SingleCartCard = ({
     }
 
     const increaseQuantity = (id) => {
-        console.log(id);
         const item = cartItems.filter((el) => el._id === id);
         var newQuantity;
 

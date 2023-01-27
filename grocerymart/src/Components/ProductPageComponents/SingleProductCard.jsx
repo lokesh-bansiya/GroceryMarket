@@ -3,6 +3,7 @@ import "../../Styles/ProductPageStyles/SingleProductCard.css";
 import cart from "../../Assets/trollyForCard.png";
 import { useDispatch } from "react-redux";
 import { addProductToCart } from "../../Redux/cartReducer/action";
+import { Link } from "react-router-dom";
 
 const SingleProductCard = ({
   id,
@@ -55,10 +56,10 @@ const SingleProductCard = ({
   };
   return (
     <div className="SingleProductCardContainer">
-      <Link to={`/single_product_page/${id}`}>
+      
         <div className="SPP_Box1">
           <div>
-            <Image src={ImgSrc} alt={brand} />
+          <Link to={`/single_product_page/${id}`}> <Image src={ImgSrc} alt={brand} /></Link>
           </div>
           <div>
             {isavailable ? (
@@ -68,7 +69,7 @@ const SingleProductCard = ({
             )}
           </div>
         </div>
-      </Link>
+      
 
       <div className="SPP_Box2">
         <p>
