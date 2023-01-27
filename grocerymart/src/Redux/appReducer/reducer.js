@@ -6,6 +6,10 @@ const initialState = {
   itemsByCategoryVegetable: [],
   itemsByCategoryBakery: [],
   allProducts: [],
+  isLoadingAllProduct: false,
+  isLoadingBakery: false,
+  isLoadingBeauty: false,
+  isLoadingVegetables: false,
   isLoading: false,
   isError: false,
 };
@@ -35,77 +39,77 @@ const reducer = (state = initialState, action) => {
     case types.GET_BY_CATEGORY_BEAUTY_REQUEST:
       return {
         ...state,
-        isLoading: true,
+        isLoadingBeauty: true,
         isError: false,
       };
     case types.GET_BY_CATEGORY_BEAUTY_SUCCESS:
       return {
         ...state,
         itemsByCategoryBeauty: payload,
-        isLoading: false,
+        isLoadingBeauty: false,
         isError: false,
       };
     case types.GET_BY_CATEGORY_BEAUTY_FAILURE:
       return {
         ...state,
-        isLoading: false,
+        isLoadingBeauty: false,
         isError: true,
       };
     case types.GET_BY_CATEGORY_VEGETABLES_REQUEST:
       return {
         ...state,
-        isLoading: true,
+        isLoadingVegetables: true,
         isError: false,
       };
     case types.GET_BY_CATEGORY_VEGETABLES_SUCCESS:
       return {
         ...state,
         itemsByCategoryVegetable: payload,
-        isLoading: false,
+        isLoadingVegetables: false,
         isError: false,
       };
     case types.GET_BY_CATEGORY_VEGETABLES_FAILURE:
       return {
         ...state,
-        isLoading: false,
+        isLoadingVegetables: false,
         isError: true,
       };
     case types.GET_BY_CATEGORY_BAKERY_REQUEST:
       return {
         ...state,
-        isLoading: true,
+        isLoadingBakery: true,
         isError: false,
       };
     case types.GET_BY_CATEGORY_BAKERY_SUCCESS:
       return {
         ...state,
         itemsByCategoryBakery: payload,
-        isLoading: false,
+        isLoadingBakery: false,
         isError: false,
       };
     case types.GET_BY_CATEGORY_BAKERY_FAILURE:
       return {
         ...state,
-        isLoading: false,
+        isLoadingBakery: false,
         isError: true,
       };
     case types.GET_ALL_PRODUCTS_REQUEST:
       return {
         ...state,
-        isLoading: true,
+        isLoadingAllProduct: true,
         isError: false,
       };
     case types.GET_ALL_PRODUCTS_SUCCESS:
       return {
         ...state,
         allProducts: payload,
-        isLoading: false,
+        isLoadingAllProduct: false,
         isError: false,
       };
     case types.GET_ALL_PRODUCTS_FAILURE:
       return {
         ...state,
-        isLoading: false,
+        isLoadingAllProduct: false,
         isError: true,
       };
     default:

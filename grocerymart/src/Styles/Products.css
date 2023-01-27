@@ -9,6 +9,8 @@
 .ProductContainer section:first-child{
     width: 90%;
     margin: auto;
+    margin-bottom: 3%;
+    margin-top: 3%;
 }
 
 .ProductContainer section:last-child{

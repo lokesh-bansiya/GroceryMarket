@@ -50,18 +50,6 @@ const Home = () => {
               src={loading}
               alt="loading..."
             />
-            <h1
-              style={{
-                fontWeight: "bold",
-                color: "black",
-                display: "flex",
-                justifyContent: "center",
-                fontSize: "150%",
-                marginTop: "5%",
-              }}
-            >
-              Please wait loading...
-            </h1>
           </div>
         </div>
       ) : (

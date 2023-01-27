@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../Redux/appReducer/action";
 import "../Styles/Products.css";
-import { ProductPageCarousel } from "../Components/ProductPageComponents/ProductPageCarousel";
 import { Stack } from "react-bootstrap";
 import { Checkbox } from "@chakra-ui/react";
 import { SingleProductCard } from "../Components/ProductPageComponents/SingleProductCard";
+import { BakeryCarousel } from "../Components/ProductPageComponents/BakeryCarousel";
 
 const Bakery = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const Bakery = () => {
   return (
     <div className="ProductContainer">
       <section>
-        <ProductPageCarousel />
+        <BakeryCarousel />
       </section>
       <section>
         <div className="sidebarAtProductPage">
