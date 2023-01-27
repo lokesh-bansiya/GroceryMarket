@@ -1,5 +1,7 @@
 import { DeleteIcon } from "@chakra-ui/icons";
-import { Box, Button, Text, Image } from "@chakra-ui/react";
+import { Box, Button, Text, Image, useToast } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteCartItem, getCartItems, updateCartItemQuantity } from "../../Redux/cartReducer/action";
 import "../../Styles/CartPageStyles/SingleCartCard.css";
 
 const SingleCartCard = ({
@@ -17,13 +19,69 @@ const SingleCartCard = ({
     isavailable,
     offers,
 }) => {
+
+    const toast = useToast();
+    const dispatch = useDispatch();
+    const cartItems = useSelector((store) => store.cartReducer.cartItems);
+
+    const deleteCartItemHandler = (id) => {
+        dispatch(deleteCartItem(id))
+        .then(() => dispatch(getCartItems()))
+        .then(() =>toast({
+            title: "Success!",
+            status: "success",
+            duration: 2000,
+            position: "top",
+            isClosable: true,
+            render: () => (
+              <Box 
+                border="1px solid green" 
+                textAlign="center" 
+                borderRadius="10px" 
+                fontWeight="bolder" 
+                color="white" p={3} 
+                bg="green.500" 
+                boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
+                {`CartItem deleted successfully!`}
+              </Box>
+            )
+          }))
+    };
+
+    const decreaseQuantity = (id) => {
+        console.log(id);
+        const item = cartItems.filter((el) => el._id === id);
+        var newQuantity;
+
+        if(item[0].quantity > 1){
+            newQuantity = {
+                quantity: Number(item[0].quantity) - 1
+            }
+        }
+        dispatch(updateCartItemQuantity(id, newQuantity)).then(() => dispatch(getCartItems()));
+    }
+
+    const increaseQuantity = (id) => {
+        console.log(id);
+        const item = cartItems.filter((el) => el._id === id);
+        var newQuantity;
+
+        if(item[0].quantity < 10){
+            newQuantity = {
+                quantity: Number(item[0].quantity) + 1
+            }
+        }
+        dispatch(updateCartItemQuantity(id, newQuantity)).then(() => dispatch(getCartItems()));
+    }
+
+
     return (
         <Box
             display={{ base: "flex" }}
             justifyContent="space-between"
             border="1px solid black"
             borderRadius="5px"
-            padding="1%"
+            padding={{base: "4%", sm: "4%", md: "2%", lg: "2%", xl:"2%"}}
             boxShadow="rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"
         >
             <Box
@@ -45,9 +103,10 @@ const SingleCartCard = ({
                 flexDirection="column"
                 justifyContent="space-between"
                 width="70%"
+                paddingRight="5%"
             >
                 <Box>
-                    <Text fontSize={{base: "60%", sm: "70%", md: "95%", lg: "100%", xl:"110%"}} fontWeight="500">
+                    <Text color="darkgreen" fontSize={{base: "60%", sm: "70%", md: "95%", lg: "100%", xl:"110%"}} fontWeight="500">
                         {name}
                     </Text>
                     {weight ? <Text fontSize={{base: "60%", sm: "70%", md: "95%", lg: "100%", xl:"110%"}} fontWeight="500">
@@ -66,7 +125,7 @@ const SingleCartCard = ({
                         {offers}
                     </Text> : <></>}
                     <Text display="flex" width="80%" justifyContent="space-between" fontSize={{base: "60%", sm: "70%", md: "95%", lg: "100%", xl:"110%"}} fontWeight="500">
-                        <span>Price:- ₹{price}</span> {mrp ? <span className="strickPrice">MRP:- ₹{mrp} </span> : <></>}
+                        <span>Price:- ₹{quantity*price}</span> {mrp ? <span className="strickPrice">MRP:- ₹{quantity*mrp} </span> : <></>}
                     </Text>
                 </Box>
 
@@ -77,20 +136,28 @@ const SingleCartCard = ({
                     flexDirection="row"
                 >
                     <Box
-                        width="20%"
+                        width={{base: "40%", sm: "30%", md: "20%", lg: "20%", xl:"20%"}}
                         display={{ base: "flex" }}
                         justifyContent="space-around"
                         marginTop="5%"
                     >
-                        <button className="Cart_btn">−</button>
+                        <button className="Cart_btn" onClick={() => decreaseQuantity(id)}>−</button>
                         <button className="Cart_btn">{quantity}</button>
-                        <button className="Cart_btn">+</button>
+                        <button className="Cart_btn" onClick={() => increaseQuantity(id)}>+</button>
                     </Box>
                     <Box>
-                        <Button border="1px solid blue" width="fit-content" margin="auto">
+                        <Button 
+                            backgroundColor="green.100" 
+                            padding="1%" paddingTop="7%" 
+                            paddingBottom="7%" 
+                            border="2px solid blue" 
+                            width="fit-content" 
+                            height="fit-content" 
+                            margin="auto"
+                        >
                             <DeleteIcon
-                                // onClick={() => deleteCartItemHandler(id)}
-                                fontSize="110%"
+                                onClick={() => deleteCartItemHandler(id)}
+                                fontSize={{base: "90%", sm: "90%", md: "100%", lg: "100%", xl:"110%"}}
                                 color="red"
                                 cursor="pointer"
                             />

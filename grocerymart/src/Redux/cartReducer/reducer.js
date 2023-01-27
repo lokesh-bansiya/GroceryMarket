@@ -2,6 +2,7 @@ import * as types from "./actionTypes";
 
 const initialState = {
   cartItems: [],
+  singleCartItem: [],
   isLoading: false,
   isError: false,
 };
@@ -21,7 +22,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
       };
-      case types.GET_CART_ITEMS_REQUEST:
+    case types.GET_CART_ITEMS_REQUEST:
       return {
         ...state,
       };
@@ -31,6 +32,19 @@ const reducer = (state = initialState, action) => {
         cartItems: payload,
       };
     case types.GET_CART_ITEMS_FAILURE:
+      return {
+        ...state,
+      };
+    case types.GET_BY_ID_CART_ITEMS_REQUEST:
+      return {
+        ...state,
+      };
+    case types.GET_BY_ID_CART_ITEMS_SUCCESS:
+      return {
+        ...state,
+        singleCartItem: payload,
+      };
+    case types.GET_BY_ID_CART_ITEMS_FAILURE:
       return {
         ...state,
       };

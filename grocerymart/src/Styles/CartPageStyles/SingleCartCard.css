@@ -16,3 +16,9 @@
     color: rgb(2, 2, 70);
     font-weight: bold;
 }
+
+@media all and (min-width: 281px) and (max-width: 400px) {
+    button{
+        font-size: 50%;
+    } 
+}

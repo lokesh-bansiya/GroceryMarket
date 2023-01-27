@@ -14,6 +14,7 @@ import { Vegetables } from "../Pages/VegetablesPage";
 import { NonVeg } from "../Pages/NonVeg";
 import { Bakery } from "../Pages/Bakery";
 import { Beauty } from "../Pages/Beauty";
+import { SingleProductPage } from "../Components/ProductPageComponents/SingleProductPage";
 
 const MainRoutes = () => {
   return (
@@ -24,6 +25,10 @@ const MainRoutes = () => {
       <Route path="/nonveg" element={<NonVeg />} />
       <Route path="/bakery" element={<Bakery />} />
       <Route path="/beauty" element={<Beauty />} />
+      <Route
+        path="/single_product_page/:id"
+        element={<SingleProductPage/>}
+      />
       <Route
         path="/cart"
         element={
