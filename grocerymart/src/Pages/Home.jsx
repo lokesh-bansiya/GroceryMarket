@@ -78,29 +78,21 @@ const Home = () => {
             position: "absolute",
             zIndex: "10",
             width: "100%",
-            paddingTop: "15%",
+            backgroundColor: "black",
+            paddingTop: "5%",
           }}
         >
-          <div>
+          <div width="100%" padding="5%" bg="black" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
             <img
               style={{
-                width: "50%",
+                width: "60%",
                 margin: "auto",
+                borderRadius: "50%"
               }}
               src={error}
               alt="Server error...!"
             />
-            <h1
-              style={{
-                fontWeight: "bold",
-                color: "blue",
-                display: "flex",
-                justifyContent: "center",
-                fontSize: "150%",
-              }}
-            >
-              Server Error! 503
-            </h1>
+            
           </div>
         </div>
       ) : (

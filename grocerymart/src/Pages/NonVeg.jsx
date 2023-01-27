@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../Redux/appReducer/action";
-import { SingleCardPage } from "../Components/ProductPageComponents/ProductCardPage";
 import "../Styles/Products.css";
-import { ProductPageCarousel } from "../Components/ProductPageComponents/ProductPageCarousel";
 import { Stack } from "react-bootstrap";
 import { Checkbox } from "@chakra-ui/react";
+import { SingleProductCard } from "../Components/ProductPageComponents/SingleProductCard";
+import { NonVegCarousel } from "../Components/ProductPageComponents/NonVegCarousel";
 
 const NonVeg = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const NonVeg = () => {
   return (
     <div className="ProductContainer">
       <section>
-        <ProductPageCarousel />
+        <NonVegCarousel />
       </section>
       <section>
         <div className="sidebarAtProductPage">
@@ -60,7 +60,7 @@ const NonVeg = () => {
         <div className="mainBoxAtProductPage">
           {products.length && products.filter((item) => item.category === "nonveg").map((ele) => {
               return (
-                <SingleCardPage
+                <SingleProductCard
                   key={ele._id}
                   id={ele._id}
                   brand={ele.brand}

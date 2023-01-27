@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../Redux/appReducer/action";
-import { SingleCardPage } from "../Components/ProductPageComponents/ProductCardPage";
 import "../Styles/Products.css";
 import { ProductPageCarousel } from "../Components/ProductPageComponents/ProductPageCarousel";
 import { Stack } from "react-bootstrap";
 import { Checkbox } from "@chakra-ui/react";
+import { SingleProductCard } from "../Components/ProductPageComponents/SingleProductCard";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ const Product = () => {
           {products.length &&
             products.map((ele) => {
               return (
-                <SingleCardPage
+                <SingleProductCard
                   key={ele._id}
                   id={ele._id}
                   brand={ele.brand}
