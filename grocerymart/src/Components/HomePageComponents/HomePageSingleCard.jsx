@@ -39,7 +39,7 @@ const HomePageSingleCard = ({
         <div>{offers}</div>
       </div>
 
-      <div className="SPI_Box5">Price: {price} { mrp? <span> MRP: {mrp} </span>: <></>}</div>
+      <div className="SPI_Box5">Price: ₹{price} { mrp? <span> MRP: ₹{mrp} </span>: <></>}</div>
 
       <div className="SPI_Box4">
         <button>Add <Image src={cart} alt="Add"/></button>

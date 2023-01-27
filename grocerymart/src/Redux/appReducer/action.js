@@ -3,7 +3,6 @@ import axios from "axios";
 
 const getProductsByBrandsAmul = () => (dispatch) => {
   dispatch({ type: types.GET_ITEMS_REQUEST });
-  console.log("running");
   return axios
     .get(`https://zany-bee-sarong.cyclic.app/products?brand=Amul`, {
       headers: {
@@ -188,31 +187,7 @@ const getSingleProduct = (id) => async (dispatch) => {
         dispatch({ type: types.GET_SINGLE_PRODUCT_FAILURE, payload: e });
         console.log(e);
       });
-  
 };
-
-
-const addProductToCart = (id) => async (dispatch) => {
-  dispatch({ type: types.ADD_TO_CART_REQUEST });
-    return axios
-      .get(`https://zany-bee-sarong.cyclic.app/cart/addcartItem/${id}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      })
-      .then((res) => {
-        dispatch({
-          type: types.ADD_TO_CART_SUCCESS,
-          payload: res.data,
-        });
-      })
-      .catch((e) => {
-        dispatch({ type: types.ADD_TO_CART_FAILURE, payload: e });
-        console.log(e);
-      });
-};
-
-
 
 export {
   getProductsByBrandsAmul,
@@ -221,5 +196,4 @@ export {
   getProductsByCategoryVegetable,
   getAllProducts,
   getSingleProduct,
-  addProductToCart
 };

@@ -29,7 +29,6 @@ const getProfile = (userKey) => (dispatch) => {
         console.log("cant get profile of user");
       });
   }
-  console.log({ Message: "Userkey is undefined!" });
 };
 
 const signUp = (admin, payload) => (dispatch) => {
