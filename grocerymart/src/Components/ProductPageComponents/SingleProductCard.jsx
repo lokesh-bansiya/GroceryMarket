@@ -19,12 +19,11 @@ const SingleProductCard = ({
   isavailable,
   offers,
 }) => {
-
   const dispatch = useDispatch();
   const toast = useToast();
 
   const addToCart = (id) => {
-    dispatch(addProductToCart(id,)).then(() => {
+    dispatch(addProductToCart(id)).then(() => {
       const timer = setTimeout(() => {
         var msg = localStorage.getItem("msg");
         if (!msg) {
@@ -56,18 +55,20 @@ const SingleProductCard = ({
   };
   return (
     <div className="SingleProductCardContainer">
-      <div className="SPP_Box1">
-        <div>
-          <Image src={ImgSrc} alt={brand} />
+      <Link to={`/single_product_page/${id}`}>
+        <div className="SPP_Box1">
+          <div>
+            <Image src={ImgSrc} alt={brand} />
+          </div>
+          <div>
+            {isavailable ? (
+              <div className="green">⦿</div>
+            ) : (
+              <div className="red">⦿</div>
+            )}
+          </div>
         </div>
-        <div>
-          {isavailable ? (
-            <div className="green">⦿</div>
-          ) : (
-            <div className="red">⦿</div>
-          )}
-        </div>
-      </div>
+      </Link>
 
       <div className="SPP_Box2">
         <p>

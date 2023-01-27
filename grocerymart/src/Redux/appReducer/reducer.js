@@ -2,6 +2,7 @@ import * as types from "./actionTypes";
 
 const initialState = {
   items: [],
+  singleProduct: [],
   itemsByCategoryBeauty: [],
   itemsByCategoryVegetable: [],
   itemsByCategoryBakery: [],
@@ -111,6 +112,19 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLoadingAllProduct: false,
         isError: true,
+      };
+      case types.GET_SINGLE_PRODUCT_REQUEST:
+      return {
+        ...state,
+      };
+    case types.GET_SINGLE_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        singleProduct: payload,
+      };
+    case types.GET_SINGLE_PRODUCT_FAILURE:
+      return {
+        ...state,
       };
     default:
       return state;

@@ -189,6 +189,29 @@ const getSingleProduct = (id) => async (dispatch) => {
       });
 };
 
+
+
+const updateProduct = (id, payload) => async (dispatch) => {
+  dispatch({ type: types.UPDATE_PRODUCT_REQUEST });
+    return axios
+      .patch(`https://zany-bee-sarong.cyclic.app/products/update/${id}`,payload, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        dispatch({
+          type: types.UPDATE_PRODUCT_SUCCESS,
+          payload: res.data,
+        });
+      })
+      .catch((e) => {
+        dispatch({ type: types.UPDATE_PRODUCT_FAILURE, payload: e });
+        console.log(e);
+      });
+};
+
+
 export {
   getProductsByBrandsAmul,
   getProductsByCategoryBeauty,
@@ -196,4 +219,5 @@ export {
   getProductsByCategoryVegetable,
   getAllProducts,
   getSingleProduct,
+  updateProduct,
 };
