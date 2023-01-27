@@ -47,6 +47,7 @@ const CartPage = () => {
       <Box width="80%" margin="auto" display="flex" flexDirection="column" padding="3%" paddingTop={{ base: "15%", sm: "12%", md: "10%", lg: "10%", xl: "10%" }} height="fit-content" >
         <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">Total price:- <span className="totalAmount">₹{parseFloat(total).toFixed(2)}</span></Box>
         <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">Total MRP:- <span className="totalAmountmrp">₹{parseFloat(totalmrp).toFixed(2)}</span></Box>
+        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">Total Items:- <span className="totalAmount">{cartItems.length}</span></Box>
       </Box>
       <Box
         width="80%"

@@ -12,10 +12,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import user from "../Assets/user.png";
 import { getProfile } from "../Redux/authReducer/action";
+import { getCartItems } from "../Redux/cartReducer/action";
 
 const ProfileMenu = () => {
   const dispatch = useDispatch();
   const userProfile = useSelector((state) => state.authReducer.userProfile);
+  const cartItems = useSelector((store) => store.cartReducer.cartItems);
   const userKey = localStorage.getItem("userKey") || "";
   const toast = useToast();
 
@@ -54,6 +56,12 @@ const ProfileMenu = () => {
       dispatch(getProfile(userKey));
     }
   }, [userKey, userProfile.length, dispatch]);
+
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      dispatch(getCartItems());
+    }
+  }, [dispatch, cartItems.length, cartItems]);
 
   return (
     <Menu borderRadius="10px">
@@ -100,9 +108,10 @@ const ProfileMenu = () => {
             width="100%"
             display="flex"
             fontWeight={600}
-            justifyContent="space-between"
           >
-            My CartItems {0} Items
+            My CartItems &nbsp; <span style={{
+              color: "darkred"
+            }}> {cartItems.length} Items</span>
           </MenuItem>
         ) : (
           <></>
