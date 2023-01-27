@@ -1,9 +1,8 @@
-## Welcome to the WebTaskit website
-GroceryMarket is an online food and grocery store. You will find everything you are looking for with products and brands in our catalogue. Right from fresh Fruits and Vegetables, Rice and Dals, Spices and Seasonings to Packaged products, Beverages, Personal care products, and Meat – we have it all. It is an Individual project built by me.
+## Welcome to the Grocery Mart, Working...
+GroceryMarket is an online food and grocery store. You will find everything you are looking for with products and brands in our online store. Right from fresh Fruits and Vegetables, Rice and Dals, Spices and Seasonings to Packaged products, Beverages, Personal care products, and Meat – we have it all. It is an Individual project built by me. to build this project I have used all the tack-stacks that I have learned during my web development aspiring journey.
 <br/>
 <br/>
 
-## [Deployed URL]( https://webtaskit.vercel.app/)
 
 # Functionality
  - Fully responsive layouts.
