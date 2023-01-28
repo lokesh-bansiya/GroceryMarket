@@ -1,9 +1,9 @@
-// SingleProductPage.jsx
 import "../../Styles/ProductPageStyles/SingleProductPage.css";
 import { Box, Button, Image, Text, useToast } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Magnifier from "react-magnifier";
 import {
     getAllProducts,
     getSingleProduct,
@@ -11,8 +11,9 @@ import {
 } from "../../Redux/appReducer/action";
 import cart from "../../Assets/trollyForCard.png";
 import { addProductToCart } from "../../Redux/cartReducer/action";
-import Slider from "react-slick";
-import { HomePageSingleCard } from "../HomePageComponents/HomePageSingleCard";
+import { CarouselForSingleProductPageLargScreen } from "./CarouselForSingleProductPageLargScreen";
+import { CarouselForSingleProductPageSmallScreen } from "./CarouselForSingleProductPageSmallScreen";
+import { CarouselForSingleProductPageExtrsSmallScreen } from "./CarouselForSingleProductPageExtrsSmallScreen";
 
 const SingleProductPage = () => {
 
@@ -21,17 +22,6 @@ const SingleProductPage = () => {
     const singleProduct = useSelector((store) => store.appReducer.singleProduct);
     const products = useSelector((store) => store.appReducer.allProducts);
     const toast = useToast();
-
-
-    var settings = {
-        dots: false,
-        infinite: true,
-        speed: 1500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-    };
-
 
     const addToCart = (id) => {
         dispatch(addProductToCart(id)).then(() =>
@@ -100,11 +90,11 @@ const SingleProductPage = () => {
             dispatch(getSingleProduct(id))
         }
         singleProduct.length = 0;
-    }, [dispatch, singleProduct.length,singleProduct, id]);
+    }, [dispatch, singleProduct.length, singleProduct, id]);
 
 
     return (
-        <Box paddingTop="10%">
+        <Box paddingTop={{base: "27%", sm: "20%", md: "15%",lg: "12%", xl:"10%"}}>
             <Box
                 boxShadow="rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"
                 padding="3%"
@@ -115,17 +105,17 @@ const SingleProductPage = () => {
                 margin="auto"
                 border="1px solid black"
             >
-                <Box width="40%" padding="2%" border="1px solid black">
-                    <Image width="100%" src={singleProduct.ImgSrc} alt={singleProduct.brand} />
+                <Box width="40%" padding="2%" border="1px solid black" display="flex" justifyContent="center" alignItems="center">
+                <Magnifier mgShape="square" width="100%" src={singleProduct.ImgSrc} alt={singleProduct.brand} />
                 </Box>
                 <Box width="55%">
                     <Box>
                         <Text
                             color="darkgreen"
                             fontSize={{
-                                base: "90%",
-                                sm: "100%",
-                                md: "110%",
+                                base: "60%",
+                                sm: "70%",
+                                md: "90%",
                                 lg: "120%",
                                 xl: "130%",
                             }}
@@ -138,7 +128,7 @@ const SingleProductPage = () => {
                                 fontSize={{
                                     base: "60%",
                                     sm: "70%",
-                                    md: "95%",
+                                    md: "90%",
                                     lg: "100%",
                                     xl: "110%",
                                 }}
@@ -182,7 +172,7 @@ const SingleProductPage = () => {
                                 fontSize={{
                                     base: "60%",
                                     sm: "70%",
-                                    md: "95%",
+                                    md: "90%",
                                     lg: "100%",
                                     xl: "110%",
                                 }}
@@ -197,8 +187,8 @@ const SingleProductPage = () => {
                             <Text
                                 fontSize={{
                                     base: "60%",
-                                    sm: "70%",
-                                    md: "95%",
+                                    sm: "60%",
+                                    md: "90%",
                                     lg: "100%",
                                     xl: "110%",
                                 }}
@@ -214,9 +204,9 @@ const SingleProductPage = () => {
                             width="80%"
                             justifyContent="space-between"
                             fontSize={{
-                                base: "80%",
-                                sm: "100%",
-                                md: "100%",
+                                base: "50%",
+                                sm: "60%",
+                                md: "90%",
                                 lg: "110%",
                                 xl: "110%",
                             }}
@@ -247,7 +237,19 @@ const SingleProductPage = () => {
                             justifyContent="space-around"
                             marginTop="5%"
                         >
-                            <Text fontWeight="bold" marginRight="3%">Quantity:- </Text>
+                            <Text
+                                fontWeight="bold"
+                                fontSize={{
+                                    base: "50%",
+                                    sm: "60%",
+                                    md: "90%",
+                                    lg: "110%",
+                                    xl: "110%",
+                                }}
+                                marginRight="3%"
+                            >
+                                Quantity:- 
+                            </Text>
                             <button className="singleproductpage_btn" onClick={() => decreaseQuantity(id)}>
                                 −
                             </button>
@@ -266,39 +268,48 @@ const SingleProductPage = () => {
                                 fontWeight="bold"
                                 margin="auto"
                                 onClick={() => addToCart(id)}
+                                fontSize={{
+                                    base: "70%",
+                                    sm: "70%",
+                                    md: "90%",
+                                    lg: "110%",
+                                    xl: "110%",
+                                }}
                             >
-                                <Text _hover={{ color: "black" }} color="white" marginRight="5%">Add</Text> <Image backgroundColor="white" borderRadius="10px" padding="2%" width="15%" src={cart} alt="Add" />
+                                <Text 
+                                   _hover={{ color: "black" }} 
+                                   color="white" 
+                                   marginRight="5%"
+                                >
+                                    Add
+                                </Text> 
+                                <Image 
+                                    backgroundColor="white" 
+                                    borderRadius="10px" 
+                                    padding="2%" 
+                                    src={cart} 
+                                    width={{
+                                        base: "12%",
+                                        sm: "13%",
+                                        md: "15%",
+                                        lg: "15%",
+                                        xl: "15%",
+                                    }}
+                                    alt="Add" />
                             </Button>
                         </Box>
                     </Box>
                 </Box>
             </Box>
 
-            <Box width="90%" margin="auto" marginTop="3%">
-                <Slider {...settings}>
-                    {
-                        products.length && products.map((ele) => {
-                            return (
-                                <HomePageSingleCard
-                                    key={ele._id}
-                                    id={ele._id}
-                                    brand={ele.brand}
-                                    name={ele.name}
-                                    mrp={ele.mrp}
-                                    price={ele.price}
-                                    quantity={ele.quantity}
-                                    weight={ele.weight}
-                                    category={ele.category}
-                                    ImgSrc={ele.ImgSrc}
-                                    sasta={ele.sasta}
-                                    packet={ele.packet}
-                                    isavailable={ele.isavailable}
-                                    offers={ele.offers}
-                                />
-                            );
-                        })
-                    }
-                </Slider>
+            <Box display={{base: "none", sm: "none", md: "block", lg: "block", xl: "block"}} width="90%" margin="auto" marginTop="3%">
+                <CarouselForSingleProductPageLargScreen/>
+            </Box>
+            <Box display={{base: "none", sm: "block", md: "none", lg: "none", xl: "none"}} width="90%" margin="auto" marginTop="3%">
+                <CarouselForSingleProductPageSmallScreen/>
+            </Box>
+            <Box display={{base: "block", sm: "none", md: "none", lg: "none", xl: "none"}} width="90%" margin="auto" marginTop="3%">
+                <CarouselForSingleProductPageExtrsSmallScreen/>
             </Box>
         </Box>
     );
