@@ -2,27 +2,26 @@ import React, { useEffect } from "react";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
 import { HomePageSingleCard } from "./HomePageSingleCard";
-import { getProductsByCategoryBakery } from "../../Redux/appReducer/action";
+import { getProductsByCategoryBeauty } from "../../Redux/appReducer/action";
 
-const HomeCategoryBakery = () => {
+const HomeCategoryBeautyForExtraSmallScreen = () => {
   const dispatch = useDispatch();
   const products = useSelector(
-    (store) => store.appReducer.itemsByCategoryBakery
+    (store) => store.appReducer.itemsByCategoryBeauty
   );
 
   var settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 5,
+    speed: 1500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
   };
 
   useEffect(() => {
     if (products.length === 0) {
-      dispatch(getProductsByCategoryBakery());
+      dispatch(getProductsByCategoryBeauty());
     }
   }, [products.length, dispatch]);
 
@@ -53,4 +52,4 @@ const HomeCategoryBakery = () => {
   );
 };
 
-export { HomeCategoryBakery };
+export { HomeCategoryBeautyForExtraSmallScreen };

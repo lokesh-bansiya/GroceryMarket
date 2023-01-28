@@ -31,9 +31,18 @@ const AdminSideSingleProductPage = ({
           duration: 2000,
           position: "top",
           isClosable: true,
-          status:"warning",
+          status: "warning",
           render: () => (
-            <Box border="2px solid red" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="red.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
+            <Box
+              border="2px solid red"
+              textAlign="center"
+              borderRadius="10px"
+              fontWeight="bolder"
+              color="white"
+              p={3}
+              bg="red.500"
+              boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"
+            >
               {`Product successfully deleted !`}
             </Box>
           ),

@@ -13,6 +13,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../Assets/redbaglogosmall.png";
 import { CategoryMenu } from "../Menu/CategoryMenu";
 import { ProductsMenu } from "../Menu/ProductsMenu";
@@ -35,11 +36,7 @@ export default function MobileScreenMenu() {
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton
-            marginTop="8%"
-            marginRight="5%"
-            fontSize="150%"
-          />
+          <DrawerCloseButton marginTop="8%" marginRight="5%" fontSize="150%" />
           <DrawerHeader borderBottomWidth="1px">
             <Box width="30%">
               <Image width="100%" src={logo} />
@@ -48,14 +45,36 @@ export default function MobileScreenMenu() {
 
           <DrawerBody>
             <Stack>
-              <Box padding="2%" borderRadius="5px" _hover={{ bg: "blue.100", color: "darkred" }}>
-                <ProductsMenu />
+              <Box
+                padding="2%"
+                borderRadius="5px"
+                _hover={{ bg: "blue.100", color: "darkred" }}
+              >
+                <ProductsMenu onClose={onClose}/>
               </Box>
-              <Box padding="2%" borderRadius="5px" _hover={{ bg: "blue.100", color: "darkred" }}>
-                <CategoryMenu />
+              <Box
+                padding="2%"
+                borderRadius="5px"
+                _hover={{ bg: "blue.100", color: "darkred" }}
+              >
+                <CategoryMenu onClose={onClose}/>
               </Box>
-              <Box padding="2%" borderRadius="5px" _hover={{ bg: "blue.100", color: "darkred" }} fontWeight={"bold"}>Cart</Box>
-              <Box padding="2%" borderRadius="5px" _hover={{ bg: "blue.100", color: "darkred" }} fontWeight={"bold"} onClick={onClose}>
+              <Box
+                padding="2%"
+                borderRadius="5px"
+                _hover={{ bg: "blue.100", color: "darkred" }}
+                fontWeight={"bold"}
+                onClick={onClose}
+              >
+                <Link to="/cart">Cart</Link>
+              </Box>
+              <Box
+                padding="2%"
+                borderRadius="5px"
+                _hover={{ bg: "blue.100", color: "darkred" }}
+                fontWeight={"bold"}
+                onClick={onClose}
+              >
                 Cancel
               </Box>
             </Stack>

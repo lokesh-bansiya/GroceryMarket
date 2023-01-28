@@ -1,4 +1,3 @@
-
 import { Box, Grid, GridItem, Image } from "@chakra-ui/react";
 import brandstore1 from "../../Assets/brandstore1.webp";
 import brandstore2 from "../../Assets/brandstore2.webp";
@@ -9,7 +8,11 @@ import brandstore6 from "../../Assets/brandstore6.webp";
 
 const HomePageSection10 = () => {
   return (
-    <Box padding="2%" width="100%" marginBottom={{base: "8%",sm: "7%", md: "3%", lg: "3%", xl: "3%"}}>
+    <Box
+      padding="2%"
+      width="100%"
+      marginBottom={{ base: "8%", sm: "7%", md: "3%", lg: "3%", xl: "3%" }}
+    >
       <Box
         width="100%"
         margin="auto"
@@ -24,7 +27,13 @@ const HomePageSection10 = () => {
         Brand Store
       </Box>
       <Grid
-        gridTemplateColumns={{ base: "repeat(2,1fr)", sm: "repeat(3,1fr)", md: "repeat(6,1fr)", lg: "repeat(6,1fr)",xl:"repeat(6,1fr)"}}
+        gridTemplateColumns={{
+          base: "repeat(2,1fr)",
+          sm: "repeat(3,1fr)",
+          md: "repeat(6,1fr)",
+          lg: "repeat(6,1fr)",
+          xl: "repeat(6,1fr)",
+        }}
         gap="2%"
         width="100%"
         margin="auto"

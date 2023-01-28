@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SingleCartCard } from "../Components/CartPageComponent/SingleCartCard";
 import { getCartItems } from "../Redux/cartReducer/action";
 import "../Styles/CartPageStyles/CartPage.css";
+import Footer from "./FooterPage";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,6 @@ const CartPage = () => {
   const [ison, setIson] = useState(false);
   const [total, setTotal] = useState(0);
   const [totalmrp, setTotalmrp] = useState(0);
-
 
   useEffect(() => {
     if (cartItems.length === 0 || ison === true) {
@@ -23,10 +23,10 @@ const CartPage = () => {
   useEffect(() => {
     if (cartItems.length > 0) {
       var value = cartItems.reduce((sum, ele) => {
-        sum += (ele.price) * (ele.quantity)
-        return sum
-      }, 0)
-      setTotal(value)
+        sum += ele.price * ele.quantity;
+        return sum;
+      }, 0);
+      setTotal(value);
     }
   }, [cartItems, cartItems.length]);
 
@@ -34,20 +34,38 @@ const CartPage = () => {
     if (cartItems.length > 0) {
       var value = cartItems.reduce((sum_mrp, ele) => {
         if (ele.mrp) {
-          sum_mrp += (ele.mrp) * (ele.quantity)
+          sum_mrp += ele.mrp * ele.quantity;
         }
         return sum_mrp;
-      }, 0)
-      setTotalmrp(value)
+      }, 0);
+      setTotalmrp(value);
     }
   }, [cartItems, cartItems.length]);
 
   return (
     <>
-      <Box width="80%" margin="auto" display="flex" flexDirection="column" padding="3%" paddingTop={{ base: "15%", sm: "12%", md: "10%", lg: "10%", xl: "10%" }} height="fit-content" >
-        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">Total price:- <span className="totalAmount">₹{parseFloat(total).toFixed(2)}</span></Box>
-        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">Total MRP:- <span className="totalAmountmrp">₹{parseFloat(totalmrp).toFixed(2)}</span></Box>
-        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">Total Items:- <span className="totalAmount">{cartItems.length}</span></Box>
+      <Box
+        width="80%"
+        margin="auto"
+        display="flex"
+        flexDirection="column"
+        padding="3%"
+        paddingTop={{ base: "15%", sm: "12%", md: "10%", lg: "10%", xl: "10%" }}
+        height="fit-content"
+      >
+        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
+          Total price:-{" "}
+          <span className="totalAmount">₹{parseFloat(total).toFixed(2)}</span>
+        </Box>
+        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
+          Total MRP:-{" "}
+          <span className="totalAmountmrp">
+            ₹{parseFloat(totalmrp).toFixed(2)}
+          </span>
+        </Box>
+        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
+          Total Items:- <span className="totalAmount">{cartItems.length}</span>
+        </Box>
       </Box>
       <Box
         width="80%"
@@ -78,6 +96,9 @@ const CartPage = () => {
             );
           })}
       </Box>
+      <section>
+        <Footer />
+      </section>
     </>
   );
 };

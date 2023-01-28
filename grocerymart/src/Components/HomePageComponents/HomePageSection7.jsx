@@ -1,4 +1,3 @@
-
 import { Box, Grid, GridItem, Image } from "@chakra-ui/react";
 import section41 from "../../Assets/section41.webp";
 import section42 from "../../Assets/section42.webp";
@@ -24,7 +23,13 @@ const HomePageSection7 = () => {
         Your Daily Staples
       </Box>
       <Grid
-        gridTemplateColumns={{ base: "repeat(2,1fr)", sm: "repeat(3,1fr)", md: "repeat(6,1fr)", lg: "repeat(6,1fr)",xl:"repeat(6,1fr)"}}
+        gridTemplateColumns={{
+          base: "repeat(2,1fr)",
+          sm: "repeat(3,1fr)",
+          md: "repeat(6,1fr)",
+          lg: "repeat(6,1fr)",
+          xl: "repeat(6,1fr)",
+        }}
         gap="2%"
         width="100%"
         margin="auto"

@@ -67,8 +67,8 @@ export default function Login() {
       dispatch(getProfile(userKey))
         const timer = setTimeout(() => {
           var msg = localStorage.getItem("msg");
-          if(!msg){
-              msg = "Something went wrong!"
+          if (!msg) {
+            msg = "Something went wrong!";
           }
           toast({
             title: "User signed up!",
@@ -77,7 +77,16 @@ export default function Login() {
             position: "top",
             isClosable: true,
             render: () => (
-              <Box border="2px solid green" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="blue.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
+              <Box
+                border="2px solid green"
+                textAlign="center"
+                borderRadius="10px"
+                fontWeight="bolder"
+                color="white"
+                p={3}
+                bg="blue.500"
+                boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"
+              >
                 {`${msg}`}
               </Box>
             ),

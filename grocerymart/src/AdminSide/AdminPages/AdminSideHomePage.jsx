@@ -7,7 +7,6 @@ import { AdminSideSingleAdminPage } from "../AdminPages/AdminSideSingleAdminPage
 import loading from "../../Assets/loadingforhome.gif";
 import error from "../AdminAssets/serverError.gif";
 
-
 const AdminSideHomePage = () => {
   const dispatch = useDispatch();
   const admins = useSelector((store) => store.adminReducer.users);
@@ -40,7 +39,7 @@ const AdminSideHomePage = () => {
               paddingTop: "5%",
               marginLeft: "15%",
               height: "100vh",
-              backgroundColor: "gray"
+              backgroundColor: "gray",
             }}
           >
             <div>

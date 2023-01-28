@@ -1,7 +1,6 @@
 import * as types from "./actionTypes";
 import axios from "axios";
 
-
 const getUserProfile = (id) => (dispatch) => {
   dispatch({ type: types.GET_USER_PROFILE_REQUEST });
   return axios
@@ -18,7 +17,6 @@ const getUserProfile = (id) => (dispatch) => {
       console.log(e);
     });
 };
-
 
 const getProductById = (id) => (dispatch) => {
   dispatch({ type: types.GET_PRODUCT_BY_ID_REQUEST });
@@ -37,7 +35,6 @@ const getProductById = (id) => (dispatch) => {
     });
 };
 
-
 const getProducts = () => (dispatch) => {
   dispatch({ type: types.GET_PRODUCTS_REQUEST });
   return axios
@@ -54,7 +51,6 @@ const getProducts = () => (dispatch) => {
       console.log(e);
     });
 };
-
 
 const getUsers = () => (dispatch) => {
   dispatch({ type: types.GET_USERS_REQUEST });
@@ -74,7 +70,6 @@ const getUsers = () => (dispatch) => {
     });
 };
 
-
 const addProduct = (product) => (dispatch) => {
   dispatch({ type: types.ADD_PRODUCT_REQUEST });
   return axios
@@ -92,7 +87,6 @@ const addProduct = (product) => (dispatch) => {
     });
 };
 
-
 const deleteProduct = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_PRODUCT_REQUEST });
   return axios
@@ -109,15 +103,18 @@ const deleteProduct = (id) => (dispatch) => {
     });
 };
 
-
 const updateProduct = (id, payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_PRODUCT_REQUEST });
   return axios
-    .patch(`https://zany-bee-sarong.cyclic.app/products/update/${id}`, payload,{
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    })
+    .patch(
+      `https://zany-bee-sarong.cyclic.app/products/update/${id}`,
+      payload,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      }
+    )
     .then((r) => {
       dispatch({ type: types.UPDATE_PRODUCT_SUCCESS, payload: r.data });
     })
@@ -125,7 +122,6 @@ const updateProduct = (id, payload) => (dispatch) => {
       dispatch({ type: types.UPDATE_PRODUCT_FAILURE, payload: e });
     });
 };
-
 
 const deleteUser = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_USER_REQUEST });
@@ -142,7 +138,6 @@ const deleteUser = (id) => (dispatch) => {
       dispatch({ type: types.DELETE_USER_FAILURE, payload: e });
     });
 };
-
 
 export {
   getUserProfile,

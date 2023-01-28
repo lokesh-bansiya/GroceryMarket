@@ -68,7 +68,10 @@ const ProfileMenu = () => {
       <MenuButton>
         <Image margin="3%" borderRadius="50%" width="100%" src={user} />
       </MenuButton>
-      <MenuList borderRadius="10px" boxShadow="rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset">
+      <MenuList
+        borderRadius="10px"
+        boxShadow="rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset"
+      >
         <MenuItem>
           <Image
             borderRadius="50%"
@@ -103,16 +106,22 @@ const ProfileMenu = () => {
           <></>
         )}
         {userProfile ? (
-          <MenuItem
+          <Link to="/cart"><MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"
             display="flex"
             fontWeight={600}
           >
-            My CartItems &nbsp; <span style={{
-              color: "darkred"
-            }}> {cartItems.length} Items</span>
-          </MenuItem>
+            My CartItems &nbsp;{" "}
+            <span
+              style={{
+                color: "darkred",
+              }}
+            >
+              {" "}
+              {cartItems.length} Items
+            </span>
+          </MenuItem></Link>
         ) : (
           <></>
         )}
@@ -155,20 +164,22 @@ const ProfileMenu = () => {
           <></>
         )}
         {userProfile.adminID ? (
-          <Link to="/admin_dashboard"><MenuItem
-            _hover={{ bg: "blue.200", color: "darkred" }}
-            bg={"pink.500"}
-            color="white"
-            display="flex"
-            fontWeight={600}
-            border="2px solid green"
-            width="fit-content"
-            margin={'auto'}
-            borderRadius="20px"
-            // onClick={() => logoutHandler()}
-          >
-            Admin Dashboard
-          </MenuItem></Link>
+          <Link to="/admin_dashboard">
+            <MenuItem
+              _hover={{ bg: "blue.200", color: "darkred" }}
+              bg={"pink.500"}
+              color="white"
+              display="flex"
+              fontWeight={600}
+              border="2px solid green"
+              width="fit-content"
+              margin={"auto"}
+              borderRadius="20px"
+              // onClick={() => logoutHandler()}
+            >
+              Admin Dashboard
+            </MenuItem>
+          </Link>
         ) : (
           <></>
         )}

@@ -7,7 +7,7 @@ import img3 from "../../Assets/sliderOneImgThree.webp";
 import img4 from "../../Assets/sliderOneImgFour.webp";
 import img5 from "../../Assets/sliderOneImgFive.webp";
 
-const HomePageCarouselOne =() => {
+const HomePageCarouselOne = () => {
   var settings = {
     dots: true,
     infinite: true,
@@ -19,22 +19,22 @@ const HomePageCarouselOne =() => {
   return (
     <Slider {...settings}>
       <div>
-        <Image src={img1} alt="img1"/>
+        <Image src={img1} alt="img1" />
       </div>
       <div>
-      <Image src={img2} alt="img2"/>
+        <Image src={img2} alt="img2" />
       </div>
       <div>
-      <Image src={img3} alt="img3"/>
+        <Image src={img3} alt="img3" />
       </div>
       <div>
-      <Image src={img4} alt="img4"/>
+        <Image src={img4} alt="img4" />
       </div>
       <div>
-      <Image src={img5} alt="img5"/>
+        <Image src={img5} alt="img5" />
       </div>
     </Slider>
   );
-}
+};
 
-export {HomePageCarouselOne};
+export { HomePageCarouselOne };

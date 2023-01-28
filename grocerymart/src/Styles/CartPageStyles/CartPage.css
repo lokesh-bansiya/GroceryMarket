@@ -1,10 +1,10 @@
-.totalAmount{
-    color: rgb(0, 0, 65);
-    font-size: 110%;
+.totalAmount {
+  color: rgb(0, 0, 65);
+  font-size: 110%;
 }
 
-.totalAmountmrp{
-    color: rgb(0, 0, 65);
-    font-size: 110%;
-    text-decoration: 2px solid line-through red;
+.totalAmountmrp {
+  color: rgb(0, 0, 65);
+  font-size: 110%;
+  text-decoration: 2px solid line-through red;
 }

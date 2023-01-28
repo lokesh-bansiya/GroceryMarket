@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { HomePageSingleCard } from "./HomePageSingleCard";
 import { getProductsByCategoryBakery } from "../../Redux/appReducer/action";
 
-const HomeCategoryBakery = () => {
+const HomeCategoryBakeryForSmallScreen = () => {
   const dispatch = useDispatch();
   const products = useSelector(
     (store) => store.appReducer.itemsByCategoryBakery
@@ -13,10 +13,10 @@ const HomeCategoryBakery = () => {
   var settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 4,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 2400,
     cssEase: "linear",
   };
 
@@ -53,4 +53,4 @@ const HomeCategoryBakery = () => {
   );
 };
 
-export { HomeCategoryBakery };
+export { HomeCategoryBakeryForSmallScreen };

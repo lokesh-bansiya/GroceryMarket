@@ -7,6 +7,7 @@ import { Checkbox } from "@chakra-ui/react";
 import loading from "../Assets/loadingforhome.gif";
 import { SingleProductCard } from "../Components/ProductPageComponents/SingleProductCard";
 import { VegetableCarousel } from "../Components/ProductPageComponents/VegetableCarousel";
+import Footer from "./FooterPage";
 
 const Vegetables = () => {
   const dispatch = useDispatch();
@@ -123,6 +124,9 @@ const Vegetables = () => {
           </div>
         </section>
       </div>
+      <section>
+        <Footer />
+      </section>
     </>
   );
 };

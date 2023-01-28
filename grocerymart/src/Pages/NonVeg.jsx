@@ -6,6 +6,7 @@ import { Stack } from "react-bootstrap";
 import { Checkbox } from "@chakra-ui/react";
 import { SingleProductCard } from "../Components/ProductPageComponents/SingleProductCard";
 import { NonVegCarousel } from "../Components/ProductPageComponents/NonVegCarousel";
+import Footer from "./FooterPage";
 
 const NonVeg = () => {
   const dispatch = useDispatch();
@@ -18,69 +19,77 @@ const NonVeg = () => {
   }, [products.length, dispatch]);
 
   return (
-    <div className="ProductContainer">
+    <>
+      <div className="ProductContainer">
+        <section>
+          <NonVegCarousel />
+        </section>
+        <section>
+          <div className="sidebarAtProductPage">
+            <Stack spacing={5} direction="column">
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+            </Stack>
+          </div>
+          <div className="mainBoxAtProductPage">
+            {products.length &&
+              products
+                .filter((item) => item.category === "nonveg")
+                .map((ele) => {
+                  return (
+                    <SingleProductCard
+                      key={ele._id}
+                      id={ele._id}
+                      brand={ele.brand}
+                      name={ele.name}
+                      mrp={ele.mrp}
+                      price={ele.price}
+                      quantity={ele.quantity}
+                      weight={ele.weight}
+                      category={ele.category}
+                      ImgSrc={ele.ImgSrc}
+                      sasta={ele.sasta}
+                      packet={ele.packet}
+                      isavailable={ele.isavailable}
+                      offers={ele.offers}
+                    />
+                  );
+                })}
+          </div>
+        </section>
+      </div>
       <section>
-        <NonVegCarousel />
+        <Footer />
       </section>
-      <section>
-        <div className="sidebarAtProductPage">
-          <Stack spacing={5} direction="column">
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-          </Stack>
-        </div>
-        <div className="mainBoxAtProductPage">
-          {products.length && products.filter((item) => item.category === "nonveg").map((ele) => {
-              return (
-                <SingleProductCard
-                  key={ele._id}
-                  id={ele._id}
-                  brand={ele.brand}
-                  name={ele.name}
-                  mrp={ele.mrp}
-                  price={ele.price}
-                  quantity={ele.quantity}
-                  weight={ele.weight}
-                  category={ele.category}
-                  ImgSrc={ele.ImgSrc}
-                  sasta={ele.sasta}
-                  packet={ele.packet}
-                  isavailable={ele.isavailable}
-                  offers={ele.offers}
-                />
-              );
-            })}
-        </div>
-      </section>
-    </div>
+    </>
   );
 };
 

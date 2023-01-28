@@ -1,159 +1,156 @@
 .AdminSideProductEditContainer {
-    width: 100%;
-    margin: auto;
-    height: fit-content;
-    padding-top: 4%;
-    text-align: center;
-    background-color: gray;
+  width: 100%;
+  margin: auto;
+  height: fit-content;
+  padding-top: 4%;
+  text-align: center;
+  background-color: gray;
 }
 
 .AdminSideProductEditContainer .admin_side_update_form_heading {
-    display: flex;
-    justify-content: center;
-    font-size: 130%;
-    font-weight: bold;
-    border-radius: 15px;
-    color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 130%;
+  font-weight: bold;
+  border-radius: 15px;
+  color: white;
 }
 
 .AdminSideProductEditContainer .admin_side_form_box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.AdminSideProductEditContainer .admin_side_form_box>div:first-child {
-    width: 15%;
-    height: auto;
+.AdminSideProductEditContainer .admin_side_form_box > div:first-child {
+  width: 15%;
+  height: auto;
 }
 
 .AdminSideProductEditContainer .parendFormBox {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-.AdminSideProductEditContainer .admin_side_form_box>div:last-child {
-    width: 85%;
+.AdminSideProductEditContainer .admin_side_form_box > div:last-child {
+  width: 85%;
 }
 
 .adminSideProductEditBox {
-    margin: auto;
-    display: flex;
-    width: 100%;
-    padding: 5% 0%;
-    justify-content: center;
-    align-items: center;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  padding: 5% 0%;
+  justify-content: center;
+  align-items: center;
 }
 
 .adminSideProductEditBox form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .AdminSideProductEditContainer .productEditBox1 {
-    width: 40%;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    padding: 5%;
-    border-radius: 10px;
-    color: black;
-    background-color: white;
-    border: 2px solid rgb(2, 94, 2);
+  width: 40%;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  padding: 5%;
+  border-radius: 10px;
+  color: black;
+  background-color: white;
+  border: 2px solid rgb(2, 94, 2);
 }
 
 .AdminSideProductEditContainer .productEditBox2 {
-    width: 40%;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    padding: 5%;
-    border-radius: 20px;
-    border: 2px solid rgb(1, 100, 1);
-    background-color: white;
+  width: 40%;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  padding: 5%;
+  border-radius: 20px;
+  border: 2px solid rgb(1, 100, 1);
+  background-color: white;
 }
 
 @media all and (min-width: 401px) and (max-width: 650px) {
+  .AdminSideProductEditContainer .admin_side_update_form_heading {
+    font-size: 100%;
+  }
 
-    .AdminSideProductEditContainer .admin_side_update_form_heading {
-        font-size: 100%;
-    }
+  .AdminSideProductEditContainer .admin_side_form_box > div:first-child {
+    width: 25%;
+    height: auto;
+  }
 
-    .AdminSideProductEditContainer .admin_side_form_box>div:first-child {
-        width: 25%;
-        height: auto;
-    }
-    
-    .AdminSideProductEditContainer .admin_side_form_box>div:last-child {
-        width: 75%;
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-        padding-top: 10%;
-    }
+  .AdminSideProductEditContainer .admin_side_form_box > div:last-child {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 10%;
+  }
 
-    .AdminSideProductEditContainer .parendFormBox {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-    }
+  .AdminSideProductEditContainer .parendFormBox {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
 
+  .adminSideProductEditBox {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
 
-    .adminSideProductEditBox {
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-    }
+  .adminSideProductEditBox form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .adminSideProductEditBox form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+  .AdminSideProductEditContainer .productEditBox1 {
+    width: 90%;
+    color: black;
+  }
 
-    .AdminSideProductEditContainer .productEditBox1 {
-        width: 90%;
-        color: black;
-    }
-
-    .AdminSideProductEditContainer .productEditBox2 {
-        width: 90%;
-        margin-top: 5%;
-    }
-
+  .AdminSideProductEditContainer .productEditBox2 {
+    width: 90%;
+    margin-top: 5%;
+  }
 }
 
 @media all and (min-width: 281px) and (max-width: 400px) {
+  .AdminSideProductEditContainer .parendFormBox {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .AdminSideProductEditContainer .parendFormBox {
-        display: flex;
-        flex-direction: column;
-    }
+  .AdminSideProductEditContainer .admin_side_form_box > div:last-child {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .AdminSideProductEditContainer .admin_side_form_box>div:last-child {
-        display: flex;
-        flex-direction: column;
-    }
+  .adminSideProductEditBox {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
 
-    .adminSideProductEditBox {
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-    }
+  .adminSideProductEditBox form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .adminSideProductEditBox form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+  .AdminSideProductEditContainer .productEditBox1 {
+    width: 90%;
+    color: black;
+    margin: auto;
+  }
 
-    .AdminSideProductEditContainer .productEditBox1 {
-        width: 90%;
-        color: black;
-        margin: auto;
-    }
-
-    .AdminSideProductEditContainer .productEditBox2 {
-        width: 90%;
-        margin: auto;
-        margin-top: 5%;
-    }
-
+  .AdminSideProductEditContainer .productEditBox2 {
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+  }
 }

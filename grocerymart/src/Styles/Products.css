@@ -1,40 +1,104 @@
-.ProductContainer{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: auto;
-    padding-top: 7%;
+.ProductContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  padding-top: 7%;
 }
 
-.ProductContainer section:first-child{
-    width: 90%;
-    margin: auto;
-    margin-bottom: 3%;
-    margin-top: 3%;
+.ProductContainer section:first-child {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 3%;
+  margin-top: 3%;
 }
 
-.ProductContainer section:last-child{
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
+.ProductContainer section:last-child {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
 }
 
-.ProductContainer .sidebarAtProductPage{
-    padding-left: 2%;
+.ProductContainer .sidebarAtProductPage {
+  padding-left: 2%;
 }
 
-.ProductContainer section:last-child .sidebarAtProductPage{
-    width: 17%;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-    display: flex;
+.ProductContainer section:last-child .sidebarAtProductPage {
+  width: 17%;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  display: flex;
+  position: sticky;
+  height: 90vh;
+  top: 15%;
+}
+
+.ProductContainer section:last-child .mainBoxAtProductPage {
+  width: 83%;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+@media all and (min-width: 651px) and (max-width: 1050px) {
+  .ProductContainer {
+    padding-top: 10%;
+  }
+
+  .ProductContainer section:last-child .sidebarAtProductPage {
+    width: 22%;
+    border: 1px solid red;
     position: sticky;
     height: 90vh;
-    top: 15%;
+    top: 7%;
+  }
+  .ProductContainer section:last-child .mainBoxAtProductPage {
+    width: 77%;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+  }
 }
 
-.ProductContainer section:last-child .mainBoxAtProductPage{
-    width: 83%;
+@media all and (min-width: 401px) and (max-width: 650px) {
+  .ProductContainer {
+    padding-top: 20%;
+  }
+  .ProductContainer section:last-child .sidebarAtProductPage {
+    width: 20%;
+    display: none;
+  }
+  .ProductContainer section:last-child .mainBoxAtProductPage {
+    width: 90%;
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    margin: auto;
+    grid-template-columns: repeat(2, 48%);
+    gap: 0% 2%;
+  }
+}
+
+@media all and (min-width: 281px) and (max-width: 400px) {
+  .ProductContainer {
+    padding-top: 25%;
+  }
+
+  .ProductContainer section:last-child .sidebarAtProductPage {
+    width: 20%;
+    display: none;
+  }
+
+  .ProductContainer section:last-child {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .ProductContainer section:last-child .mainBoxAtProductPage {
+    width: 80%;
+    display: grid;
+    margin: auto;
+    margin-top: 5%;
+    grid-template-columns: repeat(1, 100%);
+    gap: 0% 2%;
+  }
 }

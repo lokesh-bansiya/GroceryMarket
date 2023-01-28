@@ -113,7 +113,7 @@ const reducer = (state = initialState, action) => {
         isLoadingAllProduct: false,
         isError: true,
       };
-      case types.GET_SINGLE_PRODUCT_REQUEST:
+    case types.GET_SINGLE_PRODUCT_REQUEST:
       return {
         ...state,
       };

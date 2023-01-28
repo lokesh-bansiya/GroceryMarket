@@ -1,7 +1,6 @@
 import { Image } from "@chakra-ui/react";
 import React from "react";
 import Slider from "react-slick";
-
 import img1 from "../../Assets/bakery1.webp";
 import img2 from "../../Assets/bakery2.webp";
 import img3 from "../../Assets/bakery3.webp";
@@ -9,19 +8,15 @@ import img4 from "../../Assets/bakery4.webp";
 import img5 from "../../Assets/bakery5.webp";
 import img6 from "../../Assets/bakery6.webp";
 import img7 from "../../Assets/bakery7.webp";
-
 import img8 from "../../Assets/sliderOneImgThree.webp";
 import img9 from "../../Assets/sliderOneImgFour.webp";
 import img10 from "../../Assets/sliderOneImgFive.webp";
-
 import img11 from "../../Assets/beautycaro1.webp";
 import img12 from "../../Assets/beautycaro2.webp";
 import img13 from "../../Assets/beautycaro3.webp";
-
 import img14 from "../../Assets/meat1.webp";
 import img15 from "../../Assets/meat2.webp";
 import img16 from "../../Assets/meat3.webp";
-
 import img17 from "../../Assets/carouselFruit1.webp";
 import img18 from "../../Assets/carouselFruit2.webp";
 import img19 from "../../Assets/carouselFruit3.webp";

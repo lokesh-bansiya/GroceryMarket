@@ -2,11 +2,10 @@ import React from "react";
 import "../Styles/Home.css";
 import { HomePageCarouselOne } from "../Components/HomePageComponents/HomePageCarouselOne";
 import { HomePageSection2 } from "../Components/HomePageComponents/HomePageSection2";
-import { HomePageSection3 } from "../Components/HomePageComponents/HomePageSection3";
+import { HomePageAllProductsCarousel } from "../Components/HomePageComponents/HomePageAllProductsCarousel";
 import { HomePageSection4 } from "../Components/HomePageComponents/HomePageSection4";
-import { HomePageSection33 } from "../Components/HomePageComponents/HomePageSection33";
 import { HomePageSection5 } from "../Components/HomePageComponents/HomePageSection5";
-import { HomePageSection6 } from "../Components/HomePageComponents/HomePageSection6";
+import { HomeCategoryBeauty } from "../Components/HomePageComponents/HomeCategoryBeauty";
 import { Box, Image } from "@chakra-ui/react";
 import { HomePageSection7 } from "../Components/HomePageComponents/HomePageSection7";
 import { HomePageSection8 } from "../Components/HomePageComponents/HomePageSection8";
@@ -20,6 +19,14 @@ import { useSelector } from "react-redux";
 import loading from "../Assets/loadingforhome.gif";
 import error from "../AdminSide/AdminAssets/serverError.gif";
 import Footer from "./FooterPage";
+import { HomeCategoryBakeryForSmallScreen } from "../Components/HomePageComponents/HomeCategoryBakeryForSmallScreen";
+import { HomeCategoryBakeryForExtraSmallScreen } from "../Components/HomePageComponents/HomeCategoryBakeryForExtraSmallScreen";
+import { HomeCategoryVegetablesForSmallScreen } from "../Components/HomePageComponents/HomeCategoryVegetablesForSmallScreen";
+import { HomeCategoryVegetablesForExtraSmallScreen } from "../Components/HomePageComponents/HomeCategoryVegetablesForExtraSmallScreen";
+import { HomeCategoryBeautyForExtraSmallScreen } from "../Components/HomePageComponents/HomeCategoryBeautyForExtraSmallScreen";
+import { HomeCategoryBeautyForSmallScreen } from "../Components/HomePageComponents/HomeCategoryBeautyForSmallScreen";
+import { HomePageAllProductsCarouselForSmallScreen } from "../Components/HomePageComponents/HomePageAllProductsCarouselForSmallScreen";
+import { HomePageAllProductsCarouselForExtraSmallScreen } from "../Components/HomePageComponents/HomePageAllProductsCarouselForExtraSmallScreen";
 
 const Home = () => {
   const isError = useSelector((store) => store.appReducer.isError);
@@ -70,17 +77,21 @@ const Home = () => {
             paddingTop: "5%",
           }}
         >
-          <div width="100%" padding="5%" bg="black" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
+          <div
+            width="100%"
+            padding="5%"
+            bg="black"
+            boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"
+          >
             <img
               style={{
                 width: "60%",
                 margin: "auto",
-                borderRadius: "50%"
+                borderRadius: "50%",
               }}
               src={error}
               alt="Server error...!"
             />
-            
           </div>
         </div>
       ) : (
@@ -97,11 +108,41 @@ const Home = () => {
           <HomePageSection10 />
         </section>
         <section className="section3_largeScreen">
-          <HomePageSection3 />
+          <Box
+            display={{
+              base: "none",
+              sm: "none",
+              md: "none",
+              lg: "block",
+              xl: "block",
+            }}
+          >
+            <HomePageAllProductsCarousel />
+          </Box>
+          <Box
+            display={{
+              base: "none",
+              sm: "none",
+              md: "block",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <HomePageAllProductsCarouselForSmallScreen />
+          </Box>
+          <Box
+            display={{
+              base: "none",
+              sm: "block",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <HomePageAllProductsCarouselForExtraSmallScreen />
+          </Box>
         </section>
-        <section className="section3_mediumScreen">
-          <HomePageSection33 />
-        </section>
+
         <section>
           <HomePageSection4 />
         </section>
@@ -117,7 +158,40 @@ const Home = () => {
           >
             Vegetables
           </Box>
-          <HomeCategoryVegetables />
+
+          <Box
+            display={{
+              base: "none",
+              sm: "none",
+              md: "none",
+              lg: "block",
+              xl: "block",
+            }}
+          >
+            <HomeCategoryVegetables />
+          </Box>
+          <Box
+            display={{
+              base: "none",
+              sm: "none",
+              md: "block",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <HomeCategoryVegetablesForSmallScreen />
+          </Box>
+          <Box
+            display={{
+              base: "none",
+              sm: "block",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <HomeCategoryVegetablesForExtraSmallScreen />
+          </Box>
         </section>
         <section>
           <HomePageSection5 />
@@ -134,7 +208,39 @@ const Home = () => {
           >
             Beauty Products
           </Box>
-          <HomePageSection6 />
+          <Box
+            display={{
+              base: "none",
+              sm: "none",
+              md: "none",
+              lg: "block",
+              xl: "block",
+            }}
+          >
+            <HomeCategoryBeauty />
+          </Box>
+          <Box
+            display={{
+              base: "none",
+              sm: "none",
+              md: "block",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <HomeCategoryBeautyForSmallScreen />
+          </Box>
+          <Box
+            display={{
+              base: "none",
+              sm: "block",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <HomeCategoryBeautyForExtraSmallScreen />
+          </Box>
         </section>
         <section>
           <HomePageSection11 />
@@ -151,7 +257,39 @@ const Home = () => {
           >
             Bakery Items
           </Box>
-          <HomeCategoryBakery />
+          <Box
+            display={{
+              base: "none",
+              sm: "none",
+              md: "none",
+              lg: "block",
+              xl: "block",
+            }}
+          >
+            <HomeCategoryBakery />
+          </Box>
+          <Box
+            display={{
+              base: "none",
+              sm: "none",
+              md: "block",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <HomeCategoryBakeryForSmallScreen />
+          </Box>
+          <Box
+            display={{
+              base: "none",
+              sm: "block",
+              md: "none",
+              lg: "none",
+              xl: "none",
+            }}
+          >
+            <HomeCategoryBakeryForExtraSmallScreen />
+          </Box>
         </section>
         <section>
           <HomePageSection7 />

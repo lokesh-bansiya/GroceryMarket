@@ -17,7 +17,7 @@ const HomePageSection2 = () => {
       >
         <GridItem>
           <Image
-          borderRadius="7px"
+            borderRadius="7px"
             _hover={{
               cursor: "pointer",
               boxShadow:
@@ -40,7 +40,7 @@ const HomePageSection2 = () => {
         </GridItem>
         <GridItem>
           <Image
-          borderRadius="7px"
+            borderRadius="7px"
             _hover={{
               cursor: "pointer",
               boxShadow:
@@ -52,7 +52,7 @@ const HomePageSection2 = () => {
         </GridItem>
         <GridItem>
           <Image
-          borderRadius="7px"
+            borderRadius="7px"
             _hover={{
               cursor: "pointer",
               boxShadow:
@@ -64,7 +64,7 @@ const HomePageSection2 = () => {
         </GridItem>
         <GridItem>
           <Image
-          borderRadius="7px"
+            borderRadius="7px"
             _hover={{
               cursor: "pointer",
               boxShadow:
@@ -76,7 +76,7 @@ const HomePageSection2 = () => {
         </GridItem>
         <GridItem>
           <Image
-          borderRadius="7px"
+            borderRadius="7px"
             _hover={{
               cursor: "pointer",
               boxShadow:

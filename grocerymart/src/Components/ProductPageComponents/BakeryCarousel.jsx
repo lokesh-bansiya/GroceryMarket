@@ -1,4 +1,3 @@
-
 import { Image } from "@chakra-ui/react";
 import React from "react";
 import Slider from "react-slick";
@@ -10,7 +9,7 @@ import img5 from "../../Assets/bakery5.webp";
 import img6 from "../../Assets/bakery6.webp";
 import img7 from "../../Assets/bakery7.webp";
 
-const BakeryCarousel =() => {
+const BakeryCarousel = () => {
   var settings = {
     dots: true,
     infinite: true,
@@ -22,28 +21,28 @@ const BakeryCarousel =() => {
   return (
     <Slider {...settings}>
       <div>
-        <Image src={img1} alt="img1"/>
+        <Image src={img1} alt="img1" />
       </div>
       <div>
-      <Image src={img2} alt="img2"/>
+        <Image src={img2} alt="img2" />
       </div>
       <div>
-      <Image src={img3} alt="img3"/>
+        <Image src={img3} alt="img3" />
       </div>
       <div>
-      <Image src={img4} alt="img4"/>
+        <Image src={img4} alt="img4" />
       </div>
       <div>
-      <Image src={img5} alt="img5"/>
+        <Image src={img5} alt="img5" />
       </div>
       <div>
-      <Image src={img6} alt="img4"/>
+        <Image src={img6} alt="img4" />
       </div>
       <div>
-      <Image src={img7} alt="img5"/>
+        <Image src={img7} alt="img5" />
       </div>
     </Slider>
   );
-}
+};
 
-export {BakeryCarousel};
+export { BakeryCarousel };

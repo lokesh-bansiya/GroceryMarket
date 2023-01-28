@@ -110,7 +110,7 @@ export default function Navbar() {
             >
               <Login />
             </Box>
-            <Box 
+            <Box
               padding={"1%"}
               size={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
               borderRadius="5px"

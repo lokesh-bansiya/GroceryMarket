@@ -6,6 +6,7 @@ import { Stack } from "react-bootstrap";
 import { Checkbox } from "@chakra-ui/react";
 import { SingleProductCard } from "../Components/ProductPageComponents/SingleProductCard";
 import { BeautyCarousel } from "../Components/ProductPageComponents/BeautyCarousel";
+import Footer from "./FooterPage";
 
 const Beauty = () => {
   const dispatch = useDispatch();
@@ -18,69 +19,77 @@ const Beauty = () => {
   }, [products.length, dispatch]);
 
   return (
-    <div className="ProductContainer">
+    <>
+      <div className="ProductContainer">
+        <section>
+          <BeautyCarousel />
+        </section>
+        <section>
+          <div className="sidebarAtProductPage">
+            <Stack spacing={5} direction="column">
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+              <Checkbox size="md" colorScheme="black" defaultChecked>
+                Checkbox
+              </Checkbox>
+            </Stack>
+          </div>
+          <div className="mainBoxAtProductPage">
+            {products.length &&
+              products
+                .filter((item) => item.category === "beauty")
+                .map((ele) => {
+                  return (
+                    <SingleProductCard
+                      key={ele._id}
+                      id={ele._id}
+                      brand={ele.brand}
+                      name={ele.name}
+                      mrp={ele.mrp}
+                      price={ele.price}
+                      quantity={ele.quantity}
+                      weight={ele.weight}
+                      category={ele.category}
+                      ImgSrc={ele.ImgSrc}
+                      sasta={ele.sasta}
+                      packet={ele.packet}
+                      isavailable={ele.isavailable}
+                      offers={ele.offers}
+                    />
+                  );
+                })}
+          </div>
+        </section>
+      </div>
       <section>
-        <BeautyCarousel />
+        <Footer />
       </section>
-      <section>
-        <div className="sidebarAtProductPage">
-          <Stack spacing={5} direction="column">
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-            <Checkbox size='md' colorScheme="black" defaultChecked>
-              Checkbox
-            </Checkbox>
-          </Stack>
-        </div>
-        <div className="mainBoxAtProductPage">
-          {products.length && products.filter((item) => item.category === "beauty").map((ele) => {
-              return (
-                <SingleProductCard
-                  key={ele._id}
-                  id={ele._id}
-                  brand={ele.brand}
-                  name={ele.name}
-                  mrp={ele.mrp}
-                  price={ele.price}
-                  quantity={ele.quantity}
-                  weight={ele.weight}
-                  category={ele.category}
-                  ImgSrc={ele.ImgSrc}
-                  sasta={ele.sasta}
-                  packet={ele.packet}
-                  isavailable={ele.isavailable}
-                  offers={ele.offers}
-                />
-              );
-            })}
-        </div>
-      </section>
-    </div>
+    </>
   );
 };
 

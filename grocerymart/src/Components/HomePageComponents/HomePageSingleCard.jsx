@@ -20,7 +20,6 @@ const HomePageSingleCard = ({
   isavailable,
   offers,
 }) => {
-
   const toast = useToast();
   const dispatch = useDispatch();
 
@@ -56,33 +55,45 @@ const HomePageSingleCard = ({
     });
   };
 
-
   return (
     <div className="SingleProductItemContainer">
-
       <div className="SPI_Box1">
-      <Link to={`/single_product_page/${id}`}><Image src={ImgSrc} alt={brand} /></Link>
+        <Link to={`/single_product_page/${id}`}>
+          <Image src={ImgSrc} alt={brand} />
+        </Link>
         <div>
-            {isavailable? <div className="green">⦿</div> : <div className="red">⦿</div>}
+          {isavailable ? (
+            <div className="green">⦿</div>
+          ) : (
+            <div className="red">⦿</div>
+          )}
         </div>
       </div>
-      
+
       <div className="SPI_Box2">
-        <p>{brand} <span>{category}</span></p>
+        <p>
+          {brand} <span>{category}</span>
+        </p>
         <p className="overflow">{name}</p>
         <p className="overflow">{weight}</p>
-        <p>{packet}</p>
+        <p className="overflow">{packet}</p>
       </div>
 
       <div className="SPI_Box3">
-        <div>Quan: <span>{quantity}</span></div>
+        <div className="overflow">
+          Quan: <span>{quantity}</span>
+        </div>
         <div>{offers}</div>
       </div>
 
-      <div className="SPI_Box5">Price: ₹{price} { mrp? <span> MRP: ₹{mrp} </span>: <></>}</div>
+      <div className="SPI_Box5">
+        Price: ₹{price} {mrp ? <span> MRP: ₹{mrp} </span> : <></>}
+      </div>
 
       <div className="SPI_Box4">
-        <button onClick={() => addToCart(id)}>Add <Image src={cart} alt="Add"/></button>
+        <button onClick={() => addToCart(id)}>
+          Add <Image src={cart} alt="Add" />
+        </button>
       </div>
     </div>
   );

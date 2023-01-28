@@ -1,28 +1,27 @@
+// HomePageAllProductsCarouselForExtraSmallScreen
+
 import React, { useEffect } from "react";
 import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts } from "../../Redux/appReducer/action";
 import { HomePageSingleCard } from "./HomePageSingleCard";
-import { getProductsByCategoryBakery } from "../../Redux/appReducer/action";
 
-const HomeCategoryBakery = () => {
+const HomePageAllProductsCarouselForSmallScreen = () => {
   const dispatch = useDispatch();
-  const products = useSelector(
-    (store) => store.appReducer.itemsByCategoryBakery
-  );
+  const products = useSelector((store) => store.appReducer.allProducts);
 
   var settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 5,
+    speed: 1700,
+    slidesToShow: 4,
+    slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
   };
 
   useEffect(() => {
     if (products.length === 0) {
-      dispatch(getProductsByCategoryBakery());
+      dispatch(getAllProducts());
     }
   }, [products.length, dispatch]);
 
@@ -53,4 +52,4 @@ const HomeCategoryBakery = () => {
   );
 };
 
-export { HomeCategoryBakery };
+export { HomePageAllProductsCarouselForSmallScreen };

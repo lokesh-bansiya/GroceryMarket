@@ -17,9 +17,18 @@ const AdminSideSingleUser = ({ username, email, id }) => {
           duration: 2000,
           position: "top",
           isClosable: true,
-          status:"warning",
+          status: "warning",
           render: () => (
-            <Box border="2px solid red" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="red.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
+            <Box
+              border="2px solid red"
+              textAlign="center"
+              borderRadius="10px"
+              fontWeight="bolder"
+              color="white"
+              p={3}
+              bg="red.500"
+              boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"
+            >
               {`User successfully deleted !`}
             </Box>
           ),
@@ -31,7 +40,7 @@ const AdminSideSingleUser = ({ username, email, id }) => {
   return (
     <div className="single_admin_container">
       <div>
-        <img src={user} alt="user"/>
+        <img src={user} alt="user" />
       </div>
       <div>
         <p>

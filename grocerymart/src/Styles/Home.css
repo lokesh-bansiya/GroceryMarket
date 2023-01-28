@@ -17,7 +17,7 @@
   display: none;
 }
 
-.section6_largeScreen{
+.section6_largeScreen {
   display: block;
   margin-top: 4%;
 }
@@ -26,7 +26,7 @@
   .HomeContainer {
     padding-top: 20%;
   }
-  
+
   .section3_mediumScreen {
     display: block;
   }
@@ -37,12 +37,11 @@
   }
 }
 
-
 @media all and (min-width: 281px) and (max-width: 400px) {
   .HomeContainer {
     padding-top: 25%;
   }
-  
+
   .section3_mediumScreen {
     display: block;
   }
@@ -51,5 +50,4 @@
   .section6_largeScreen {
     display: none;
   }
-  
 }

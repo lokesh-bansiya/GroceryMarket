@@ -1,4 +1,3 @@
-
 import { Box, Grid, GridItem, Image } from "@chakra-ui/react";
 import homekitchen1 from "../../Assets/home&kitchen1.webp";
 import homekitchen2 from "../../Assets/home&kitchen2.webp";
@@ -24,7 +23,13 @@ const HomePageSection11 = () => {
         Home and Kitchen
       </Box>
       <Grid
-        gridTemplateColumns={{ base: "repeat(2,1fr)", sm: "repeat(3,1fr)", md: "repeat(6,1fr)", lg: "repeat(6,1fr)",xl:"repeat(6,1fr)"}}
+        gridTemplateColumns={{
+          base: "repeat(2,1fr)",
+          sm: "repeat(3,1fr)",
+          md: "repeat(6,1fr)",
+          lg: "repeat(6,1fr)",
+          xl: "repeat(6,1fr)",
+        }}
         gap="2%"
         width="100%"
         margin="auto"

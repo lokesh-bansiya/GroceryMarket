@@ -62,7 +62,16 @@ const AdminSideProductEditPage = () => {
           position: "top",
           isClosable: true,
           render: () => (
-            <Box border="2px solid green" textAlign="center" borderRadius="10px" fontWeight="bolder" color="white" p={3} bg="blue.500" boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px">
+            <Box
+              border="2px solid green"
+              textAlign="center"
+              borderRadius="10px"
+              fontWeight="bolder"
+              color="white"
+              p={3}
+              bg="blue.500"
+              boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"
+            >
               {`Product Successfully Updated !`}
             </Box>
           ),
@@ -98,7 +107,7 @@ const AdminSideProductEditPage = () => {
   return (
     <div className="AdminSideProductEditContainer">
       <div className="admin_side_update_form_heading">
-      Grocery Mart Product Edit Page
+        Grocery Mart Product Edit Page
       </div>
       <div className="admin_side_form_box">
         <div>
@@ -265,7 +274,7 @@ const AdminSideProductEditPage = () => {
                 </Select>
 
                 <div>
-                    <img style={{width: "60%"}} src={additem} alt=""/>
+                  <img style={{ width: "60%" }} src={additem} alt="" />
                 </div>
 
                 <Button

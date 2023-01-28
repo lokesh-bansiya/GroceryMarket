@@ -8,31 +8,30 @@ import { getUserProfile } from "../../Redux/adminReducer/action";
 import { AdminMenu } from "../../Menu/AdminMenu";
 
 const AdminSideNavbar = () => {
+  const user = useSelector((store) => store.adminReducer.userprofile);
+  const dispatch = useDispatch();
+  const userKey = localStorage.getItem("userKey");
 
-   const user = useSelector((store) => store.adminReducer.userprofile);
-   const dispatch = useDispatch();
-   const userKey = localStorage.getItem("userKey");
+  useEffect(() => {
+    dispatch(getUserProfile(userKey));
+  }, [userKey, dispatch]);
 
-   useEffect(() => {
-      dispatch(getUserProfile(userKey));
-   },[userKey,dispatch]);
-   
   return (
     <div className="admin_navbar_outerbox">
       <div className="MenuPanel">
-        <AdminMenu/>
+        <AdminMenu />
       </div>
       <div className="adminSideDisplaynone">
-            <div className="AdminSideProfile">
-               <div>
-               <img src={admin} alt="Admin"/>
-               </div>
-               <div>
-               <p>{user.username}</p>
-               <p>{user.email}</p>
-               </div>
-            </div>
+        <div className="AdminSideProfile">
+          <div>
+            <img src={admin} alt="Admin" />
+          </div>
+          <div>
+            <p>{user.username}</p>
+            <p>{user.email}</p>
+          </div>
         </div>
+      </div>
       <div className="admin_navbar">
         <div>
           <Link to="/admin_dashboard">
@@ -69,10 +68,11 @@ const AdminSideNavbar = () => {
         </div>
         <div>
           <Link to="/admin_side_add_product">
-            <div><img src={black} alt="graph"/></div>
+            <div>
+              <img src={black} alt="graph" />
+            </div>
           </Link>
         </div>
-        
       </div>
     </div>
   );

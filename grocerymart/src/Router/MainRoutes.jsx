@@ -25,10 +25,7 @@ const MainRoutes = () => {
       <Route path="/nonveg" element={<NonVeg />} />
       <Route path="/bakery" element={<Bakery />} />
       <Route path="/beauty" element={<Beauty />} />
-      <Route
-        path="/single_product_page/:id"
-        element={<SingleProductPage/>}
-      />
+      <Route path="/single_product_page/:id" element={<SingleProductPage />} />
       <Route
         path="/cart"
         element={

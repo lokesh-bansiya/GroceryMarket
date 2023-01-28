@@ -80,11 +80,8 @@ const getProductsByCategoryVegetable = () => (dispatch) => {
     });
 };
 
-
-
 const getAllProducts = (category) => async (dispatch) => {
   if (category === "price_low=300&&price_high=700") {
-
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
       .get(`https://zany-bee-sarong.cyclic.app/products?${category}`, {
@@ -102,10 +99,7 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-
-  }
-  else if (category === "asc" || category === "desc") {
-
+  } else if (category === "asc" || category === "desc") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
       .get(`https://zany-bee-sarong.cyclic.app/products?sortBy=${category}`, {
@@ -123,17 +117,17 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-
-  }
-  else if (category) {
-
+  } else if (category) {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://zany-bee-sarong.cyclic.app/products/?category=${category}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      })
+      .get(
+        `https://zany-bee-sarong.cyclic.app/products/?category=${category}`,
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      )
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -144,9 +138,7 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-    
-  }
-  else {
+  } else {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
       .get(`https://zany-bee-sarong.cyclic.app/products`, {
@@ -167,50 +159,49 @@ const getAllProducts = (category) => async (dispatch) => {
   }
 };
 
-
-
 const getSingleProduct = (id) => async (dispatch) => {
   dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST });
-    return axios
-      .get(`https://zany-bee-sarong.cyclic.app/products/getById/${id}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      })
-      .then((res) => {
-        dispatch({
-          type: types.GET_SINGLE_PRODUCT_SUCCESS,
-          payload: res.data,
-        });
-      })
-      .catch((e) => {
-        dispatch({ type: types.GET_SINGLE_PRODUCT_FAILURE, payload: e });
-        console.log(e);
+  return axios
+    .get(`https://zany-bee-sarong.cyclic.app/products/getById/${id}`, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+    .then((res) => {
+      dispatch({
+        type: types.GET_SINGLE_PRODUCT_SUCCESS,
+        payload: res.data,
       });
+    })
+    .catch((e) => {
+      dispatch({ type: types.GET_SINGLE_PRODUCT_FAILURE, payload: e });
+      console.log(e);
+    });
 };
-
-
 
 const updateProduct = (id, payload) => async (dispatch) => {
   dispatch({ type: types.UPDATE_PRODUCT_REQUEST });
-    return axios
-      .patch(`https://zany-bee-sarong.cyclic.app/products/update/${id}`,payload, {
+  return axios
+    .patch(
+      `https://zany-bee-sarong.cyclic.app/products/update/${id}`,
+      payload,
+      {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
-      })
-      .then((res) => {
-        dispatch({
-          type: types.UPDATE_PRODUCT_SUCCESS,
-          payload: res.data,
-        });
-      })
-      .catch((e) => {
-        dispatch({ type: types.UPDATE_PRODUCT_FAILURE, payload: e });
-        console.log(e);
+      }
+    )
+    .then((res) => {
+      dispatch({
+        type: types.UPDATE_PRODUCT_SUCCESS,
+        payload: res.data,
       });
+    })
+    .catch((e) => {
+      dispatch({ type: types.UPDATE_PRODUCT_FAILURE, payload: e });
+      console.log(e);
+    });
 };
-
 
 export {
   getProductsByBrandsAmul,

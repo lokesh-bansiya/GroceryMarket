@@ -56,20 +56,21 @@ const SingleProductCard = ({
   };
   return (
     <div className="SingleProductCardContainer">
-      
-        <div className="SPP_Box1">
-          <div>
-          <Link to={`/single_product_page/${id}`}> <Image src={ImgSrc} alt={brand} /></Link>
-          </div>
-          <div>
-            {isavailable ? (
-              <div className="green">⦿</div>
-            ) : (
-              <div className="red">⦿</div>
-            )}
-          </div>
+      <div className="SPP_Box1">
+        <div>
+          <Link to={`/single_product_page/${id}`}>
+            {" "}
+            <Image src={ImgSrc} alt={brand} />
+          </Link>
         </div>
-      
+        <div>
+          {isavailable ? (
+            <div className="green">⦿</div>
+          ) : (
+            <div className="red">⦿</div>
+          )}
+        </div>
+      </div>
 
       <div className="SPP_Box2">
         <p>
