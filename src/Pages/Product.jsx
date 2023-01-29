@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../Redux/appReducer/action";
 import "../Styles/Products.css";
 import { ProductPageCarousel } from "../Components/ProductPageComponents/ProductPageCarousel";
-import { Stack } from "react-bootstrap";
-import { Checkbox } from "@chakra-ui/react";
+import { Stack,Box  } from "@chakra-ui/react";
 import { SingleProductCard } from "../Components/ProductPageComponents/SingleProductCard";
 import Footer from "./FooterPage";
+
+// onClick={() => categoryhandle("vegetable")}
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -26,37 +27,9 @@ const Product = () => {
         </section>
         <section>
           <div className="sidebarAtProductPage">
-            <Stack spacing={5} direction="column">
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
-              <Checkbox size="md" colorScheme="black" defaultChecked>
-                Checkbox
-              </Checkbox>
+            <Stack direction="column">
+              <Box></Box>
+              
             </Stack>
           </div>
           <div className="mainBoxAtProductPage">
