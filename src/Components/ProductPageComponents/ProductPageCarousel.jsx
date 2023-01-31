@@ -35,71 +35,71 @@ const ProductPageCarousel = () => {
   };
   return (
     <Slider {...settings}>
-      <div>
-        <Image src={img1} alt="img1" />
+      <div width="100%">
+        <Image width="100%" src={img1} alt="img1" />
       </div>
-      <div>
-        <Image src={img2} alt="img2" />
+      <div width="100%">
+        <Image width="100%" src={img2} alt="img2" />
       </div>
-      <div>
-        <Image src={img21} alt="img1" />
+      <div width="100%">
+        <Image width="100%" src={img21} alt="img1" />
       </div>
-      <div>
-        <Image src={img22} alt="img2" />
+      <div width="100%">
+        <Image width="100%" src={img22} alt="img2" />
       </div>
-      <div>
-        <Image src={img3} alt="img3" />
+      <div width="100%">
+        <Image width="100%" src={img3} alt="img3" />
       </div>
-      <div>
-        <Image src={img4} alt="img4" />
+      <div width="100%">
+        <Image width="100%" src={img4} alt="img4" />
       </div>
-      <div>
-        <Image src={img5} alt="img5" />
+      <div width="100%">
+        <Image width="100%" src={img5} alt="img5" />
       </div>
-      <div>
-        <Image src={img6} alt="img1" />
+      <div width="100%">
+        <Image width="100%" src={img6} alt="img1" />
       </div>
-      <div>
-        <Image src={img11} alt="img2" />
+      <div width="100%">
+        <Image width="100%" src={img11} alt="img2" />
       </div>
-      <div>
-        <Image src={img14} alt="img3" />
+      <div width="100%">
+        <Image width="100%" src={img14} alt="img3" />
       </div>
-      <div>
-        <Image src={img17} alt="img4" />
+      <div width="100%">
+        <Image width="100%" src={img17} alt="img4" />
       </div>
-      <div>
-        <Image src={img7} alt="img5" />
+      <div width="100%">
+        <Image width="100%" src={img7} alt="img5" />
       </div>
-      <div>
-        <Image src={img12} alt="img1" />
+      <div width="100%">
+        <Image width="100%" src={img12} alt="img1" />
       </div>
-      <div>
-        <Image src={img15} alt="img2" />
+      <div width="100%">
+        <Image width="100%" src={img15} alt="img2" />
       </div>
-      <div>
-        <Image src={img18} alt="img3" />
+      <div width="100%">
+        <Image width="100%" src={img18} alt="img3" />
       </div>
-      <div>
-        <Image src={img8} alt="img4" />
+      <div width="100%">
+        <Image width="100%" src={img8} alt="img4" />
       </div>
-      <div>
-        <Image src={img13} alt="img5" />
+      <div width="100%">
+        <Image width="100%" src={img13} alt="img5" />
       </div>
-      <div>
-        <Image src={img16} alt="img1" />
+      <div width="100%">
+        <Image width="100%" src={img16} alt="img1" />
       </div>
-      <div>
-        <Image src={img20} alt="img2" />
+      <div width="100%">
+        <Image width="100%" src={img20} alt="img2" />
       </div>
-      <div>
-        <Image src={img9} alt="img3" />
+      <div width="100%">
+        <Image width="100%" src={img9} alt="img3" />
       </div>
-      <div>
-        <Image src={img10} alt="img4" />
+      <div width="100%">
+        <Image width="100%" src={img10} alt="img4" />
       </div>
-      <div>
-        <Image src={img19} alt="img5" />
+      <div width="100%">
+        <Image width="100%" src={img19} alt="img5" />
       </div>
     </Slider>
   );

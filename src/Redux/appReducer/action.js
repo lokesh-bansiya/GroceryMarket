@@ -20,7 +20,6 @@ const getProductsByBrandsAmul = () => (dispatch) => {
 
 const getProductsByCategoryBeauty = () => (dispatch) => {
   dispatch({ type: types.GET_BY_CATEGORY_BEAUTY_REQUEST });
-  console.log("running");
   return axios
     .get(`https://zany-bee-sarong.cyclic.app/products?category=beauty`, {
       headers: {
@@ -41,7 +40,6 @@ const getProductsByCategoryBeauty = () => (dispatch) => {
 
 const getProductsByCategoryBakery = () => (dispatch) => {
   dispatch({ type: types.GET_BY_CATEGORY_BAKERY_REQUEST });
-  console.log("running");
   return axios
     .get(`https://zany-bee-sarong.cyclic.app/products?category=bakery`, {
       headers: {

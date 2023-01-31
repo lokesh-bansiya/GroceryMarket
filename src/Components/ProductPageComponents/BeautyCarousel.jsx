@@ -16,14 +16,14 @@ const BeautyCarousel = () => {
   };
   return (
     <Slider {...settings}>
-      <div>
-        <Image src={img1} alt="img1" />
+      <div width="100%">
+        <Image width="100%" src={img1} alt="img1" />
       </div>
-      <div>
-        <Image src={img2} alt="img2" />
+      <div width="100%">
+        <Image width="100%" src={img2} alt="img2" />
       </div>
-      <div>
-        <Image src={img3} alt="img3" />
+      <div width="100%">
+        <Image width="100%" src={img3} alt="img3" />
       </div>
     </Slider>
   );

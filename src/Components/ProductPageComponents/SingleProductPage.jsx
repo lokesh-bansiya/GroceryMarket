@@ -101,7 +101,7 @@ const SingleProductPage = () => {
         borderRadius="7px"
         display="flex"
         justifyContent="space-between"
-        width="80%"
+        width="70%"
         margin="auto"
         border="1px solid black"
       >
@@ -125,10 +125,10 @@ const SingleProductPage = () => {
             <Text
               color="darkgreen"
               fontSize={{
-                base: "60%",
-                sm: "70%",
+                base: "50%",
+                sm: "60%",
                 md: "90%",
-                lg: "120%",
+                lg: "110%",
                 xl: "130%",
               }}
               fontWeight="500"
@@ -138,8 +138,8 @@ const SingleProductPage = () => {
             {singleProduct.weight ? (
               <Text
                 fontSize={{
-                  base: "60%",
-                  sm: "70%",
+                  base: "50%",
+                  sm: "60%",
                   md: "90%",
                   lg: "100%",
                   xl: "110%",
@@ -153,8 +153,8 @@ const SingleProductPage = () => {
             )}
             <Text
               fontSize={{
-                base: "60%",
-                sm: "70%",
+                base: "50%",
+                sm: "60%",
                 md: "95%",
                 lg: "100%",
                 xl: "110%",
@@ -166,13 +166,14 @@ const SingleProductPage = () => {
             {singleProduct.sasta ? (
               <Text
                 fontSize={{
-                  base: "60%",
-                  sm: "70%",
+                  base: "50%",
+                  sm: "60%",
                   md: "95%",
                   lg: "100%",
                   xl: "110%",
                 }}
                 fontWeight="500"
+                color="blue.600"
               >
                 {singleProduct.sasta}
               </Text>
@@ -182,8 +183,8 @@ const SingleProductPage = () => {
             {singleProduct.packet ? (
               <Text
                 fontSize={{
-                  base: "60%",
-                  sm: "70%",
+                  base: "50%",
+                  sm: "60%",
                   md: "90%",
                   lg: "100%",
                   xl: "110%",
@@ -198,7 +199,7 @@ const SingleProductPage = () => {
             {singleProduct.offers ? (
               <Text
                 fontSize={{
-                  base: "60%",
+                  base: "50%",
                   sm: "60%",
                   md: "90%",
                   lg: "100%",
@@ -213,23 +214,48 @@ const SingleProductPage = () => {
             )}
             <Text
               display="flex"
+              flexDirection="column"
               width="80%"
               justifyContent="space-between"
               fontSize={{
                 base: "50%",
                 sm: "60%",
-                md: "90%",
-                lg: "110%",
-                xl: "110%",
+                md: "70%",
+                lg: "90%",
+                xl: "100%",
               }}
               fontWeight="500"
             >
               <span>
-                Price:- ₹{singleProduct.quantity * singleProduct.price}
+                Price for one item:- ₹{singleProduct.price}
+              </span>{" "}
+              {singleProduct.mrp ? (
+                <Text>MRP for one item:- <span className="strickPrice">
+                  ₹{singleProduct.mrp}{" "}
+                </span></Text>
+              ) : (
+                <></>
+              )}
+            </Text>
+            <Text
+              display="flex"
+              flexDirection={{base: "column", sm:"row", md:"row",lg:"row",xl:"row"}}
+              justifyContent="space-between"
+              fontSize={{
+                base: "50%",
+                sm: "60%",
+                md: "80%",
+                lg: "90%",
+                xl: "100%",
+              }}
+              fontWeight="500"
+            >
+              <span>
+                Total Price:- ₹{singleProduct.quantity * singleProduct.price}
               </span>{" "}
               {singleProduct.mrp ? (
                 <span className="strickPrice">
-                  MRP:- ₹{singleProduct.quantity * singleProduct.mrp}{" "}
+                  Total MRP:- ₹{singleProduct.quantity * singleProduct.mrp}{" "}
                 </span>
               ) : (
                 <></>
@@ -278,7 +304,7 @@ const SingleProductPage = () => {
                 +
               </button>
             </Box>
-            <Box marginTop="5%">
+            <Box width={{base: "50%",sm:"50%",md:"60%",lg:"80%",xl:"80%"}} marginTop="5%">
               <Button
                 backgroundColor="blue.400"
                 padding="1%"
