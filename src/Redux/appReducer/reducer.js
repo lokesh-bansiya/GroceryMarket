@@ -10,6 +10,7 @@ const initialState = {
   isLoadingAllProduct: false,
   isLoadingBakery: false,
   isLoadingBeauty: false,
+  isLoadingNonVeg: false,
   isLoadingVegetables: false,
   isLoading: false,
   isError: false,

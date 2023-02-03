@@ -79,14 +79,10 @@ const getProductsByCategoryVegetable = () => (dispatch) => {
 };
 
 const getAllProducts = (category) => async (dispatch) => {
-  if (category === "price_low=300&&price_high=700") {
+  if (category === "price_low=0&&price_high=300") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://zany-bee-sarong.cyclic.app/products?${category}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      })
+      .get(`https://zany-bee-sarong.cyclic.app/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -97,14 +93,11 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  } else if (category === "asc" || category === "desc") {
+  }
+  else if (category === "price_low=300&&price_high=600") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://zany-bee-sarong.cyclic.app/products?sortBy=${category}`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      })
+      .get(`https://zany-bee-sarong.cyclic.app/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -115,17 +108,115 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  } else if (category) {
+  }
+  else if (category === "price_low=600&&price_high=1000") {
+    dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
+    return axios
+      .get(`https://zany-bee-sarong.cyclic.app/products?${category}`)
+      .then((res) => {
+        dispatch({
+          type: types.GET_ALL_PRODUCTS_SUCCESS,
+          payload: res.data,
+        });
+      })
+      .catch((e) => {
+        dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
+        console.log(e);
+      });
+  }
+  else if (category === "price_low=1000&&price_high=1500") {
+    dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
+    return axios
+      .get(`https://zany-bee-sarong.cyclic.app/products?${category}`)
+      .then((res) => {
+        dispatch({
+          type: types.GET_ALL_PRODUCTS_SUCCESS,
+          payload: res.data,
+        });
+      })
+      .catch((e) => {
+        dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
+        console.log(e);
+      });
+  }
+  else if (category === "price_low=1500&&price_high=2000") {
+    dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
+    return axios
+      .get(`https://zany-bee-sarong.cyclic.app/products?${category}`)
+      .then((res) => {
+        dispatch({
+          type: types.GET_ALL_PRODUCTS_SUCCESS,
+          payload: res.data,
+        });
+      })
+      .catch((e) => {
+        dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
+        console.log(e);
+      });
+  } 
+  else if (category === "price_low=2000&&price_high=5000") {
+    dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
+    return axios
+      .get(`https://zany-bee-sarong.cyclic.app/products?${category}`)
+      .then((res) => {
+        dispatch({
+          type: types.GET_ALL_PRODUCTS_SUCCESS,
+          payload: res.data,
+        });
+      })
+      .catch((e) => {
+        dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
+        console.log(e);
+      });
+  }
+  else if (category === "asc" || category === "desc") {
+    dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
+    return axios
+      .get(`https://zany-bee-sarong.cyclic.app/products?sortBy=${category}`)
+      .then((res) => {
+        dispatch({
+          type: types.GET_ALL_PRODUCTS_SUCCESS,
+          payload: res.data,
+        });
+      })
+      .catch((e) => {
+        dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
+        console.log(e);
+      });
+  }
+  else if (category === "Fresho" ||
+  category === "Ocean Secret" ||
+  category === "ABHI EGGS" ||
+  category === "Milky Mist" ||
+  category === "Amul" ||
+  category === "Medimix" ||
+  category === "Ponds" ||
+  category === "Loreal Paris" ||
+  category === "Sunsilk" ||
+  category === "Dettol" ||
+  category === "Colgate" ||
+  category === "Cinthol" ||
+  category === "Sensodyne" ||
+  category === "Mysore Sandal" ||
+  category === "STAYFREE" ||
+  category === "Nivea" ||
+  category === "Nestle" ||
+  category === "Mother Dairy" ||
+  category === "Hamam" ||
+  category === "Pears" ||
+  category === "Prasuma" ||
+  category === "Oral-B" ||
+  category === "Vaseline" ||
+  category === "Margo" ||
+  category === "Nandini" ||
+  category === "Britannia" ||
+  category === "Gillette" ||
+  category === "iD Fresho"
+  ) {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
       .get(
-        `https://zany-bee-sarong.cyclic.app/products/?category=${category}`,
-        {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-          },
-        }
-      )
+        `https://zany-bee-sarong.cyclic.app/products/?brand=${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -136,14 +227,43 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  } else {
+  }
+   else if (category) {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://zany-bee-sarong.cyclic.app/products`, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
+      .get(
+        `https://zany-bee-sarong.cyclic.app/products/?category=${category}`)
+      .then((res) => {
+        dispatch({
+          type: types.GET_ALL_PRODUCTS_SUCCESS,
+          payload: res.data,
+        });
       })
+      .catch((e) => {
+        dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
+        console.log(e);
+      });
+  } 
+  else if (!category) {
+    dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
+    return axios
+      .get(
+        `https://zany-bee-sarong.cyclic.app/products`)
+      .then((res) => {
+        dispatch({
+          type: types.GET_ALL_PRODUCTS_SUCCESS,
+          payload: res.data,
+        });
+      })
+      .catch((e) => {
+        dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
+        console.log(e);
+      });
+    }
+  else {
+    dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
+    return axios
+      .get(`https://zany-bee-sarong.cyclic.app/products`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,

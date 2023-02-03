@@ -1,4 +1,4 @@
-import { Box, Image, Button } from "@chakra-ui/react";
+import { Box, Image, Button, Grid, Skeleton, SkeletonText } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SingleCartCard } from "../Components/CartPageComponent/SingleCartCard";
@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 const CartPage = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cartReducer.cartItems);
+  const loading = useSelector((store) => store.appReducer.isLoadingCart);
   const [ison, setIson] = useState(false);
   const [total, setTotal] = useState(0);
   const [totalmrp, setTotalmrp] = useState(0);
@@ -43,6 +44,39 @@ const CartPage = () => {
       setTotalmrp(value);
     }
   }, [cartItems, cartItems.length]);
+
+
+  if (loading) {
+    return (
+      <Grid
+        w={{
+          base: "90%",
+          md: "80%",
+          lg: "80%",
+        }}
+        m="auto"
+        templateColumns={{
+          base: "repeat(1,1fr)"
+        }}
+        gap="5"
+        p="10"
+      >
+        {new Array(20).fill(0).map((e, i) => (
+          <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+            <Skeleton size="10" h="110px" />
+            <SkeletonText
+              w="80%"
+              m="auto"
+              mb="20px"
+              mt="4"
+              noOfLines={2}
+              spacing="4"
+            />
+          </Box>
+        ))}
+      </Grid>
+    );
+  }
 
   return (
     <>
