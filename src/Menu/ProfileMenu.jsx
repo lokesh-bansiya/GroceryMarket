@@ -122,7 +122,7 @@ const ProfileMenu = () => {
               }}
             >
               {" "}
-             {token ? <>{cartItems.length}</>: <>{0}</> } Items
+             {!token ? <>{cartItems.length}</>: <>{0}</> } Items
             </span>
           </MenuItem></Link>
         ) : (
@@ -153,7 +153,7 @@ const ProfileMenu = () => {
         ) : (
           <></>
         )}
-        {userProfile ? (
+        {userProfile && token ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"
