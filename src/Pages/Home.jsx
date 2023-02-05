@@ -128,22 +128,22 @@ const Home = () => {
                   lg: "repeat(5,1fr)",
                   xl: "repeat(5,1fr)",
                 }}
-                gap="10"
-                p="10"
+                gap="2"
+                p="2"
               >
-                {new Array(5).fill(0).map((e, i) => (
-                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
-                    <Skeleton size="15" h="150px" />
-                    <SkeletonText
-                      w="80%"
-                      m="auto"
-                      mb="20px"
-                      mt="4"
-                      noOfLines={5}
-                      spacing="1"
-                    />
-                  </Box>
-                ))}
+              {new Array(5).fill(0).map((e, i) => (
+                <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                  <Skeleton size="15" h="150px" />
+                  <SkeletonText
+                    w="80%"
+                    m="auto"
+                    mb="20px"
+                    mt="4"
+                    noOfLines={5}
+                    spacing="1"
+                  />
+                </Box>
+              ))}
               </Grid>
             ) : (
               <>
