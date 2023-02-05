@@ -122,7 +122,7 @@ const ProfileMenu = () => {
               }}
             >
               {" "}
-              token ? {cartItems.length}: {0} Items
+             {token ? <>{cartItems.length}</>: <>{0}</> } Items
             </span>
           </MenuItem></Link>
         ) : (
