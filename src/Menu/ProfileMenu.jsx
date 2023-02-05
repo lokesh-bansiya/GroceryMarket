@@ -21,6 +21,8 @@ const ProfileMenu = () => {
   const userKey = localStorage.getItem("userKey") || "";
   const toast = useToast();
 
+  const token = localStorage.getItem("token");
+
   const logoutHandler = () => {
     if (userKey) {
       // localStorage.removeItem("userKey");
@@ -120,7 +122,7 @@ const ProfileMenu = () => {
               }}
             >
               {" "}
-              {cartItems.length} Items
+              token ? {cartItems.length}: {0} Items
             </span>
           </MenuItem></Link>
         ) : (
