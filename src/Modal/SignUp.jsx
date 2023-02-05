@@ -21,7 +21,6 @@ import { useDispatch } from "react-redux";
 import logo from "../Assets/redbaglogosmall.png";
 import Login from "./Login";
 import { signUp } from "../Redux/authReducer/action";
-import { useNavigate } from "react-router-dom";
 
 const initialSignUpState = {
   username: "",
@@ -65,7 +64,6 @@ export default function SignUp() {
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
   const [info, setInfo] = useState("user");
-  const navigate = useNavigate();
 
   const [userState, setUserState] = useReducer(
     signUpReducer,
@@ -109,7 +107,7 @@ export default function SignUp() {
           ),
         });
         onClose();
-        navigate("/login");
+        // navigate();
       }, 3000);
       return () => clearTimeout(timer);
     } else {

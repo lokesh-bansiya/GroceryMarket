@@ -16,19 +16,17 @@ import { getCartItems } from "../Redux/cartReducer/action";
 
 const ProfileMenu = () => {
   const dispatch = useDispatch();
-  const userProfile = useSelector((state) => state.authReducer.userProfile);
+  var userProfile = useSelector((state) => state.authReducer.userProfile);
   const cartItems = useSelector((store) => store.cartReducer.cartItems);
   const userKey = localStorage.getItem("userKey") || "";
   const toast = useToast();
 
-  const token = localStorage.getItem("token");
-
   const logoutHandler = () => {
     if (userKey) {
-      // localStorage.removeItem("userKey");
-      // localStorage.remoreItem("adminID");
-      // localStorage.removeItem("token");
+      
       localStorage.clear();
+      userProfile = "";
+
       toast({
         title: "User signed up!",
         description: "We've added your product.",
@@ -58,7 +56,7 @@ const ProfileMenu = () => {
     if (userProfile.length === 0) {
       dispatch(getProfile(userKey));
     }
-  }, [userKey, userProfile.length, dispatch]);
+  });
 
   useEffect(() => {
     if (cartItems.length === 0) {
@@ -122,7 +120,7 @@ const ProfileMenu = () => {
               }}
             >
               {" "}
-             {!token ? <>{cartItems.length}</>: <>{0}</> } Items
+             {cartItems.length} Items
             </span>
           </MenuItem></Link>
         ) : (
@@ -153,7 +151,7 @@ const ProfileMenu = () => {
         ) : (
           <></>
         )}
-        {userProfile && token ? (
+        {userProfile ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"

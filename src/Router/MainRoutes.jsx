@@ -15,15 +15,11 @@ import { NonVeg } from "../Pages/NonVeg";
 import { Bakery } from "../Pages/Bakery";
 import { Beauty } from "../Pages/Beauty";
 import { SingleProductPage } from "../Components/ProductPageComponents/SingleProductPage";
-import Login from "../Modal/Login";
-import SignUp from "../Modal/SignUp";
 
 const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
       <Route path="/products" element={<Product />} />
       <Route path="/vegetables" element={<Vegetables />} />
       <Route path="/nonveg" element={<NonVeg />} />

@@ -21,8 +21,6 @@ import logo from "../Assets/redbaglogosmall.png";
 import { getProfile, login } from "../Redux/authReducer/action";
 import SignUp from "./SignUp";
 
-
-
 const initialLoginState = {
   email: "",
   password: "",
@@ -47,7 +45,6 @@ const loginReducer = (state, action) => {
 };
 
 
-
 export default function Login() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const initialRef = React.useRef(null);
@@ -65,6 +62,7 @@ export default function Login() {
     if (loginState.email !== "" && loginState.password !== "") {
       dispatch(login(loginState))
       dispatch(getProfile(userKey))
+      
         const timer = setTimeout(() => {
           var msg = localStorage.getItem("msg");
           if (!msg) {

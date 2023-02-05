@@ -41,15 +41,18 @@ const reducer = (state = initialState, action) => {
     case types.GET_BY_ID_CART_ITEMS_REQUEST:
       return {
         ...state,
+        isLoadingCart: true,
       };
     case types.GET_BY_ID_CART_ITEMS_SUCCESS:
       return {
         ...state,
         singleCartItem: payload,
+        isLoadingCart: false,
       };
     case types.GET_BY_ID_CART_ITEMS_FAILURE:
       return {
         ...state,
+        isLoadingCart: false,
       };
     default:
       return state;

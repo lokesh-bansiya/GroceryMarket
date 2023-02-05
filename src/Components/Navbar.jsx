@@ -1,13 +1,12 @@
 import { Box, Flex, Input, Image } from "@chakra-ui/react";
 import logo from "../Assets/redCart.png";
 import cart from "../Assets/cart.jpg";
-import SignUp from "../Modal/SignUp";
-import Login from "../Modal/Login";
 import { ProductsMenu } from "../Menu/ProductsMenu";
 import { CategoryMenu } from "../Menu/CategoryMenu";
 import MobileScreenMenu from "../Drawer/MobileScreenMenu";
 import { Link } from "react-router-dom";
 import { ProfileMenu } from "../Menu/ProfileMenu";
+import SignUpLogin from "../Modal/SignUpLogin";
 
 export default function Navbar() {
   return (
@@ -100,15 +99,26 @@ export default function Navbar() {
           >
             <Box
               padding={"1%"}
+              width="30%"
               size={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
               borderRadius="5px"
               fontSize={"110%"}
+              display="flex"
+              justifyContent="center"
               fontWeight={1000}
               color="white"
-              bg={"blue.400"}
-              _hover={{ bg: "blue.300" }}
             >
-              <Login />
+              <Box width="75%">
+                <Link to="/cart">
+                  <Image
+                    margin="3%"
+                    borderRadius="50%"
+                    width="100%"
+                    src={cart}
+                    alt="Cart"
+                  />
+                </Link>
+              </Box>
             </Box>
             <Box
               padding={"1%"}
@@ -120,7 +130,7 @@ export default function Navbar() {
               bg={"pink.500"}
               _hover={{ bg: "pink.400" }}
             >
-              <SignUp />
+              <SignUpLogin />
             </Box>
           </Flex>
         </Box>
@@ -145,31 +155,18 @@ export default function Navbar() {
             <MobileScreenMenu />
           </Box>
         </Box>
-        <Box width={{ base: "30%", sm: "20%", md: "12%", lg: "10%" }}>
-          <Flex
-            flexDirection="row"
-            alignItems="center"
-            width="100%"
-            border="1px solid blue"
-            bg={"blue.400"}
-            borderRadius="10px"
-            justifyContent="space-around"
-          >
-            <Box width="30%">
-              <Link to="/cart">
-                <Image
-                  margin="3%"
-                  borderRadius="50%"
-                  width="100%"
-                  src={cart}
-                  alt="Cart"
-                />
-              </Link>
-            </Box>
-            <Box width="30%">
-              <ProfileMenu />
-            </Box>
-          </Flex>
+        <Box
+          display="flex"
+          width={{ base: "9%", sm: "6%", md: "5%", lg: "3%" }}
+          flexDirection="row"
+          alignItems="center"
+          border="1px solid blue"
+          bg={"blue.400"}
+          borderRadius="10px"
+          justifyContent="center">
+          <Box width="80%">
+            <ProfileMenu />
+          </Box>
         </Box>
       </Flex>
     </Box>
