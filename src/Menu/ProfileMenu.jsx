@@ -23,9 +23,10 @@ const ProfileMenu = () => {
 
   const logoutHandler = () => {
     if (userKey) {
-      localStorage.removeItem("userKey");
-      localStorage.remoreItem("adminID");
-      localStorage.removeItem("token");
+      // localStorage.removeItem("userKey");
+      // localStorage.remoreItem("adminID");
+      // localStorage.removeItem("token");
+      localStorage.clear();
       toast({
         title: "User signed up!",
         description: "We've added your product.",
