@@ -16,7 +16,6 @@ import homebanner from "../Assets/homebanner.webp";
 import { HomePageSection10 } from "../Components/HomePageComponents/HomePageSection10";
 import { HomePageSection11 } from "../Components/HomePageComponents/HomePageSection11";
 import { useSelector } from "react-redux";
-import loading from "../Assets/loadingforhome.gif";
 import error from "../AdminSide/AdminAssets/serverError.gif";
 import Footer from "./FooterPage";
 import { HomeCategoryBakeryForSmallScreen } from "../Components/HomePageComponents/HomeCategoryBakeryForSmallScreen";
@@ -30,7 +29,6 @@ import { HomePageAllProductsCarouselForExtraSmallScreen } from "../Components/Ho
 
 const Home = () => {
   const isError = useSelector((store) => store.appReducer.isError);
-  const isLoading = useSelector((store) => store.appReducer.isLoading);
   const isLoadingBakery = useSelector((store) => store.appReducer.isLoadingBakery);
   const isLoadingBeauty = useSelector((store) => store.appReducer.isLoadingBeauty);
   const isLoadingVegetables = useSelector((store) => store.appReducer.isLoadingVegetables);
@@ -38,35 +36,6 @@ const Home = () => {
 
   return (
     <>
-      {isLoading ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
-            position: "absolute",
-            zIndex: "10",
-            width: "100%",
-            paddingTop: "15%",
-          }}
-        >
-          <div>
-            <img
-              style={{
-                width: "50%",
-                margin: "auto",
-                marginBottom: "5%",
-              }}
-              src={loading}
-              alt="loading..."
-            />
-          </div>
-        </div>
-      ) : (
-        <></>
-      )}
-
       {isError ? (
         <div
           style={{
@@ -103,13 +72,115 @@ const Home = () => {
       )}
       <div className="HomeContainer">
         <section className="section1">
-          <HomePageCarouselOne />
+          {
+            isLoadingAllProduct ? (
+              <Grid
+                w={{
+                  base: "100%",
+                  md: "90%",
+                  lg: "80%",
+                }}
+                m="auto"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                }}
+                gap="2"
+                p="2"
+              >
+                {new Array(1).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="150px" />
+                    <SkeletonText
+                      w="80%"
+                      m="auto"
+                      mb="20px"
+                      mt="4"
+                      noOfLines={2}
+                      spacing="1"
+                    />
+                  </Box>
+                ))}
+              </Grid>
+            ) : (
+              <>
+                <HomePageCarouselOne />
+              </>
+            )
+          }
         </section>
         <section>
-          <HomePageSection2 />
+          {
+            isLoadingAllProduct ? (
+              <Grid
+                w={{
+                  base: "100%",
+                  md: "90%",
+                  lg: "80%",
+                }}
+                m="auto"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                  sm: "repeat(2,1fr)",
+                  md: "repeat(6,1fr)",
+                  lg: "repeat(6,1fr)",
+                  xl: "repeat(6,1fr)",
+                }}
+                gap="2"
+                p="2"
+              >
+                {new Array(6).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="30px" />
+                  </Box>
+                ))}
+              </Grid>
+            ) : (
+              <>
+                <HomePageSection2 />
+              </>
+            )
+          }
         </section>
         <section>
-          <HomePageSection10 />
+          {
+            isLoadingAllProduct ? (
+              <Grid
+                w={{
+                  base: "100%",
+                  md: "90%",
+                  lg: "80%",
+                }}
+                m="auto"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                  sm: "repeat(2,1fr)",
+                  md: "repeat(6,1fr)",
+                  lg: "repeat(6,1fr)",
+                  xl: "repeat(6,1fr)",
+                }}
+                gap="2"
+                p="2"
+              >
+                {new Array(6).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="70px" />
+                    <SkeletonText
+                      w="80%"
+                      m="auto"
+                      mb="5px"
+                      mt="2"
+                      noOfLines={2}
+                      spacing="1"
+                    />
+                  </Box>
+                ))}
+              </Grid>
+            ) : (
+              <>
+                <HomePageSection10 />
+              </>
+            )
+          }
         </section>
         <section className="section3_largeScreen">
           {
@@ -131,19 +202,19 @@ const Home = () => {
                 gap="2"
                 p="2"
               >
-              {new Array(5).fill(0).map((e, i) => (
-                <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
-                  <Skeleton size="15" h="150px" />
-                  <SkeletonText
-                    w="80%"
-                    m="auto"
-                    mb="20px"
-                    mt="4"
-                    noOfLines={5}
-                    spacing="1"
-                  />
-                </Box>
-              ))}
+                {new Array(5).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="150px" />
+                    <SkeletonText
+                      w="80%"
+                      m="auto"
+                      mb="5px"
+                      mt="4"
+                      noOfLines={3}
+                      spacing="1"
+                    />
+                  </Box>
+                ))}
               </Grid>
             ) : (
               <>
@@ -186,7 +257,46 @@ const Home = () => {
         </section>
 
         <section>
-          <HomePageSection4 />
+          {
+            isLoadingAllProduct ? (
+              <Grid
+                w={{
+                  base: "100%",
+                  md: "90%",
+                  lg: "80%",
+                }}
+                m="auto"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                  sm: "repeat(2,1fr)",
+                  md: "repeat(4,1fr)",
+                  lg: "repeat(4,1fr)",
+                  xl: "repeat(4,1fr)",
+                }}
+                gap="2"
+                p="2"
+              >
+                {new Array(4).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="100px" />
+                    <SkeletonText
+                      w="80%"
+                      m="auto"
+                      mb="20px"
+                      mt="4"
+                      noOfLines={2}
+                      spacing="1"
+                    />
+                  </Box>
+                ))}
+              </Grid>
+            ) : (
+              <>
+                <HomePageSection4 />
+              </>
+            )
+          }
+
         </section>
         <section className="section3_largeScreen">
           <Box
@@ -272,7 +382,46 @@ const Home = () => {
 
         </section>
         <section>
-          <HomePageSection5 />
+          {
+            isLoadingAllProduct ? (
+              <Grid
+                w={{
+                  base: "100%",
+                  md: "90%",
+                  lg: "80%",
+                }}
+                m="auto"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                  sm: "repeat(2,1fr)",
+                  md: "repeat(6,1fr)",
+                  lg: "repeat(6,1fr)",
+                  xl: "repeat(6,1fr)",
+                }}
+                gap="2"
+                p="2"
+              >
+                {new Array(6).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="80px" />
+                    <SkeletonText
+                      w="80%"
+                      m="auto"
+                      mb="20px"
+                      mt="4"
+                      noOfLines={3}
+                      spacing="1"
+                    />
+                  </Box>
+                ))}
+              </Grid>
+            ) : (
+              <>
+                <HomePageSection5 />
+              </>
+            )
+          }
+
         </section>
         <section className="section6_largeScreen">
           <Box
@@ -358,7 +507,46 @@ const Home = () => {
 
         </section>
         <section>
-          <HomePageSection11 />
+          {
+            isLoadingAllProduct ? (
+              <Grid
+                w={{
+                  base: "100%",
+                  md: "90%",
+                  lg: "80%",
+                }}
+                m="auto"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                  sm: "repeat(2,1fr)",
+                  md: "repeat(6,1fr)",
+                  lg: "repeat(6,1fr)",
+                  xl: "repeat(6,1fr)",
+                }}
+                gap="2"
+                p="2"
+              >
+                {new Array(6).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="90px" />
+                    <SkeletonText
+                      w="80%"
+                      m="auto"
+                      mb="20px"
+                      mt="4"
+                      noOfLines={3}
+                      spacing="1"
+                    />
+                  </Box>
+                ))}
+              </Grid>
+            ) : (
+              <>
+                <HomePageSection11 />
+              </>
+            )
+          }
+
         </section>
         <section className="section3_largeScreen">
           <Box
@@ -444,7 +632,45 @@ const Home = () => {
 
         </section>
         <section>
-          <HomePageSection7 />
+          {
+            isLoadingAllProduct ? (
+              <Grid
+                w={{
+                  base: "100%",
+                  md: "90%",
+                  lg: "80%",
+                }}
+                m="auto"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                  sm: "repeat(2,1fr)",
+                  md: "repeat(6,1fr)",
+                  lg: "repeat(6,1fr)",
+                  xl: "repeat(6,1fr)",
+                }}
+                gap="2"
+                p="2"
+              >
+                {new Array(6).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="90px" />
+                    <SkeletonText
+                      w="80%"
+                      m="auto"
+                      mb="20px"
+                      mt="4"
+                      noOfLines={3}
+                      spacing="1"
+                    />
+                  </Box>
+                ))}
+              </Grid>
+            ) : (
+              <>
+                <HomePageSection7 />
+              </>
+            )
+          }
         </section>
         <section>
           <Box
@@ -459,10 +685,86 @@ const Home = () => {
           >
             Snacks Store/ Cleaning & Household
           </Box>
-          <HomePageSection9 />
+          {
+            isLoadingAllProduct ? (
+              <Grid
+                w={{
+                  base: "100%",
+                  md: "90%",
+                  lg: "80%",
+                }}
+                m="auto"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                  sm: "repeat(2,1fr)",
+                  md: "repeat(4,1fr)",
+                  lg: "repeat(4,1fr)",
+                  xl: "repeat(4,1fr)",
+                }}
+                gap="2"
+                p="2"
+              >
+                {new Array(4).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="100px" />
+                    <SkeletonText
+                      w="80%"
+                      m="auto"
+                      mb="20px"
+                      mt="1"
+                      noOfLines={3}
+                      spacing="1"
+                    />
+                  </Box>
+                ))}
+              </Grid>
+            ) : (
+              <>
+                <HomePageSection9 />
+              </>
+            )
+          }
         </section>
         <section>
-          <HomePageSection8 />
+          {
+            isLoadingAllProduct ? (
+              <Grid
+                w={{
+                  base: "100%",
+                  md: "90%",
+                  lg: "80%",
+                }}
+                m="auto"
+                templateColumns={{
+                  base: "repeat(1,1fr)",
+                  sm: "repeat(2,1fr)",
+                  md: "repeat(6,1fr)",
+                  lg: "repeat(6,1fr)",
+                  xl: "repeat(6,1fr)",
+                }}
+                gap="2"
+                p="2"
+              >
+                {new Array(6).fill(0).map((e, i) => (
+                  <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
+                    <Skeleton size="15" h="80px" />
+                    <SkeletonText
+                      w="80%"
+                      m="auto"
+                      mb="20px"
+                      mt="1"
+                      noOfLines={2}
+                      spacing="1"
+                    />
+                  </Box>
+                ))}
+              </Grid>
+            ) : (
+              <>
+                <HomePageSection8 />
+              </>
+            )
+          }
         </section>
         <section>
           <Box width="100%" marginTop="5%">

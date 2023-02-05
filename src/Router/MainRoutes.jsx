@@ -29,9 +29,7 @@ const MainRoutes = () => {
       <Route
         path="/cart"
         element={
-          <PrivateRoute>
             <CartPage />
-          </PrivateRoute>
         }
       />
       <Route

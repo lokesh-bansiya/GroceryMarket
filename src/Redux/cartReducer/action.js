@@ -11,12 +11,13 @@ const addProductToCart = (id, value) => (dispatch) => {
     })
     .then((res) => {
       dispatch({
-        type: types.GET_CART_ITEMS_SUCCESS,
+        type: types.ADD_TO_CART_SUCCESS,
         payload: res.data,
       });
       localStorage.setItem("msg", res.data.Message);
     })
     .catch((err) => {
+      dispatch({ type: types.ADD_TO_CART_FAILURE, payload: err });
       console.log(err);
     });
 };
@@ -24,11 +25,7 @@ const addProductToCart = (id, value) => (dispatch) => {
 const getCartItems = () => (dispatch) => {
   dispatch({ type: types.GET_CART_ITEMS_REQUEST });
   return axios
-    .get(`https://zany-bee-sarong.cyclic.app/cart/cartItems`, {
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    })
+    .get(`https://zany-bee-sarong.cyclic.app/cart/cartItems`)
     .then((res) => {
       dispatch({
         type: types.GET_CART_ITEMS_SUCCESS,
