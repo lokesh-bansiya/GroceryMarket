@@ -57,7 +57,11 @@ const ProfileMenu = () => {
 
   const change = () => {
     isAuth = localStorage.getItem("isAuth");
-    cartItems.length = 0;
+    console.log(isAuth);
+    username = localStorage.getItem("username") || "no user";
+    email = localStorage.getItem("email") || "no mail";
+    adminID = localStorage.getItem("adminID");
+    dispatch(getCartItems());
   }
 
   useEffect(() => {
@@ -86,7 +90,7 @@ const ProfileMenu = () => {
             alt="user img"
           />
         </MenuItem>
-        {username && isAuth === "true" ? (
+        {isAuth === "true" ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"
@@ -98,7 +102,7 @@ const ProfileMenu = () => {
         ) : (
           <></>
         )}
-        {email && isAuth === "true" ? (
+        {isAuth === "true" ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"

@@ -227,11 +227,11 @@ const SingleProductPage = () => {
               fontWeight="500"
             >
               <span>
-                Price for one item:- ₹{singleProduct.price}
+                Price for one item:- ₹{parseFloat(singleProduct.price).toFixed(2)}
               </span>{" "}
               {singleProduct.mrp ? (
                 <Text>MRP for one item:- <span className="strickPrice">
-                  ₹{singleProduct.mrp}{" "}
+                  ₹{parseFloat(singleProduct.mrp).toFixed(2)}{" "}
                 </span></Text>
               ) : (
                 <></>
@@ -251,11 +251,11 @@ const SingleProductPage = () => {
               fontWeight="500"
             >
               <span>
-                Total Price:- ₹{singleProduct.quantity * singleProduct.price}
+                Total Price:- ₹{parseFloat(singleProduct.quantity * singleProduct.price).toFixed(2)}
               </span>{" "}
               {singleProduct.mrp ? (
                 <span className="strickPrice">
-                  Total MRP:- ₹{singleProduct.quantity * singleProduct.mrp}{" "}
+                  Total MRP:- ₹{parseFloat(singleProduct.quantity * singleProduct.mrp).toFixed(2)}{" "}
                 </span>
               ) : (
                 <></>
