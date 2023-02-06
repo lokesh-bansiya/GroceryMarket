@@ -41,8 +41,9 @@ const Bakery = () => {
           lg: "repeat(4,1fr)",
           xl: "repeat(4,1fr)",
         }}
-        gap="10"
-        p="10"
+        gap="5"
+        p="5"
+        pt="10%"
       >
         {new Array(20).fill(0).map((e, i) => (
           <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>

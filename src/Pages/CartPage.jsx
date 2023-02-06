@@ -65,9 +65,10 @@ const CartPage = () => {
           base: "repeat(1,1fr)"
         }}
         gap="5"
-        p="10"
+        p="5"
+        pt="10%"
       >
-        {new Array(20).fill(0).map((e, i) => (
+        {new Array(5).fill(0).map((e, i) => (
           <Box w=" 100%" m="auto" boxShadow="lg" bg="white" key={i}>
             <Skeleton size="10" h="110px" />
             <SkeletonText
