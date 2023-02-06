@@ -11,21 +11,24 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import user from "../Assets/user.png";
-import { getProfile } from "../Redux/authReducer/action";
 import { getCartItems } from "../Redux/cartReducer/action";
 
 const ProfileMenu = () => {
   const dispatch = useDispatch();
-  var userProfile = useSelector((state) => state.authReducer.userProfile);
+  var isAuth = localStorage.getItem("isAuth") || false;
+  var username = localStorage.getItem("username");
+  var email = localStorage.getItem("email");
+  var adminID = localStorage.getItem("adminID");
   const cartItems = useSelector((store) => store.cartReducer.cartItems);
   const userKey = localStorage.getItem("userKey") || "";
   const toast = useToast();
 
+  console.log(isAuth);
+
   const logoutHandler = () => {
     if (userKey) {
-      
       localStorage.clear();
-      userProfile = "";
+      localStorage.setItem("isAuth", false);
 
       toast({
         title: "User signed up!",
@@ -52,21 +55,22 @@ const ProfileMenu = () => {
     }
   };
 
-  useEffect(() => {
-    if (userProfile.length === 0) {
-      dispatch(getProfile(userKey));
-    }
-  });
+  const change = () => {
+    isAuth = localStorage.getItem("isAuth");
+    cartItems.length = 0;
+  }
 
   useEffect(() => {
-    if (cartItems.length === 0) {
-      dispatch(getCartItems());
+    if (isAuth === false || isAuth === true) {
+      if (cartItems.length === 0) {
+        dispatch(getCartItems());
+      }
     }
-  }, [dispatch, cartItems.length, cartItems]);
+  }, [dispatch, cartItems.length, cartItems, isAuth]);
 
   return (
     <Menu borderRadius="10px">
-      <MenuButton>
+      <MenuButton onClick={change}>
         <Image margin="3%" borderRadius="50%" width="100%" src={user} />
       </MenuButton>
       <MenuList
@@ -82,31 +86,31 @@ const ProfileMenu = () => {
             alt="user img"
           />
         </MenuItem>
-        {userProfile ? (
+        {username && isAuth === "true" ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"
             display="flex"
             fontWeight={600}
           >
-            {userProfile.username}
+            {username}
           </MenuItem>
         ) : (
           <></>
         )}
-        {userProfile ? (
+        {email && isAuth === "true" ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"
             display="flex"
             fontWeight={600}
           >
-            {userProfile.email}
+            {email}
           </MenuItem>
         ) : (
           <></>
         )}
-        {userProfile ? (
+        {isAuth === "true" ? (
           <Link to="/cart"><MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"
@@ -120,13 +124,13 @@ const ProfileMenu = () => {
               }}
             >
               {" "}
-             {cartItems.length} Items
+              {cartItems.length} Items
             </span>
           </MenuItem></Link>
         ) : (
           <></>
         )}
-        {userProfile ? (
+        {isAuth === "true" ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"
@@ -139,7 +143,7 @@ const ProfileMenu = () => {
         ) : (
           <></>
         )}
-        {userProfile ? (
+        {isAuth === "true" ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"
@@ -151,7 +155,7 @@ const ProfileMenu = () => {
         ) : (
           <></>
         )}
-        {userProfile ? (
+        {isAuth === "true" ? (
           <MenuItem
             _hover={{ bg: "blue.300", color: "darkred" }}
             width="100%"
@@ -164,7 +168,7 @@ const ProfileMenu = () => {
         ) : (
           <></>
         )}
-        {userProfile.adminID ? (
+        {adminID && isAuth === "true" ? (
           <Link to="/admin_dashboard">
             <MenuItem
               _hover={{ bg: "blue.200", color: "darkred" }}
@@ -176,7 +180,7 @@ const ProfileMenu = () => {
               width="fit-content"
               margin={"auto"}
               borderRadius="20px"
-              // onClick={() => logoutHandler()}
+            // onClick={() => logoutHandler()}
             >
               Admin Dashboard
             </MenuItem>

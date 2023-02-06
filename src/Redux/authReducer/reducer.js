@@ -16,7 +16,7 @@ const initialState = {
   userProfile: [],
   signupmessage: "",
   logoutmessage: "",
-  isAuth: false,
+  isAuth: localStorage.getItem("isAuth") || false,
   accountCreated: false,
   isLoading: false,
   isError: false,
@@ -56,6 +56,7 @@ export const reducer = (state = initialState, action) => {
       };
 
     case SIGNIN_SUCCESS:
+      localStorage.setItem("isAuth", true);
       return {
         ...state,
         isLoading: false,
@@ -63,6 +64,7 @@ export const reducer = (state = initialState, action) => {
         userInfo: payload,
         isError: false,
       };
+      
 
     case SIGNIN_FAILURE:
       return {
@@ -71,6 +73,7 @@ export const reducer = (state = initialState, action) => {
         isError: true,
       };
     case SIGNOUT:
+      
       return {
         ...state,
         userInfo: [],

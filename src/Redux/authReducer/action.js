@@ -22,6 +22,8 @@ const getProfile = (userKey) => (dispatch) => {
       })
       .then((res) => {
         dispatch({ type: GET_PROFILE_SUCCESS, payload: res.data });
+        localStorage.setItem("username", res.data.username);
+        localStorage.setItem("email", res.data.email);
       })
       .catch((e) => {
         dispatch({ type: GET_PROFILE_FAILURE });
@@ -76,6 +78,9 @@ const login = (payload) => (dispatch) => {
       }
       localStorage.setItem("token", response.data.token);
       console.log(response.data);
+    })
+    .then(() => {
+      dispatch(getProfile(localStorage.getItem("userKey")));
     })
     .catch((e) => {
       dispatch({ type: SIGNIN_FAILURE });

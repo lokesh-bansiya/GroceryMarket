@@ -21,6 +21,7 @@ import { useDispatch } from "react-redux";
 import logo from "../Assets/redbaglogosmall.png";
 import { getProfile, login, signUp } from "../Redux/authReducer/action";
 import { useNavigate } from "react-router-dom";
+import { getUsers } from "../Redux/adminReducer/action";
 
 
 const initialLoginState = {
@@ -108,9 +109,9 @@ export default function SignUpLogin() {
     const loginHandler = (loginState) => {
         if (loginState.email !== "" && loginState.password !== "") {
             dispatch(login(loginState))
-            dispatch(getProfile(userKey))
 
             const timer = setTimeout(() => {
+                dispatch(getProfile(userKey));
                 var msg = localStorage.getItem("msg");
                 if (!msg) {
                     msg = "Something went wrong!";
@@ -137,6 +138,7 @@ export default function SignUpLogin() {
                     ),
                 });
                 onClose();
+                dispatch(getUsers());
                 navigate("/");
             }, 3000);
             return () => clearTimeout(timer);
@@ -207,6 +209,7 @@ export default function SignUpLogin() {
                     ),
                 });
                 setIsLogin(false);
+                dispatch(getUsers());
             }, 3000);
             return () => clearTimeout(timer);
         } else {
@@ -236,7 +239,6 @@ export default function SignUpLogin() {
     };
 
     return (
-
         !islogin ?
             (
                 <>
