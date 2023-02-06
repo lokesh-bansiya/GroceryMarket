@@ -1,10 +1,10 @@
 import * as types from "./actionTypes";
 import axios from "axios";
 
-const addProductToCart = (id, value) => (dispatch) => {
+const addProductToCart = (value) => (dispatch) => {
   dispatch({ type: types.ADD_TO_CART_REQUEST });
   return axios
-    .post(`https://zany-bee-sarong.cyclic.app/cart/addcartItem/${id}`, value, {
+    .post(`https://zany-bee-sarong.cyclic.app/cart/addcartItem`, value, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -25,7 +25,11 @@ const addProductToCart = (id, value) => (dispatch) => {
 const getCartItems = () => (dispatch) => {
   dispatch({ type: types.GET_CART_ITEMS_REQUEST });
   return axios
-    .get(`https://zany-bee-sarong.cyclic.app/cart/cartItems`)
+    .get(`https://zany-bee-sarong.cyclic.app/cart/cartItems`,{
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
     .then((res) => {
       dispatch({
         type: types.GET_CART_ITEMS_SUCCESS,
@@ -41,7 +45,7 @@ const getCartItems = () => (dispatch) => {
 const deleteCartItem = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_CART_ITEM_REQUEST });
   return axios
-    .delete(`https://zany-bee-sarong.cyclic.app/cart/delete/${id}`, {
+    .delete(`https://zany-bee-sarong.cyclic.app/cart/delete/${id}`,{
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -61,7 +65,7 @@ const deleteCartItem = (id) => (dispatch) => {
 const updateCartItemQuantity = (id, payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_CART_ITEM_REQUEST });
   return axios
-    .patch(`https://zany-bee-sarong.cyclic.app/cart/update/${id}`, payload, {
+    .patch(`https://zany-bee-sarong.cyclic.app/cart/update/${id}`, payload,{
       headers: {
         Authorization: localStorage.getItem("token"),
       },

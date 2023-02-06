@@ -23,8 +23,6 @@ const ProfileMenu = () => {
   const userKey = localStorage.getItem("userKey") || "";
   const toast = useToast();
 
-  console.log(isAuth);
-
   const logoutHandler = () => {
     if (userKey) {
       localStorage.clear();
@@ -62,6 +60,7 @@ const ProfileMenu = () => {
     email = localStorage.getItem("email") || "no mail";
     adminID = localStorage.getItem("adminID");
     dispatch(getCartItems());
+    return;
   }
 
   useEffect(() => {

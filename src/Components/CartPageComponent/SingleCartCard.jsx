@@ -1,5 +1,6 @@
 import { DeleteIcon } from "@chakra-ui/icons";
 import { Box, Button, Text, Image, useToast } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   deleteCartItem,
@@ -55,6 +56,7 @@ const SingleCartCard = ({
       );
   };
 
+  // decrease quantity
   const decreaseQuantity = (id) => {
     const item = cartItems.filter((el) => el._id === id);
     var newQuantity;
@@ -69,6 +71,7 @@ const SingleCartCard = ({
     );
   };
 
+  // Increase quantity
   const increaseQuantity = (id) => {
     const item = cartItems.filter((el) => el._id === id);
     var newQuantity;
@@ -82,6 +85,13 @@ const SingleCartCard = ({
       dispatch(getCartItems())
     );
   };
+
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      dispatch(getCartItems());
+    }
+  }, [dispatch, cartItems.length, cartItems]);
+
 
   return (
     <Box

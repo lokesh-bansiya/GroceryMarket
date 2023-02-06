@@ -23,8 +23,22 @@ const SingleProductPage = () => {
   const products = useSelector((store) => store.appReducer.allProducts);
   const toast = useToast();
 
-  const addToCart = (id) => {
-    dispatch(addProductToCart(id)).then(() =>
+  const addToCart = () => {
+    const payload = {
+      brand: singleProduct.brand,
+      name: singleProduct.name,
+      weight: singleProduct.weight,
+      price: singleProduct.price,
+      mrp: singleProduct.mrp,
+      ImgSrc: singleProduct.ImgSrc,
+      category: singleProduct.category,
+      sasta: singleProduct.sasta,
+      packet: singleProduct.packet,
+      offers: singleProduct.offers,
+      isavailable: singleProduct.isavailable,
+      quantity: singleProduct.quantity,
+    }
+    dispatch(addProductToCart(payload)).then(() =>
       toast({
         status: "success",
         duration: 2000,

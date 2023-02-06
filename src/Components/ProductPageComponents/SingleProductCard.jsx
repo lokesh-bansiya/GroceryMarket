@@ -24,7 +24,21 @@ const SingleProductCard = ({
   const toast = useToast();
 
   const addToCart = (id) => {
-    dispatch(addProductToCart(id)).then(() => {
+    const payload = {
+      brand,
+      name,
+      weight,
+      price,
+      mrp,
+      ImgSrc,
+      category,
+      sasta,
+      packet,
+      offers,
+      isavailable,
+      quantity,
+    }
+    dispatch(addProductToCart(payload)).then(() => {
       const timer = setTimeout(() => {
         var msg = localStorage.getItem("msg");
         if (!msg) {

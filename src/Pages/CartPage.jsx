@@ -31,6 +31,9 @@ const CartPage = () => {
       }, 0);
       setTotal(value);
     }
+    else{
+      setTotal(0);
+    }
   }, [cartItems, cartItems.length]);
 
   useEffect(() => {
@@ -42,6 +45,9 @@ const CartPage = () => {
         return sum_mrp;
       }, 0);
       setTotalmrp(value);
+    }
+    else{
+      setTotalmrp(0);
     }
   }, [cartItems, cartItems.length]);
 
