@@ -72,10 +72,10 @@ const Product = () => {
             <Box display="flex" margin="auto" marginTop="0%" width="90%" flexDirection="column">
               <Box>
                 <Box fontWeight="bold">Category</Box>
-                <Text color="darkgreen" fontWeight="500" onClick={() => filterHandle("vegetable")}>Vegetables</Text>
-                <Text color="darkgreen" fontWeight="500" onClick={() => filterHandle("nonveg")}>Non-Veg</Text>
-                <Text color="darkgreen" fontWeight="500" onClick={() => filterHandle("bakery")}>Bakery Items</Text>
-                <Text color="darkgreen" fontWeight="500" onClick={() => filterHandle("beauty")}>Beauty & Hygiene</Text>
+                <Text _hover={{cursor: "pointer", backgroundColor: "gray.200"}} paddingLeft="3%" color="darkgreen" fontWeight="500" onClick={() => filterHandle("vegetable")}>Vegetables</Text>
+                <Text _hover={{cursor: "pointer", backgroundColor: "gray.200"}} paddingLeft="3%" color="darkgreen" fontWeight="500" onClick={() => filterHandle("nonveg")}>Non-Veg</Text>
+                <Text _hover={{cursor: "pointer", backgroundColor: "gray.200"}} paddingLeft="3%" color="darkgreen" fontWeight="500" onClick={() => filterHandle("bakery")}>Bakery Items</Text>
+                <Text _hover={{cursor: "pointer", backgroundColor: "gray.200"}} paddingLeft="3%" color="darkgreen" fontWeight="500" onClick={() => filterHandle("beauty")}>Beauty & Hygiene</Text>
               </Box>
               <Box display="flex" flexDirection="column" justifyContent="left">
                 <Box fontWeight="bold" marginTop="7%">Filter</Box>
@@ -85,19 +85,24 @@ const Product = () => {
                   fontSize={{ base: "70%", sm: "70%", md: "70%", lg: "80%", xl: "90%" }}
                   padding="0.1%"
                   onChange={(e) => filterHandle(e.target.value)}
+                  _hover={{cursor: "pointer"}}
                 >
-                  <option value="price_low=0&&price_high=300">Below 300</option>
-                  <option value="price_low=300&&price_high=600">300 - 600</option>
-                  <option value="price_low=600&&price_high=1000">600 - 1000</option>
-                  <option value="price_low=1000&&price_high=1500">1000 - 1500</option>
-                  <option value="price_low=1500&&price_high=2000">1500 - 2000</option>
-                  <option value="price_low=2000&&price_high=5000">2000 - 5000</option>
+                  <option value="price_low=300">Below 300</option>
+                  <option value="price_low=300&&price_high=400">300 - 400</option>
+                  <option value="price_low=400&&price_high=500">400 - 500</option>
+                  <option value="price_low=500&&price_high=600">500 - 600</option>
+                  <option value="price_low=600&&price_high=700">600 - 700</option>
+                  <option value="price_low=700&&price_high=800">700 - 800</option>
+                  <option value="price_low=800&&price_high=900">800 - 900</option>
+                  <option value="price_low=900&&price_high=1000">900 - 1000</option>
+                  <option value="price_high=1000">1000 - Above</option>
                 </Select>
                 <Select
                   fontWeight="500"
                   fontSize={{ base: "70%", sm: "70%", md: "70%", lg: "80%", xl: "90%" }}
                   padding="0.1%"
                   onChange={(e) => filterHandle(e.target.value)}
+                  _hover={{cursor: "pointer"}}
                 >
                   <option value="">Popularity</option>
                   <option value="asc" >Price-Low to High</option>
@@ -109,6 +114,7 @@ const Product = () => {
                   padding="0.1%"
                   placeholder="Select Brands"
                   onChange={(e) => filterHandle(e.target.value)}
+                  _hover={{cursor: "pointer"}}
                 >
                   <option value="Fresho">Fresho</option>
                   <option value="Ocean Secret">Ocean Secret</option>

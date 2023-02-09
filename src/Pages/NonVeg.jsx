@@ -80,6 +80,7 @@ const NonVeg = () => {
                   fontSize={{ base: "70%", sm: "70%", md: "70%", lg: "80%", xl: "90%" }}
                   padding="0.1%"
                   onChange={(e) => filterHandle(e.target.value)}
+                  _hover={{cursor: "pointer"}}
                 >
                   <option value="price_low=0&&price_high=300">Below 300</option>
                   <option value="price_low=300&&price_high=600">300 - 600</option>
@@ -93,6 +94,7 @@ const NonVeg = () => {
                   fontSize={{ base: "70%", sm: "70%", md: "70%", lg: "80%", xl: "90%" }}
                   padding="0.1%"
                   onChange={(e) => filterHandle(e.target.value)}
+                  _hover={{cursor: "pointer"}}
                 >
                   <option value="">Popularity</option>
                   <option value="asc" >Price-Low to High</option>

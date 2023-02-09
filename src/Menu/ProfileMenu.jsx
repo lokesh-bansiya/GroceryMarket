@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import user from "../Assets/user.png";
 import { getCartItems } from "../Redux/cartReducer/action";
 
@@ -22,6 +22,7 @@ const ProfileMenu = () => {
   const cartItems = useSelector((store) => store.cartReducer.cartItems);
   const userKey = localStorage.getItem("userKey") || "";
   const toast = useToast();
+  const navigate = useNavigate();
 
   const logoutHandler = () => {
     if (userKey) {
@@ -50,6 +51,7 @@ const ProfileMenu = () => {
           </Box>
         ),
       });
+      navigate("/")
     }
   };
 
@@ -127,7 +129,7 @@ const ProfileMenu = () => {
               }}
             >
               {" "}
-              {cartItems.length} Items
+              {cartItems.filter((el) => el.cartID === userKey).length} Items
             </span>
           </MenuItem></Link>
         ) : (

@@ -15,6 +15,7 @@ const CartPage = () => {
   const [ison, setIson] = useState(false);
   const [total, setTotal] = useState(0);
   const [totalmrp, setTotalmrp] = useState(0);
+  const userKey = localStorage.getItem("userKey")
 
   useEffect(() => {
     if (cartItems.length === 0 || ison === true) {
@@ -25,20 +26,20 @@ const CartPage = () => {
 
   useEffect(() => {
     if (cartItems.length > 0) {
-      var value = cartItems.reduce((sum, ele) => {
+      var value = cartItems.filter((el) => el.cartID === userKey).reduce((sum, ele) => {
         sum += ele.price * ele.quantity;
         return sum;
       }, 0);
       setTotal(value);
     }
-    else{
+    else {
       setTotal(0);
     }
-  }, [cartItems, cartItems.length]);
+  }, [cartItems, cartItems.length, userKey]);
 
   useEffect(() => {
     if (cartItems.length > 0) {
-      var value = cartItems.reduce((sum_mrp, ele) => {
+      var value = cartItems.filter((el) => el.cartID === userKey).reduce((sum_mrp, ele) => {
         if (ele.mrp) {
           sum_mrp += ele.mrp * ele.quantity;
         }
@@ -46,10 +47,10 @@ const CartPage = () => {
       }, 0);
       setTotalmrp(value);
     }
-    else{
+    else {
       setTotalmrp(0);
     }
-  }, [cartItems, cartItems.length]);
+  }, [cartItems, cartItems.length, userKey]);
 
 
   if (loading) {
@@ -91,28 +92,44 @@ const CartPage = () => {
         width="80%"
         margin="auto"
         display="flex"
-        flexDirection="column"
-        padding="3%"
+        justifyContent="space-between"
+        padding="2%"
         paddingTop={{ base: "15%", sm: "12%", md: "10%", lg: "10%", xl: "10%" }}
         height="fit-content"
       >
-        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
-          Total price:-{" "}
-          <span className="totalAmount">₹{parseFloat(total).toFixed(2)}</span>
+        <Box
+          width="fit-content"
+          display="flex"
+          flexDirection="column"
+          height="fit-content"
+        >
+          <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
+            Total price:-{" "}
+            <span className="totalAmount">₹{parseFloat(total).toFixed(2)}</span>
+          </Box>
+          <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
+            Total MRP:-{" "}
+            <span className="totalAmountmrp">
+              ₹{parseFloat(totalmrp).toFixed(2)}
+            </span>
+          </Box>
+          <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
+            Total Items:- <span className="totalAmount">{cartItems.filter((el) => el.cartID === userKey).length}</span>
+          </Box>
         </Box>
-        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
-          Total MRP:-{" "}
-          <span className="totalAmountmrp">
-            ₹{parseFloat(totalmrp).toFixed(2)}
-          </span>
+
+        <Box
+          width="fit-content"
+          display="flex"
+          height="fit-content"
+        >
+          <Link to="/checkout"><Button colorScheme="blue">Buy</Button></Link>
         </Box>
-        <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
-          Total Items:- <span className="totalAmount">{cartItems.length}</span>
-        </Box>
+
       </Box>
 
       {
-        cartItems.length === 0 ? (
+        cartItems.filter((el) => el.cartID === userKey).length === 0 ? (
           <Box
             display="flex"
             justifyContent="center"
@@ -162,7 +179,7 @@ const CartPage = () => {
             gridTemplateColumns={{ base: "repeat(1,1fr)" }}
           >
             {
-              cartItems.map((ele) => {
+              cartItems.filter((el) => el.cartID === userKey).map((ele) => {
                 return (
                   <SingleCartCard
                     key={ele._id}
