@@ -15,7 +15,7 @@ const CartPage = () => {
   const [ison, setIson] = useState(false);
   const [total, setTotal] = useState(0);
   const [totalmrp, setTotalmrp] = useState(0);
-  const userKey = localStorage.getItem("userKey")
+  const userKey = localStorage.getItem("userKey");
 
   useEffect(() => {
     if (cartItems.length === 0 || ison === true) {
@@ -94,7 +94,7 @@ const CartPage = () => {
         display="flex"
         justifyContent="space-between"
         padding="2%"
-        paddingTop={{ base: "15%", sm: "12%", md: "10%", lg: "10%", xl: "10%" }}
+        paddingTop={{ base: "25%", sm: "20%", md: "10%", lg: "10%", xl: "10%" }}
         height="fit-content"
       >
         <Box
@@ -103,17 +103,17 @@ const CartPage = () => {
           flexDirection="column"
           height="fit-content"
         >
-          <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
+          <Box fontWeight="bold" fontSize={{base: "60%", sm:"80%", md:"100%",lg:"100%",xl:"100%"}} color="darkviolet">
             Total price:-{" "}
             <span className="totalAmount">₹{parseFloat(total).toFixed(2)}</span>
           </Box>
-          <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
+          <Box fontWeight="bold" fontSize={{base: "60%", sm:"80%", md:"100%",lg:"100%",xl:"100%"}} color="darkviolet">
             Total MRP:-{" "}
             <span className="totalAmountmrp">
               ₹{parseFloat(totalmrp).toFixed(2)}
             </span>
           </Box>
-          <Box fontWeight="bold" fontSize={{ base: "100%" }} color="darkviolet">
+          <Box fontWeight="bold" fontSize={{base: "60%", sm:"80%", md:"100%",lg:"100%",xl:"100%"}} color="darkviolet">
             Total Items:- <span className="totalAmount">{cartItems.filter((el) => el.cartID === userKey).length}</span>
           </Box>
         </Box>
@@ -123,7 +123,7 @@ const CartPage = () => {
           display="flex"
           height="fit-content"
         >
-          <Link to="/checkout"><Button colorScheme="blue">Buy</Button></Link>
+          <Link to="/checkout"><Button size={{base: "sm", sm: "md", md: "md", lg:"md", xl:"lg"}} fontSize={{base: "60%", sm:"80%", md:"100%",lg:"100%",xl:"100%"}} colorScheme="blue">Checkout</Button></Link>
         </Box>
 
       </Box>
