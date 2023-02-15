@@ -18,7 +18,7 @@ GroceryMarket is an online food and grocery store. You will find everything you 
  - checkpoints added at the backend side to protect data and important information of users.
 
 ## Home Page:
-![homepageGroceryMart](https://user-images.githubusercontent.com/105616033/214993746-258f0fc4-6bf9-485e-acdf-de25eda5fab0.png)
+![grocery1](https://user-images.githubusercontent.com/105616033/218976127-ca075c15-a66d-4d52-af29-807488e32033.png)
 
 
 ## Signup Page:
@@ -30,6 +30,10 @@ GroceryMarket is an online food and grocery store. You will find everything you 
 
 
 ## Products Page:
+![grocery4](https://user-images.githubusercontent.com/105616033/218976222-f2277681-0416-4772-b34f-06284898992e.png)
+
+
+## Cart Page:-
 ![grocery6](https://user-images.githubusercontent.com/105616033/218975583-76853cdf-ef26-431d-8108-c0fe939233f7.png)
 
 ## Ordered Items:-
