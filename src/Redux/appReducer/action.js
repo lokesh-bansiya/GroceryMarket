@@ -397,6 +397,7 @@ const addOrderedItems = (payload) => async (dispatch) => {
         type: types.ADD_ORDERED_ITEMS_SUCCESS,
         payload: res.data,
       });
+      console.log(payload);
       localStorage.setItem("msg", res.data.Message);
     })
     .catch((e) => {
@@ -429,12 +430,38 @@ const getAllOrderedItems = () => async (dispatch) => {
 };
 
 
+const deleteOrderedItems = (id) => async (dispatch) => {
+  dispatch({ type: types.DELETE_ORDERED_ITEMS_REQUEST });
+  return axios
+    .delete(`https://dull-erin-frock.cyclic.app/order/delete/${id}`,
+      {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      }
+    )
+    .then((res) => {
+      dispatch({
+        type: types.DELETE_ORDERED_ITEMS_SUCCESS,
+        payload: res.data,
+      });
+      console.log(res.data.Message);
+      localStorage.setItem("msg", res.data.Message);
+    })
+    .catch((e) => {
+      dispatch({ type: types.DELETE_ORDERED_ITEMS_FAILURE, payload: e });
+      console.log(e);
+    });
+};
+
+
 export {
   getProductsByBrandsAmul,
   getProductsByCategoryBeauty,
   getProductsByCategoryBakery,
   getProductsByCategoryVegetable,
   addOrderedItems,
+  deleteOrderedItems,
   getAllOrderedItems,
   getAllProducts,
   getSingleProduct,

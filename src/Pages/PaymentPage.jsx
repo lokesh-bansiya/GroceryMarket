@@ -1,8 +1,10 @@
 import { Box, Button, FormControl, FormLabel, Image, Input, Text, useToast, } from "@chakra-ui/react"
 import { useEffect, useReducer, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import img from "../Assets/success-tick.gif";
+import { addOrderedItems } from "../Redux/appReducer/action";
+import { deleteCartItem } from "../Redux/cartReducer/action";
 
 
 const paymentInitialState = {
@@ -40,6 +42,7 @@ const PaymentPage = () => {
     const navigate = useNavigate();
     const [total, setTotal] = useState(0);
     const userKey = localStorage.getItem("userKey");
+    const dispatch = useDispatch();
     const cartItems = useSelector((store) => store.cartReducer.cartItems);
     const [paymentState, setPaymentState] = useReducer(
         paymentReducer,
@@ -47,16 +50,40 @@ const PaymentPage = () => {
     );
     const toast = useToast();
 
+
     const PaymentHandler = (flag) => {
         if(paymentState.cvv !== "" && paymentState.cardno !== "" && paymentState.date !== ""){
             setFlag(true);
             console.log(flag);
     
             let time = setTimeout(() => {
+                cartItems.filter((el) => el.cartID === userKey).length > 0 && 
+                cartItems.filter((el) => el.cartID === userKey).forEach((item) => {
+                    let payload = {
+                        brand: item.brand,
+                        name: item.name,
+                        weight: item.weight,
+                        price: item.price,
+                        mrp: item.mrp,
+                        ImgSrc: item.ImgSrc,
+                        category: item.category,
+                        sasta: item.sasta,
+                        packet: item.sasta,
+                        offers: item.offers,
+                        isavailable: item.isavailable,
+                        quantity: item.quantity
+                    };
+
+                    dispatch(addOrderedItems(payload));
+                    dispatch(deleteCartItem(item._id));
+                    console.log(item);
+                });
+
                 navigate("/");
                 setFlag(false);
                 console.log(flag);
                 clearTimeout(time);
+
             }, 3000);
         }
         else{
@@ -82,7 +109,6 @@ const PaymentPage = () => {
                 ),
             });
         }
-        
     };
 
     useEffect(() => {
@@ -157,9 +183,9 @@ const PaymentPage = () => {
                     </Box>
                     <Box width={{ base: "100%" }}>
                         <Box padding="5%" width="100%">
-                            <Text fontWeight="bold" color="blue">Cart value: {cartItems.length}</Text>
+                            <Text fontWeight="bold" color="blue">Cart value: {cartItems.filter((el) => el.cartID === userKey).length}</Text>
                             <Text fontWeight="bold" color="teal">Delivery charge: 0</Text>
-                            <Text fontWeight="bold" color="red">Total:- {total}</Text>
+                            <Text fontWeight="bold" color="red">Total:- {parseFloat(total).toFixed(2)}</Text>
                         </Box>
                     </Box>
                 </Box>

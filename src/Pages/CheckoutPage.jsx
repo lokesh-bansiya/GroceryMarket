@@ -348,9 +348,9 @@ const Checkout = () => {
                 </Box>
                 <Box width={{ base: "100%", sm: "100%", md: "25%", lg: "25%", xl: "25%" }}>
                     <Box padding="5%" width="100%" boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px">
-                        <Text fontWeight="bold" color="blue">Cart value: {cartItems.length}</Text>
+                        <Text fontWeight="bold" color="blue">Cart value: {cartItems.filter((el) => el.cartID === userKey).length}</Text>
                         <Text fontWeight="bold" color="teal">Delivery charge: 0</Text>
-                        <Text fontWeight="bold" color="red">Total:- {total}</Text>
+                        <Text fontWeight="bold" color="red">Total:- {parseFloat(total).toFixed(2)}</Text>
                     </Box>
                 </Box>
             </Box>

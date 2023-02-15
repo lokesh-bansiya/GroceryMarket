@@ -5,7 +5,7 @@ const AdminMenu = () => {
   return (
     <Menu>
       <MenuButton>Panel</MenuButton>
-      <MenuList bg={"black"}>
+      <MenuList zIndex={1000} bg={"black"}>
         <Link to="/admin_dashboard">
           <MenuItem bg={"black"} _hover={{ bg: "blue.300", color: "darkred" }}>
             Dashboard
