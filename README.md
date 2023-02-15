@@ -30,6 +30,14 @@ GroceryMarket is an online food and grocery store. You will find everything you 
 
 
 ## Products Page:
+![grocery6](https://user-images.githubusercontent.com/105616033/218975583-76853cdf-ef26-431d-8108-c0fe939233f7.png)
+
+## Ordered Items:-
+![grocery11](https://user-images.githubusercontent.com/105616033/218975682-7247ae65-328e-4def-9dec-265ee3eba72d.png)
+
+
+## Single Product Page:-
+![grocery5](https://user-images.githubusercontent.com/105616033/218975929-dcbe5cba-6b09-4477-b30e-eee83e1252a3.png)
 
 
 ## Admin Dashboard:
