@@ -7,6 +7,7 @@ const initialState = {
   itemsByCategoryVegetable: [],
   itemsByCategoryBakery: [],
   allProducts: [],
+  orderedItems: [],
   isLoadingAllProduct: false,
   isLoadingBakery: false,
   isLoadingBeauty: false,
@@ -112,6 +113,19 @@ const reducer = (state = initialState, action) => {
         singleProduct: payload,
       };
     case types.GET_SINGLE_PRODUCT_FAILURE:
+      return {
+        ...state,
+      };
+      case types.GET_ORDERED_ITEMS_REQUEST:
+      return {
+        ...state,
+      };
+    case types.GET_ORDERED_ITEMS_SUCCESS:
+      return {
+        ...state,
+        orderedItems: payload,
+      };
+    case types.GET_ORDERED_ITEMS_FAILURE:
       return {
         ...state,
       };

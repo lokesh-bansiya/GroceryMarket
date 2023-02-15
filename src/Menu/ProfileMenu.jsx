@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import user from "../Assets/user.png";
+import { OrderedItems } from "../Drawer/OrderedItems";
 import { getCartItems } from "../Redux/cartReducer/action";
 
 const ProfileMenu = () => {
@@ -143,7 +144,8 @@ const ProfileMenu = () => {
             fontWeight={600}
             justifyContent="space-between"
           >
-            My Orders {0} Items
+            {/* My Orders {0} Items */}
+            <OrderedItems/>
           </MenuItem>
         ) : (
           <></>
