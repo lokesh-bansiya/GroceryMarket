@@ -38,7 +38,12 @@ const AdminSideSingleUser = ({ username, email, id }) => {
   };
 
   return (
-    <div className="single_admin_container">
+    <div style={{
+      width: "95%",
+      height: "95%",
+      margin: "auto",
+      marginBottom: "3%"
+    }} className="single_admin_container">
       <div>
         <img src={user} alt="user" />
       </div>

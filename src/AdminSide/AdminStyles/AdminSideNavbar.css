@@ -37,7 +37,7 @@
 .adminSideDisplaynone .AdminSideProfile {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 90%;
   border-radius: 10px;
   height: 30vh;
   margin-top: 5%;

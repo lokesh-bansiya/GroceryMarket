@@ -52,7 +52,12 @@ const AdminSideSingleProductPage = ({
   };
 
   return (
-    <div>
+    <Box 
+      width={{base:"95%", sm:"96%",md:"96%",lg:"97%",xl:"97%"}}
+      height={{base:"95%", sm:"96%",md:"95%",lg:"94%",xl:"94%"}}
+      margin="auto"
+      marginBottom="3%"
+    >
       <div className="admin_side_product_item">
         <div className="product_img_box">
           <div>
@@ -155,7 +160,7 @@ const AdminSideSingleProductPage = ({
           </div>
         </div>
       </div>
-    </div>
+    </Box>
   );
 };
 
