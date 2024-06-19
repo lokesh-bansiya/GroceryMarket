@@ -4,7 +4,7 @@ import axios from "axios";
 const getUserProfile = (id) => (dispatch) => {
   dispatch({ type: types.GET_USER_PROFILE_REQUEST });
   return axios
-    .get(`https://dull-erin-frock.cyclic.app/users/profile/${id}`, {
+    .get(`https://grocery-market-backend.vercel.app/users/profile/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -21,7 +21,7 @@ const getUserProfile = (id) => (dispatch) => {
 const getProductById = (id) => (dispatch) => {
   dispatch({ type: types.GET_PRODUCT_BY_ID_REQUEST });
   return axios
-    .get(`https://dull-erin-frock.cyclic.app/products/getById/${id}`, {
+    .get(`https://grocery-market-backend.vercel.app/products/getById/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -38,7 +38,7 @@ const getProductById = (id) => (dispatch) => {
 const getProducts = () => (dispatch) => {
   dispatch({ type: types.GET_PRODUCTS_REQUEST });
   return axios
-    .get(`https://dull-erin-frock.cyclic.app/products`, {
+    .get(`https://grocery-market-backend.vercel.app/products`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -56,7 +56,7 @@ const getUsers = () => (dispatch) => {
   dispatch({ type: types.GET_USERS_REQUEST });
 
   return axios
-    .get(`https://dull-erin-frock.cyclic.app/users`, {
+    .get(`https://grocery-market-backend.vercel.app/users`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -73,7 +73,7 @@ const getUsers = () => (dispatch) => {
 const addProduct = (product) => (dispatch) => {
   dispatch({ type: types.ADD_PRODUCT_REQUEST });
   return axios
-    .post("https://dull-erin-frock.cyclic.app/products/add", product, {
+    .post("https://grocery-market-backend.vercel.app/products/add", product, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -90,7 +90,7 @@ const addProduct = (product) => (dispatch) => {
 const deleteProduct = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_PRODUCT_REQUEST });
   return axios
-    .delete(`https://dull-erin-frock.cyclic.app/products/delete/${id}`, {
+    .delete(`https://grocery-market-backend.vercel.app/products/delete/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -107,7 +107,7 @@ const updateProduct = (id, payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_PRODUCT_REQUEST });
   return axios
     .patch(
-      `https://dull-erin-frock.cyclic.app/products/update/${id}`,
+      `https://grocery-market-backend.vercel.app/products/update/${id}`,
       payload,
       {
         headers: {
@@ -126,7 +126,7 @@ const updateProduct = (id, payload) => (dispatch) => {
 const deleteUser = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_USER_REQUEST });
   return axios
-    .delete(`https://dull-erin-frock.cyclic.app/users/delete/${id}`, {
+    .delete(`https://grocery-market-backend.vercel.app/users/delete/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
