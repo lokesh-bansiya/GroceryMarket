@@ -1,10 +1,11 @@
 import * as types from "./actionTypes";
 import axios from "axios";
+import { serverUrl } from "../../App";
 
 const getProductsByBrandsAmul = () => (dispatch) => {
   dispatch({ type: types.GET_ITEMS_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/products?brand=Amul`, {
+    .get(`${serverUrl}/products?brand=Amul`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -21,7 +22,7 @@ const getProductsByBrandsAmul = () => (dispatch) => {
 const getProductsByCategoryBeauty = () => (dispatch) => {
   dispatch({ type: types.GET_BY_CATEGORY_BEAUTY_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/products?category=beauty`, {
+    .get(`${serverUrl}/products?category=beauty`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -41,7 +42,7 @@ const getProductsByCategoryBeauty = () => (dispatch) => {
 const getProductsByCategoryBakery = () => (dispatch) => {
   dispatch({ type: types.GET_BY_CATEGORY_BAKERY_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/products?category=bakery`, {
+    .get(`${serverUrl}/products?category=bakery`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -61,7 +62,7 @@ const getProductsByCategoryBakery = () => (dispatch) => {
 const getProductsByCategoryVegetable = () => (dispatch) => {
   dispatch({ type: types.GET_BY_CATEGORY_VEGETABLES_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/products?category=vegetable`, {
+    .get(`${serverUrl}/products?category=vegetable`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -82,7 +83,7 @@ const getAllProducts = (category) => async (dispatch) => {
   if (category === "price_low=0&&price_high=300") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -93,11 +94,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "price_low=300") {
+  } else if (category === "price_low=300") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -108,11 +108,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "price_high=1000") {
+  } else if (category === "price_high=1000") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -123,11 +122,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "price_low=300&&price_high=400") {
+  } else if (category === "price_low=300&&price_high=400") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -138,11 +136,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "price_low=400&&price_high=500") {
+  } else if (category === "price_low=400&&price_high=500") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -153,11 +150,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "price_low=500&&price_high=600") {
+  } else if (category === "price_low=500&&price_high=600") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -168,11 +164,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "price_low=600&&price_high=700") {
+  } else if (category === "price_low=600&&price_high=700") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -183,11 +178,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "price_low=700&&price_high=800") {
+  } else if (category === "price_low=700&&price_high=800") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -198,11 +192,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "price_low=800&&price_high=900") {
+  } else if (category === "price_low=800&&price_high=900") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -213,11 +206,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "price_low=900&&price_high=1000") {
+  } else if (category === "price_low=900&&price_high=1000") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?${category}`)
+      .get(`${serverUrl}/products?${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -228,11 +220,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "asc" || category === "desc") {
+  } else if (category === "asc" || category === "desc") {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products?sortBy=${category}`)
+      .get(`${serverUrl}/products?sortBy=${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -243,8 +234,8 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category === "Fresho" ||
+  } else if (
+    category === "Fresho" ||
     category === "Ocean Secret" ||
     category === "ABHI EGGS" ||
     category === "Milky Mist" ||
@@ -275,8 +266,7 @@ const getAllProducts = (category) => async (dispatch) => {
   ) {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(
-        `https://grocery-market-backend.vercel.app/products/?brand=${category}`)
+      .get(`${serverUrl}/products/?brand=${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -287,12 +277,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (category) {
+  } else if (category) {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(
-        `https://grocery-market-backend.vercel.app/products/?category=${category}`)
+      .get(`${serverUrl}/products/?category=${category}`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -303,12 +291,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else if (!category) {
+  } else if (!category) {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(
-        `https://grocery-market-backend.vercel.app/products`)
+      .get(`${serverUrl}/products`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -319,11 +305,10 @@ const getAllProducts = (category) => async (dispatch) => {
         dispatch({ type: types.GET_ALL_PRODUCTS_FAILURE, payload: e });
         console.log(e);
       });
-  }
-  else {
+  } else {
     dispatch({ type: types.GET_ALL_PRODUCTS_REQUEST });
     return axios
-      .get(`https://grocery-market-backend.vercel.app/products`)
+      .get(`${serverUrl}/products`)
       .then((res) => {
         dispatch({
           type: types.GET_ALL_PRODUCTS_SUCCESS,
@@ -340,7 +325,7 @@ const getAllProducts = (category) => async (dispatch) => {
 const getSingleProduct = (id) => async (dispatch) => {
   dispatch({ type: types.GET_SINGLE_PRODUCT_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/products/getById/${id}`, {
+    .get(`${serverUrl}/products/getById/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -360,15 +345,11 @@ const getSingleProduct = (id) => async (dispatch) => {
 const updateProduct = (id, payload) => async (dispatch) => {
   dispatch({ type: types.UPDATE_PRODUCT_REQUEST });
   return axios
-    .patch(
-      `https://grocery-market-backend.vercel.app/products/update/${id}`,
-      payload,
-      {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }
-    )
+    .patch(`${serverUrl}/products/update/${id}`, payload, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
     .then((res) => {
       dispatch({
         type: types.UPDATE_PRODUCT_SUCCESS,
@@ -381,17 +362,14 @@ const updateProduct = (id, payload) => async (dispatch) => {
     });
 };
 
-
 const addOrderedItems = (payload) => async (dispatch) => {
   dispatch({ type: types.ADD_ORDERED_ITEMS_REQUEST });
   return axios
-    .post(`https://grocery-market-backend.vercel.app/order/addOrderItem`, payload,
-      {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }
-    )
+    .post(`${serverUrl}/order/addOrderItem`, payload, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
     .then((res) => {
       dispatch({
         type: types.ADD_ORDERED_ITEMS_SUCCESS,
@@ -406,17 +384,14 @@ const addOrderedItems = (payload) => async (dispatch) => {
     });
 };
 
-
 const getAllOrderedItems = () => async (dispatch) => {
   dispatch({ type: types.GET_ORDERED_ITEMS_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/order/`,
-      {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }
-    )
+    .get(`${serverUrl}/order/`, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
     .then((res) => {
       dispatch({
         type: types.GET_ORDERED_ITEMS_SUCCESS,
@@ -429,17 +404,14 @@ const getAllOrderedItems = () => async (dispatch) => {
     });
 };
 
-
 const deleteOrderedItems = (id) => async (dispatch) => {
   dispatch({ type: types.DELETE_ORDERED_ITEMS_REQUEST });
   return axios
-    .delete(`https://grocery-market-backend.vercel.app/order/delete/${id}`,
-      {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }
-    )
+    .delete(`${serverUrl}/order/delete/${id}`, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
     .then((res) => {
       dispatch({
         type: types.DELETE_ORDERED_ITEMS_SUCCESS,
@@ -453,7 +425,6 @@ const deleteOrderedItems = (id) => async (dispatch) => {
       console.log(e);
     });
 };
-
 
 export {
   getProductsByBrandsAmul,

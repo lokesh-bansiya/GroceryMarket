@@ -1,10 +1,11 @@
 import * as types from "./actionTypes";
 import axios from "axios";
+import { serverUrl } from "../../App";
 
 const addProductToCart = (value) => (dispatch) => {
   dispatch({ type: types.ADD_TO_CART_REQUEST });
   return axios
-    .post(`https://grocery-market-backend.vercel.app/cart/addcartItem`, value, {
+    .post(`${serverUrl}/cart/addcartItem`, value, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -25,7 +26,7 @@ const addProductToCart = (value) => (dispatch) => {
 const getCartItems = () => (dispatch) => {
   dispatch({ type: types.GET_CART_ITEMS_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/cart/cartItems`,{
+    .get(`${serverUrl}/cart/cartItems`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -45,7 +46,7 @@ const getCartItems = () => (dispatch) => {
 const deleteCartItem = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_CART_ITEM_REQUEST });
   return axios
-    .delete(`https://grocery-market-backend.vercel.app/cart/delete/${id}`,{
+    .delete(`${serverUrl}/cart/delete/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -65,7 +66,7 @@ const deleteCartItem = (id) => (dispatch) => {
 const updateCartItemQuantity = (id, payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_CART_ITEM_REQUEST });
   return axios
-    .patch(`https://grocery-market-backend.vercel.app/cart/update/${id}`, payload,{
+    .patch(`${serverUrl}/cart/update/${id}`, payload, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -85,7 +86,7 @@ const updateCartItemQuantity = (id, payload) => (dispatch) => {
 const getSingleCartItem = (id) => (dispatch) => {
   dispatch({ type: types.GET_BY_ID_CART_ITEMS_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/cart/getById/${id}`, {
+    .get(`${serverUrl}/cart/getById/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },

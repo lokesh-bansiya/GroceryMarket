@@ -10,12 +10,13 @@ import {
   GET_PROFILE_FAILURE,
 } from "./actionTypes";
 import axios from "axios";
+import { serverUrl } from "../../App";
 
 const getProfile = (userKey) => (dispatch) => {
   if (userKey !== "undefined") {
     dispatch({ type: GET_PROFILE_REQUEST });
     axios
-      .get(`https://grocery-market-backend.vercel.app/users/profile/${userKey}`, {
+      .get(`${serverUrl}/users/profile/${userKey}`, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -37,7 +38,7 @@ const signUp = (admin, payload) => (dispatch) => {
   if (admin === "admin") {
     dispatch({ type: SIGNUP_REQUEST });
     axios
-      .post("https://grocery-market-backend.vercel.app/users/admin/signup", payload)
+      .post("${serverUrl}/users/admin/signup", payload)
       .then((response) => {
         dispatch({ type: SIGNUP_SUCCESS, payload: response.data });
         console.log(response.data);
@@ -51,7 +52,7 @@ const signUp = (admin, payload) => (dispatch) => {
   } else {
     dispatch({ type: SIGNUP_REQUEST });
     axios
-      .post("https://grocery-market-backend.vercel.app/users/user/signup", payload)
+      .post("${serverUrl}/users/user/signup", payload)
       .then((response) => {
         dispatch({ type: SIGNUP_SUCCESS, payload: response.data });
         console.log(response.data);
@@ -68,7 +69,7 @@ const signUp = (admin, payload) => (dispatch) => {
 const login = (payload) => (dispatch) => {
   dispatch({ type: SIGNIN_REQUEST });
   axios
-    .post("https://grocery-market-backend.vercel.app/users/login", payload)
+    .post("${serverUrl}/users/login", payload)
     .then((response) => {
       dispatch({ type: SIGNIN_SUCCESS, payload: response.data });
       localStorage.setItem("msg", response.data.Message);

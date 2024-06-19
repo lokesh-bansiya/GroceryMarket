@@ -1,5 +1,5 @@
 {
-  "name": "grocerymart",
+  "name": "grocery_mart",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +15,6 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.3",
     "bootstrap": "^3.4.1",
-    "carousel-react-rcdev": "0.0.5",
     "framer-motion": "^8.5.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",

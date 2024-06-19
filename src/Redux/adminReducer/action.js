@@ -1,10 +1,11 @@
+import { serverUrl } from "../../App";
 import * as types from "./actionTypes";
 import axios from "axios";
 
 const getUserProfile = (id) => (dispatch) => {
   dispatch({ type: types.GET_USER_PROFILE_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/users/profile/${id}`, {
+    .get(`${serverUrl}/users/profile/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -21,7 +22,7 @@ const getUserProfile = (id) => (dispatch) => {
 const getProductById = (id) => (dispatch) => {
   dispatch({ type: types.GET_PRODUCT_BY_ID_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/products/getById/${id}`, {
+    .get(`${serverUrl}/products/getById/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -38,7 +39,7 @@ const getProductById = (id) => (dispatch) => {
 const getProducts = () => (dispatch) => {
   dispatch({ type: types.GET_PRODUCTS_REQUEST });
   return axios
-    .get(`https://grocery-market-backend.vercel.app/products`, {
+    .get(`${serverUrl}/products`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -56,7 +57,7 @@ const getUsers = () => (dispatch) => {
   dispatch({ type: types.GET_USERS_REQUEST });
 
   return axios
-    .get(`https://grocery-market-backend.vercel.app/users`, {
+    .get(`${serverUrl}/users`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -73,7 +74,7 @@ const getUsers = () => (dispatch) => {
 const addProduct = (product) => (dispatch) => {
   dispatch({ type: types.ADD_PRODUCT_REQUEST });
   return axios
-    .post("https://grocery-market-backend.vercel.app/products/add", product, {
+    .post("${serverUrl}/products/add", product, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -90,7 +91,7 @@ const addProduct = (product) => (dispatch) => {
 const deleteProduct = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_PRODUCT_REQUEST });
   return axios
-    .delete(`https://grocery-market-backend.vercel.app/products/delete/${id}`, {
+    .delete(`${serverUrl}/products/delete/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -106,15 +107,11 @@ const deleteProduct = (id) => (dispatch) => {
 const updateProduct = (id, payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_PRODUCT_REQUEST });
   return axios
-    .patch(
-      `https://grocery-market-backend.vercel.app/products/update/${id}`,
-      payload,
-      {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }
-    )
+    .patch(`${serverUrl}/products/update/${id}`, payload, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
     .then((r) => {
       dispatch({ type: types.UPDATE_PRODUCT_SUCCESS, payload: r.data });
     })
@@ -126,7 +123,7 @@ const updateProduct = (id, payload) => (dispatch) => {
 const deleteUser = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_USER_REQUEST });
   return axios
-    .delete(`https://grocery-market-backend.vercel.app/users/delete/${id}`, {
+    .delete(`${serverUrl}/users/delete/${id}`, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
